@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ren_hong\\Desktop\\Training2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8DC214-3906-4C61-B0CC-CF8B22450E75}|Training2\\Training2.csproj|c:\\users\\ren_hong\\desktop\\training2\\training2\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8DC214-3906-4C61-B0CC-CF8B22450E75}|Training2\\Training2.csproj|solutionrelative:training2\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8DC214-3906-4C61-B0CC-CF8B22450E75}|Training2\\Training2.csproj|c:\\users\\ren_hong\\desktop\\training2\\training2\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CB8DC214-3906-4C61-B0CC-CF8B22450E75}|Training2\\Training2.csproj|solutionrelative:training2\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8DC214-3906-4C61-B0CC-CF8B22450E75}|Training2\\Training2.csproj|c:\\users\\ren_hong\\desktop\\training2\\training2\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8DC214-3906-4C61-B0CC-CF8B22450E75}|Training2\\Training2.csproj|solutionrelative:training2\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB8DC214-3906-4C61-B0CC-CF8B22450E75}|Training2\\Training2.csproj|c:\\users\\ren_hong\\desktop\\training2\\training2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB8DC214-3906-4C61-B0CC-CF8B22450E75}|Training2\\Training2.csproj|solutionrelative:training2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D88772B-6AFE-4249-A027-01DC49918C64}|Caculatorlib\\Caculatorlib.csproj|c:\\users\\ren_hong\\desktop\\training2\\caculatorlib\\caculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D88772B-6AFE-4249-A027-01DC49918C64}|Caculatorlib\\Caculatorlib.csproj|solutionrelative:caculatorlib\\caculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Caculator.cs",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\Training2\\Caculatorlib\\Caculator.cs",
+              "RelativeDocumentMoniker": "Caculatorlib\\Caculator.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\Training2\\Caculatorlib\\Caculator.cs",
+              "RelativeToolTip": "Caculatorlib\\Caculator.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA6wAUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T02:27:51.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frm_Main.cs",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\Training2\\Training2\\frm_Main.cs",
+              "RelativeDocumentMoniker": "Training2\\frm_Main.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\Training2\\Training2\\frm_Main.cs",
+              "RelativeToolTip": "Training2\\frm_Main.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T00:59:16.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frm_Main.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\Training2\\Training2\\frm_Main.cs",
+              "RelativeDocumentMoniker": "Training2\\frm_Main.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\Training2\\Training2\\frm_Main.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Training2\\frm_Main.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T00:59:07.233Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frm_Main.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\Training2\\Training2\\frm_Main.Designer.cs",
+              "RelativeDocumentMoniker": "Training2\\frm_Main.Designer.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\Training2\\Training2\\frm_Main.Designer.cs",
+              "RelativeToolTip": "Training2\\frm_Main.Designer.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA6wBIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T00:57:44.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\Training2\\Training2\\Program.cs",
+              "RelativeDocumentMoniker": "Training2\\Program.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\Training2\\Training2\\Program.cs",
+              "RelativeToolTip": "Training2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T00:56:50.645Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

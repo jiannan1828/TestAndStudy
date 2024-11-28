@@ -1,0 +1,11 @@
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\obj\Debug\net8.0\Caculatorlib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\obj\Debug\net8.0\Caculatorlib.AssemblyInfoInputs.cache
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\obj\Debug\net8.0\Caculatorlib.AssemblyInfo.cs
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\obj\Debug\net8.0\Caculatorlib.csproj.CoreCompileInputs.cache
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\bin\Debug\net8.0\Caculatorlib.deps.json
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\bin\Debug\net8.0\Caculatorlib.dll
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\bin\Debug\net8.0\Caculatorlib.pdb
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\obj\Debug\net8.0\Caculatorlib.dll
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\obj\Debug\net8.0\refint\Caculatorlib.dll
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\obj\Debug\net8.0\Caculatorlib.pdb
+C:\Users\ren_hong\Desktop\Training2\Caculatorlib\obj\Debug\net8.0\ref\Caculatorlib.dll
