@@ -1,0 +1,17 @@
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\bin\Debug\net8.0-windows\Training5.exe
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\bin\Debug\net8.0-windows\Training5.deps.json
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\bin\Debug\net8.0-windows\Training5.runtimeconfig.json
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\bin\Debug\net8.0-windows\Training5.dll
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\bin\Debug\net8.0-windows\Training5.pdb
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.frm_Main.resources
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.csproj.GenerateResource.cache
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.AssemblyInfoInputs.cache
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.AssemblyInfo.cs
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.csproj.CoreCompileInputs.cache
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.sourcelink.json
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.dll
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\refint\Training5.dll
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.pdb
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\Training5.genruntimeconfig.cache
+C:\Users\ren_hong\Desktop\TestAndStudy\Training5\Training5\obj\Debug\net8.0-windows\ref\Training5.dll
