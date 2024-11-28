@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AB5BE5-2F86-4472-9F42-4631514383F6}|Training3\\Training3.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training3\\training3\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AB5BE5-2F86-4472-9F42-4631514383F6}|Training3\\Training3.csproj|solutionrelative:training3\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AB5BE5-2F86-4472-9F42-4631514383F6}|Training3\\Training3.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training3\\training3\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C0AB5BE5-2F86-4472-9F42-4631514383F6}|Training3\\Training3.csproj|solutionrelative:training3\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AB5BE5-2F86-4472-9F42-4631514383F6}|Training3\\Training3.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training3\\training3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AB5BE5-2F86-4472-9F42-4631514383F6}|Training3\\Training3.csproj|solutionrelative:training3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AB5BE5-2F86-4472-9F42-4631514383F6}|Training3\\Training3.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training3\\training3\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AB5BE5-2F86-4472-9F42-4631514383F6}|Training3\\Training3.csproj|solutionrelative:training3\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frm_Main.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\Training3\\frm_Main.Designer.cs",
+              "RelativeDocumentMoniker": "Training3\\frm_Main.Designer.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\Training3\\frm_Main.Designer.cs",
+              "RelativeToolTip": "Training3\\frm_Main.Designer.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAIA4wEEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T03:15:24.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frm_Main.cs",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\Training3\\frm_Main.cs",
+              "RelativeDocumentMoniker": "Training3\\frm_Main.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\Training3\\frm_Main.cs",
+              "RelativeToolTip": "Training3\\frm_Main.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAswDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T03:15:39.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\Training3\\Program.cs",
+              "RelativeDocumentMoniker": "Training3\\Program.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\Training3\\Program.cs",
+              "RelativeToolTip": "Training3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T03:15:30.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frm_Main.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\Training3\\frm_Main.cs",
+              "RelativeDocumentMoniker": "Training3\\frm_Main.cs",
+              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training3\\Training3\\frm_Main.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Training3\\frm_Main.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T03:07:05.54Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.frm_Main.resources
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.csproj.GenerateResource.cache
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.AssemblyInfoInputs.cache
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.AssemblyInfo.cs
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.csproj.CoreCompileInputs.cache
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.sourcelink.json
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\bin\Debug\net8.0-windows\Training3.exe
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\bin\Debug\net8.0-windows\Training3.deps.json
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\bin\Debug\net8.0-windows\Training3.runtimeconfig.json
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\bin\Debug\net8.0-windows\Training3.dll
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\bin\Debug\net8.0-windows\Training3.pdb
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.dll
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\refint\Training3.dll
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.pdb
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\Training3.genruntimeconfig.cache
+C:\Users\ren_hong\Desktop\TestAndStudy\Training3\Training3\obj\Debug\net8.0-windows\ref\Training3.dll
