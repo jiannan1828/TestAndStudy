@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ren_hong\\Desktop\\新人練習一\\新人練習一\\新人練習一.csproj": {}
+    "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\新人練習一\\新人練習一.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ren_hong\\Desktop\\新人練習一\\新人練習一\\新人練習一.csproj": {
+    "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\新人練習一\\新人練習一.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ren_hong\\Desktop\\新人練習一\\新人練習一\\新人練習一.csproj",
+        "projectUniqueName": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\新人練習一\\新人練習一.csproj",
         "projectName": "新人練習一",
-        "projectPath": "C:\\Users\\ren_hong\\Desktop\\新人練習一\\新人練習一\\新人練習一.csproj",
+        "projectPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\新人練習一\\新人練習一.csproj",
         "packagesPath": "C:\\Users\\ren_hong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ren_hong\\Desktop\\新人練習一\\新人練習一\\obj\\",
+        "outputPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\新人練習一\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
