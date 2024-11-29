@@ -1,26 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\",
+  "WorkspaceRootPath": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training4\\training4\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|solutionrelative:training4\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|\\\\mac\\home\\desktop\\testandstudy\\training4\\training4\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training4\\training4\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|solutionrelative:training4\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|\\\\mac\\home\\desktop\\testandstudy\\training4\\training4\\frm_change3.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training4\\training4\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|solutionrelative:training4\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|\\\\mac\\home\\desktop\\testandstudy\\training4\\training4\\frm_change3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training4\\training4\\frm_change3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|solutionrelative:training4\\frm_change3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\training4\\frm_change3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\training4\\frm_change3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|solutionrelative:training4\\frm_change3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|\\\\mac\\home\\desktop\\testandstudy\\training4\\training4\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6F913F4-BFA7-479B-AD75-B65C4A312EC3}|Training4\\Training4.csproj|\\\\mac\\home\\desktop\\testandstudy\\training4\\training4\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,52 +28,65 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frm_Main.cs [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.cs",
-              "RelativeDocumentMoniker": "Training4\\frm_Main.cs",
-              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.cs [\u8A2D\u8A08]",
-              "RelativeToolTip": "Training4\\frm_Main.cs [\u8A2D\u8A08]",
+              "DocumentIndex": 1,
+              "Title": "frm_Change3.Designer.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.Designer.cs",
+              "RelativeDocumentMoniker": "Training4\\frm_Change3.Designer.cs",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.Designer.cs",
+              "RelativeToolTip": "Training4\\frm_Change3.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T06:16:00.647Z",
-              "EditorCaption": " [\u8A2D\u8A08]"
+              "WhenOpened": "2024-11-29T03:27:07.538Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "frm_Main.cs [Design]",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.cs",
+              "RelativeDocumentMoniker": "Training4\\frm_Main.cs",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.cs [Design]",
+              "RelativeToolTip": "Training4\\frm_Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T06:16:00.647Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "frm_Main.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.Designer.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.Designer.cs",
               "RelativeDocumentMoniker": "Training4\\frm_Main.Designer.cs",
-              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.Designer.cs",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.Designer.cs",
               "RelativeToolTip": "Training4\\frm_Main.Designer.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAnwD8AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIAmwA0AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T06:15:53.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frm_Change3.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.cs",
+              "DocumentIndex": 3,
+              "Title": "frm_Change3.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.cs",
               "RelativeDocumentMoniker": "Training4\\frm_Change3.cs",
-              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.cs [Design]",
-              "RelativeToolTip": "Training4\\frm_Change3.cs [Design]",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Training4\\frm_Change3.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T06:07:59.896Z",
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [\u8A2D\u8A08]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "frm_Change3.cs",
-              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.cs",
               "RelativeDocumentMoniker": "Training4\\frm_Change3.cs",
-              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.cs",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Change3.cs",
               "RelativeToolTip": "Training4\\frm_Change3.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -84,13 +95,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "frm_Main.cs",
-              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.cs",
               "RelativeDocumentMoniker": "Training4\\frm_Main.cs",
-              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.cs",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training4\\Training4\\frm_Main.cs",
               "RelativeToolTip": "Training4\\frm_Main.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAD4v0EAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwC8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T05:18:00.006Z",
               "EditorCaption": ""

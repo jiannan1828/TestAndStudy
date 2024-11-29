@@ -1,0 +1,17 @@
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\bin\Debug\net8.0-windows\Training6.exe
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\bin\Debug\net8.0-windows\Training6.deps.json
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\bin\Debug\net8.0-windows\Training6.runtimeconfig.json
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\bin\Debug\net8.0-windows\Training6.dll
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\bin\Debug\net8.0-windows\Training6.pdb
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.AssemblyInfoInputs.cache
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.AssemblyInfo.cs
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.sourcelink.json
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.dll
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\refint\Training6.dll
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.pdb
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.genruntimeconfig.cache
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\ref\Training6.dll
+\\Mac\Home\Desktop\TestAndStudy\Training6\Training6\obj\Debug\net8.0-windows\Training6.Frm_Main.resources

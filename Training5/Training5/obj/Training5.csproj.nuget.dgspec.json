@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training5\\Training5\\Training5.csproj": {}
+    "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training5\\Training5\\Training5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training5\\Training5\\Training5.csproj": {
+    "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training5\\Training5\\Training5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training5\\Training5\\Training5.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training5\\Training5\\Training5.csproj",
         "projectName": "Training5",
-        "projectPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training5\\Training5\\Training5.csproj",
-        "packagesPath": "C:\\Users\\ren_hong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training5\\Training5\\obj\\",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training5\\Training5\\Training5.csproj",
+        "packagesPath": "C:\\Users\\4xuann\\.nuget\\packages\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training5\\Training5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ren_hong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\4xuann\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
