@@ -1,0 +1,17 @@
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\bin\Debug\net8.0-windows\Training8.exe
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\bin\Debug\net8.0-windows\Training8.deps.json
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\bin\Debug\net8.0-windows\Training8.runtimeconfig.json
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\bin\Debug\net8.0-windows\Training8.dll
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\bin\Debug\net8.0-windows\Training8.pdb
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.Frm_Maim.resources
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.AssemblyInfoInputs.cache
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.AssemblyInfo.cs
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.sourcelink.json
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.dll
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\refint\Training8.dll
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.pdb
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\Training8.genruntimeconfig.cache
+\\Mac\Home\Desktop\TestAndStudy\Training8\Training8\obj\Debug\net8.0-windows\ref\Training8.dll

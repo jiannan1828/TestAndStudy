@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53C80F-A7D2-42DE-892D-6E082F9DBE24}|Training8\\Training8.csproj|\\\\mac\\home\\desktop\\testandstudy\\training8\\training8\\frm_maim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53C80F-A7D2-42DE-892D-6E082F9DBE24}|Training8\\Training8.csproj|\\\\mac\\home\\desktop\\testandstudy\\training8\\training8\\training8.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53C80F-A7D2-42DE-892D-6E082F9DBE24}|Training8\\Training8.csproj|\\\\mac\\home\\desktop\\testandstudy\\training8\\training8\\training8.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53C80F-A7D2-42DE-892D-6E082F9DBE24}|Training8\\Training8.csproj|\\\\mac\\home\\desktop\\testandstudy\\training8\\training8\\frm_maim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Training8.csproj",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\Training8\\Training8.csproj",
+              "RelativeDocumentMoniker": "Training8\\Training8.csproj",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\Training8\\Training8.csproj",
+              "RelativeToolTip": "Training8\\Training8.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-02T04:47:26.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Training8",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\Training8\\Training8.csproj",
+              "RelativeDocumentMoniker": "Training8\\Training8.csproj",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\Training8\\Training8.csproj",
+              "RelativeToolTip": "Training8\\Training8.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-02T04:47:28.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Frm_Maim.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\Training8\\Frm_Maim.cs",
+              "RelativeDocumentMoniker": "Training8\\Frm_Maim.cs",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\Training8\\Frm_Maim.cs",
+              "RelativeToolTip": "Training8\\Frm_Maim.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAMA9wDsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T00:53:13.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Frm_Maim.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\Training8\\Frm_Maim.cs",
+              "RelativeDocumentMoniker": "Training8\\Frm_Maim.cs",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training8\\Training8\\Frm_Maim.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Training8\\Frm_Maim.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T00:26:16.063Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
