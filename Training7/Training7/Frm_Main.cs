@@ -1,6 +1,7 @@
 using System.Windows.Forms;
 using netDxf;
 using netDxf.Entities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Training7
 {
@@ -42,6 +43,9 @@ namespace Training7
         public void show_lv_DXFData(DxfDocument dxfDoc)
         {
             int index = 0;
+
+            lv_DXFCircles.Items.Clear();
+            lv_DXFPoints.Items.Clear();
 
             foreach (var Circle in dxfDoc.Entities.Circles)
             {
