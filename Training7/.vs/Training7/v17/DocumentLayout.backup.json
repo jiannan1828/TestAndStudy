@@ -6,10 +6,10 @@
       "AbsoluteMoniker": "D:0:0:{17FEBE26-A59D-4591-8C6A-27768DEFBC2B}|Training7\\Training7.csproj|\\\\mac\\home\\desktop\\testandstudy\\training7\\training7\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17FEBE26-A59D-4591-8C6A-27768DEFBC2B}|Training7\\Training7.csproj|\\\\mac\\home\\desktop\\testandstudy\\training7\\training7\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17FEBE26-A59D-4591-8C6A-27768DEFBC2B}|Training7\\Training7.csproj|\\\\mac\\home\\desktop\\testandstudy\\training7\\training7\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17FEBE26-A59D-4591-8C6A-27768DEFBC2B}|Training7\\Training7.csproj|\\\\mac\\home\\desktop\\testandstudy\\training7\\training7\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{17FEBE26-A59D-4591-8C6A-27768DEFBC2B}|Training7\\Training7.csproj|\\\\mac\\home\\desktop\\testandstudy\\training7\\training7\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,19 +23,19 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Frm_Main.cs [\u8A2D\u8A08]",
+              "DocumentIndex": 1,
+              "Title": "Frm_Main.cs [Design]",
               "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training7\\Training7\\Frm_Main.cs",
               "RelativeDocumentMoniker": "Training7\\Frm_Main.cs",
-              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training7\\Training7\\Frm_Main.cs [\u8A2D\u8A08]",
-              "RelativeToolTip": "Training7\\Frm_Main.cs [\u8A2D\u8A08]",
+              "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training7\\Training7\\Frm_Main.cs [Design]",
+              "RelativeToolTip": "Training7\\Frm_Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T08:22:05.932Z",
-              "EditorCaption": " [\u8A2D\u8A08]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Frm_Main.Designer.cs",
               "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training7\\Training7\\Frm_Main.Designer.cs",
               "RelativeDocumentMoniker": "Training7\\Frm_Main.Designer.cs",
@@ -43,8 +43,7 @@
               "RelativeToolTip": "Training7\\Frm_Main.Designer.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAqwBwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T08:18:47.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-30T08:18:47.631Z"
             },
             {
               "$type": "Document",
@@ -54,7 +53,7 @@
               "RelativeDocumentMoniker": "Training7\\Frm_Main.cs",
               "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\Training7\\Training7\\Frm_Main.cs",
               "RelativeToolTip": "Training7\\Frm_Main.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAMA4wCAAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAIAqwCUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-29T07:29:25.463Z",
               "EditorCaption": ""

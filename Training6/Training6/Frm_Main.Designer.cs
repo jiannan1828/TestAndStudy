@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            pnl_Pic_Draw = new Panel();
             pic_Draw = new PictureBox();
-            panel1.SuspendLayout();
+            pnl_Pic_Draw.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Draw).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnl_Pic_Draw
             // 
-            panel1.AutoScroll = true;
-            panel1.Controls.Add(pic_Draw);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(974, 929);
-            panel1.TabIndex = 0;
+            pnl_Pic_Draw.AutoScroll = true;
+            pnl_Pic_Draw.Controls.Add(pic_Draw);
+            pnl_Pic_Draw.Dock = DockStyle.Fill;
+            pnl_Pic_Draw.Location = new Point(0, 0);
+            pnl_Pic_Draw.Name = "pnl_Pic_Draw";
+            pnl_Pic_Draw.Size = new Size(974, 929);
+            pnl_Pic_Draw.TabIndex = 0;
             // 
             // pic_Draw
             // 
@@ -52,23 +52,25 @@
             pic_Draw.TabIndex = 0;
             pic_Draw.TabStop = false;
             pic_Draw.Paint += pic_Draw_Paint;
+            pic_Draw.MouseDown += pic_Draw_MouseDown;
+            pic_Draw.MouseMove += pic_Draw_MouseMove;
             // 
             // Frm_Main
             // 
             AutoScaleDimensions = new SizeF(14F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(974, 929);
-            Controls.Add(panel1);
+            Controls.Add(pnl_Pic_Draw);
             Name = "Frm_Main";
             Text = "ScrollBar練習";
-            panel1.ResumeLayout(false);
+            pnl_Pic_Draw.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pic_Draw).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnl_Pic_Draw;
         private PictureBox pic_Draw;
     }
 }
