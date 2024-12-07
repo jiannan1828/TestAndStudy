@@ -1,4 +1,6 @@
-﻿namespace Training7
+﻿using System.IO;
+
+namespace Training7
 {
     partial class Frm_Main
     {
@@ -112,17 +114,17 @@
             // 
             pnl_pic_DXFDatas.AutoScroll = true;
             pnl_pic_DXFDatas.Controls.Add(pic_DXFDatas);
-            pnl_pic_DXFDatas.Location = new Point(516, 50);
+            pnl_pic_DXFDatas.Location = new Point(516, 12);
             pnl_pic_DXFDatas.Name = "pnl_pic_DXFDatas";
-            pnl_pic_DXFDatas.Size = new Size(956, 899);
+            pnl_pic_DXFDatas.Size = new Size(900, 900);
             pnl_pic_DXFDatas.TabIndex = 4;
             // 
             // pic_DXFDatas
             // 
-            pic_DXFDatas.BackColor = Color.FromArgb(192, 255, 192);
+            pic_DXFDatas.BackColor = Color.Honeydew;
             pic_DXFDatas.Location = new Point(0, 0);
             pic_DXFDatas.Name = "pic_DXFDatas";
-            pic_DXFDatas.Size = new Size(1500000, 1000000);
+            pic_DXFDatas.Size = new Size(900, 900);
             pic_DXFDatas.TabIndex = 0;
             pic_DXFDatas.TabStop = false;
             pic_DXFDatas.Paint += pic_DXFDatas_Paint;
@@ -134,7 +136,7 @@
             // 
             lbl_MousePos.AutoSize = true;
             lbl_MousePos.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lbl_MousePos.Location = new Point(516, 12);
+            lbl_MousePos.Location = new Point(516, 917);
             lbl_MousePos.Name = "lbl_MousePos";
             lbl_MousePos.Size = new Size(197, 35);
             lbl_MousePos.TabIndex = 5;
@@ -144,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1484, 961);
+            ClientSize = new Size(1784, 961);
             Controls.Add(lbl_MousePos);
             Controls.Add(pnl_pic_DXFDatas);
             Controls.Add(dgv_DXFDatas);

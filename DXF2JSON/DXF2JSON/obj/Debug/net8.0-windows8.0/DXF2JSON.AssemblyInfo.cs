@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("DXF2JSON")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DXF2JSON")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows8.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows8.0")]
 
 // 由 MSBuild WriteCodeFragment 類別產生。
