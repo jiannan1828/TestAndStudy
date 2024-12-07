@@ -9,6 +9,7 @@ namespace Training7
     public partial class Frm_Main : Form
     {
         public DxfDocument dxfDoc = new DxfDocument();
+        public double minX, minY, maxX, maxY;
 
         private OpenFileDialog openDXFFileDialog = new OpenFileDialog();
 
@@ -21,6 +22,8 @@ namespace Training7
 
         private double mouse2CircleDistance;
         private Circle highlightedCircle = null;
+        private int prevHighlightedRow;
+        private bool isHighlightedRow = false;
 
 
         public Frm_Main()
@@ -44,7 +47,14 @@ namespace Training7
             {
                 dxfDoc = DxfDocument.Load(openDXFFileDialog.FileName);
                 MessageBox.Show($"檔案 {openDXFFileDialog.FileName} 成功讀取！");
+
                 DXFDatas.show_dgv_DXFDatas(dgv_DXFDatas, dxfDoc);
+
+                DXFDatas.find_DXFDatas_bounds(dxfDoc, out minX, out minY, out maxX, out maxY);
+                
+                offset.X = (float)minX * 10;
+                offset.Y = (float)minY * 10;
+
                 pic_DXFDatas.Refresh();
             }
             catch (Exception ex)
@@ -105,6 +115,7 @@ namespace Training7
 
             // 鼠標與圓的距離判斷是否高量
             highlightedCircle = null; // 每一次移動滑鼠都必須重新判斷是否需要高量
+            int index = 0; // datagridview 的索引行遍歷
 
             foreach (var circle in dxfDoc.Entities.Circles)
             {
@@ -116,9 +127,22 @@ namespace Training7
 
                 if (mouse2CircleDistance <= circle.Radius)
                 {
-                    highlightedCircle = circle; // 記錄高亮的圓
+                    if (isHighlightedRow == true) 
+                    {
+                        dgv_DXFDatas.Rows[prevHighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window;
+                    }
+
+                    highlightedCircle = circle; // 記錄高亮的圓              
+                    dgv_DXFDatas.Rows[index].DefaultCellStyle.BackColor = SystemColors.Highlight;  // 高亮 datagridview 該列               
+                    dgv_DXFDatas.FirstDisplayedScrollingRowIndex = index;// 設置自動捲動到該列
+
+                    prevHighlightedRow = index; // 紀錄上一次被highlight過的列
+                    isHighlightedRow = true;
+                    
                     break;
                 }
+
+                index++;
             }
 
             pic_DXFDatas.Refresh();
@@ -126,33 +150,34 @@ namespace Training7
 
         private void pic_DXFDatas_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (Control.ModifierKeys == Keys.Control)
-            {
-                // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放前）
-                float realXBeforeZoom = (e.X - offset.X) / zoomFactor;
-                float realYBeforeZoom = (e.Y - offset.Y) / zoomFactor;
+            
+            // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放前）
+            float realXBeforeZoom = (e.X - offset.X) / zoomFactor;
+            float realYBeforeZoom = (e.Y - offset.Y) / zoomFactor;
 
-                if (e.Delta > 0)
-                {
-                    zoomFactor *= 2f; // 滾輪向上，放大
-                }
-                else if (e.Delta < 0)
+            if (e.Delta > 0)
+            {
+                zoomFactor *= 2f; // 滾輪向上，放大
+            }
+            else if (e.Delta < 0)
+            {
+                if(zoomFactor > 1) // 最小就 1 倍
                 {
                     zoomFactor /= 2f; // 滾輪向下，縮小
-                }
-
-                // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放後）
-                float realXAfterZoom = (e.X - offset.X) / zoomFactor;
-                float realYAfterZoom = (e.Y - offset.Y) / zoomFactor;
-
-                // 根據縮放前後的真實座標差異調整偏移量
-                offset.X += (realXAfterZoom - realXBeforeZoom) * zoomFactor;
-                offset.Y += (realYAfterZoom - realYBeforeZoom) * zoomFactor;
-
-                pic_DXFDatas.Refresh();
+                }                   
             }
-        }
 
+            // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放後）
+            float realXAfterZoom = (e.X - offset.X) / zoomFactor;
+            float realYAfterZoom = (e.Y - offset.Y) / zoomFactor;
+
+            // 根據縮放前後的真實座標差異調整偏移量
+            offset.X += (realXAfterZoom - realXBeforeZoom) * zoomFactor;
+            offset.Y += (realYAfterZoom - realYBeforeZoom) * zoomFactor;
+
+            pic_DXFDatas.Refresh();
+        }
+        
         private void pic_DXFDatas_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

@@ -49,18 +49,18 @@ namespace Training7
             // txt_OpenDXFFile
             // 
             txt_OpenDXFFile.Font = new Font("Microsoft JhengHei UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_OpenDXFFile.Location = new Point(11, 902);
-            txt_OpenDXFFile.Margin = new Padding(2);
+            txt_OpenDXFFile.Location = new Point(13, 24);
+            txt_OpenDXFFile.Margin = new Padding(4);
             txt_OpenDXFFile.Name = "txt_OpenDXFFile";
-            txt_OpenDXFFile.Size = new Size(291, 48);
+            txt_OpenDXFFile.Size = new Size(578, 89);
             txt_OpenDXFFile.TabIndex = 0;
             // 
             // btn_OK
             // 
-            btn_OK.Location = new Point(411, 900);
-            btn_OK.Margin = new Padding(2);
+            btn_OK.Location = new Point(822, 24);
+            btn_OK.Margin = new Padding(4);
             btn_OK.Name = "btn_OK";
-            btn_OK.Size = new Size(100, 50);
+            btn_OK.Size = new Size(200, 100);
             btn_OK.TabIndex = 1;
             btn_OK.Text = "確定";
             btn_OK.UseVisualStyleBackColor = true;
@@ -68,10 +68,10 @@ namespace Training7
             // 
             // btn_OpenDXFFile
             // 
-            btn_OpenDXFFile.Location = new Point(307, 900);
-            btn_OpenDXFFile.Margin = new Padding(2);
+            btn_OpenDXFFile.Location = new Point(614, 24);
+            btn_OpenDXFFile.Margin = new Padding(4);
             btn_OpenDXFFile.Name = "btn_OpenDXFFile";
-            btn_OpenDXFFile.Size = new Size(100, 50);
+            btn_OpenDXFFile.Size = new Size(200, 100);
             btn_OpenDXFFile.TabIndex = 2;
             btn_OpenDXFFile.Text = "...";
             btn_OpenDXFFile.UseVisualStyleBackColor = true;
@@ -81,50 +81,59 @@ namespace Training7
             // 
             dgv_DXFDatas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_DXFDatas.Columns.AddRange(new DataGridViewColumn[] { Index, PosX, PosY, Diameter });
-            dgv_DXFDatas.Location = new Point(12, 12);
+            dgv_DXFDatas.Location = new Point(15, 134);
+            dgv_DXFDatas.Margin = new Padding(6);
             dgv_DXFDatas.Name = "dgv_DXFDatas";
+            dgv_DXFDatas.RowHeadersWidth = 82;
             dgv_DXFDatas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_DXFDatas.Size = new Size(498, 883);
+            dgv_DXFDatas.Size = new Size(996, 1513);
             dgv_DXFDatas.TabIndex = 3;
             // 
             // Index
             // 
             Index.HeaderText = "流水號";
+            Index.MinimumWidth = 10;
             Index.Name = "Index";
             Index.Width = 75;
             // 
             // PosX
             // 
             PosX.HeaderText = "座標X";
+            PosX.MinimumWidth = 10;
             PosX.Name = "PosX";
             PosX.Width = 125;
             // 
             // PosY
             // 
             PosY.HeaderText = "座標Y";
+            PosY.MinimumWidth = 10;
             PosY.Name = "PosY";
             PosY.Width = 125;
             // 
             // Diameter
             // 
             Diameter.HeaderText = "直徑";
+            Diameter.MinimumWidth = 10;
             Diameter.Name = "Diameter";
+            Diameter.Width = 200;
             // 
             // pnl_pic_DXFDatas
             // 
             pnl_pic_DXFDatas.AutoScroll = true;
             pnl_pic_DXFDatas.Controls.Add(pic_DXFDatas);
-            pnl_pic_DXFDatas.Location = new Point(516, 12);
+            pnl_pic_DXFDatas.Location = new Point(1032, 24);
+            pnl_pic_DXFDatas.Margin = new Padding(6);
             pnl_pic_DXFDatas.Name = "pnl_pic_DXFDatas";
-            pnl_pic_DXFDatas.Size = new Size(900, 900);
+            pnl_pic_DXFDatas.Size = new Size(1800, 1800);
             pnl_pic_DXFDatas.TabIndex = 4;
             // 
             // pic_DXFDatas
             // 
             pic_DXFDatas.BackColor = Color.Honeydew;
             pic_DXFDatas.Location = new Point(0, 0);
+            pic_DXFDatas.Margin = new Padding(6);
             pic_DXFDatas.Name = "pic_DXFDatas";
-            pic_DXFDatas.Size = new Size(900, 900);
+            pic_DXFDatas.Size = new Size(1800, 1800);
             pic_DXFDatas.TabIndex = 0;
             pic_DXFDatas.TabStop = false;
             pic_DXFDatas.Paint += pic_DXFDatas_Paint;
@@ -136,24 +145,25 @@ namespace Training7
             // 
             lbl_MousePos.AutoSize = true;
             lbl_MousePos.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lbl_MousePos.Location = new Point(516, 917);
+            lbl_MousePos.Location = new Point(588, 1543);
+            lbl_MousePos.Margin = new Padding(6, 0, 6, 0);
             lbl_MousePos.Name = "lbl_MousePos";
-            lbl_MousePos.Size = new Size(197, 35);
+            lbl_MousePos.Size = new Size(393, 68);
             lbl_MousePos.TabIndex = 5;
             lbl_MousePos.Text = "當前滑鼠座標 : ";
             // 
             // Frm_Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(14F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1784, 961);
+            ClientSize = new Size(2944, 1799);
             Controls.Add(lbl_MousePos);
             Controls.Add(pnl_pic_DXFDatas);
             Controls.Add(dgv_DXFDatas);
             Controls.Add(btn_OpenDXFFile);
             Controls.Add(btn_OK);
             Controls.Add(txt_OpenDXFFile);
-            Margin = new Padding(2);
+            Margin = new Padding(4);
             Name = "Frm_Main";
             Text = "讀取Dxf黨";
             ((System.ComponentModel.ISupportInitialize)dgv_DXFDatas).EndInit();

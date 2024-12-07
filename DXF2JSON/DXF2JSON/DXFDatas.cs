@@ -5,6 +5,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using netDxf;
+using netDxf.Entities;
+using static netDxf.Entities.HatchBoundaryPath;
 
 namespace DXF2JSON
 {
@@ -18,7 +20,7 @@ namespace DXF2JSON
         /// <returns>無回傳值</returns>
         public static void show_dgv_DXFDatas(DataGridView dgv_DXFDatas, DxfDocument dxfDoc)
         {
-            int index = 0;
+            int index = 1;
 
             dgv_DXFDatas.Rows.Clear();
 
@@ -32,6 +34,33 @@ namespace DXF2JSON
                 );
 
                 index++;
+            }
+        }
+
+        /// <summary>
+        /// 計算 dxf 檔所有圓的邊界
+        /// </summary>
+        /// <param name="dxfDoc">已讀取的 DXF 文件</param>
+        /// <param name="minX">左邊界</param>
+        /// <param name="minY">上邊界</param>
+        /// <param name="maxX">右邊界</param>
+        /// <param name="maxY">下邊界</param>
+        /// <returns>無回傳值</returns>
+        public static void find_DXFDatas_bounds(DxfDocument dxfDoc, out double minX, out double minY, out double maxX, out double maxY)
+        {
+            // 初始化邊界
+            minX = double.MaxValue;
+            minY = double.MaxValue;
+            maxX = double.MinValue;
+            maxY = double.MinValue;
+
+            // 遍歷所有圓，更新邊界
+            foreach (var circle in dxfDoc.Entities.Circles)
+            {
+                minX = Math.Min(minX, circle.Center.X - circle.Radius);
+                minY = Math.Min(minY, circle.Center.Y - circle.Radius);
+                maxX = Math.Max(maxX, circle.Center.X + circle.Radius);
+                maxY = Math.Max(maxY, circle.Center.Y + circle.Radius);
             }
         }
     }
