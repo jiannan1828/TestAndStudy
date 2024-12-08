@@ -1,4 +1,4 @@
-namespace Training7
+namespace DxfReader
 {
     internal static class Program
     {

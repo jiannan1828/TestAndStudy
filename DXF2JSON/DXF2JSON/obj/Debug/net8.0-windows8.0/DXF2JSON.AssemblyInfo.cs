@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DXF2JSON")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+076617f59d7386fe80f816d3a2b9f5c2c4b37f85")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56d7efe6fab6e12da821da2941933c0b3170799c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DXF2JSON")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DXF2JSON")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
