@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GaA+pC1lbvw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\NeedleViewer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hong\\.nuget\\packages\\netdxf\\2022.11.2\\netdxf.2022.11.2.nupkg.sha512"
+  ],
+  "logs": []
+}
