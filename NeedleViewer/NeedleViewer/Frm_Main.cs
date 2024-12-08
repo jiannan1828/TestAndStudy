@@ -31,7 +31,7 @@ namespace NeedleViewer
         private Dxf.Json.Circle FocusedCircle = null;
         private int PrevHighlightedRow;
         private bool IsHighlightedRow = false;
-        private int MouseEnterRowIndex;
+        private int MouseEnterRowIndex = -1;
 
         public Frm_Main()
         {
@@ -197,27 +197,35 @@ namespace NeedleViewer
                         MessageBox.Show($"檔案 {OpenDxfFileDialog.FileName} 成功讀取！");
 
                         Dxf.transform_Dxf2Json(DxfDoc, out Json);
-
-                        UI.show_dgv_NeedleInfo(dgv_NeedleInfo, Json);
-
-                        Dxf.find_Dxf_bounds(Json, out minX, out minY, out maxX, out maxY, out width, out height);
-
-                        ZoomFactor = Math.Min(pic_Needles.Width / 10 / (float)width, pic_Needles.Height / 10 / (float)height);
-                        Offset.X = -(float)minX * 10 * ZoomFactor;
-                        Offset.Y = -(float)minY * 10 * ZoomFactor;
-
-                        pic_Needles.Refresh();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"讀取檔案時發生錯誤: {ex.Message}");
+                        MessageBox.Show($"讀取 DXF 檔時發生錯誤: {ex.Message}");
                     }
                 }
                 else if (OpenDxfFileDialog.FilterIndex == 2) //剛剛選擇檔案類型的第二行是 .json
                 {
-                    string jsonContent = File.ReadAllText(OpenDxfFileDialog.FileName);
-                    Json = JsonSerializer.Deserialize<Json>(jsonContent); // 20241208 4xuan : 有Bug待解決
+                    try
+                    {
+                        Json = JsonSerializer.Deserialize<Json>(File.ReadAllText(OpenDxfFileDialog.FileName));
+                        MessageBox.Show($"檔案 {OpenDxfFileDialog.FileName} 成功讀取！");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show($"讀取 JSON 檔時發生錯誤: {ex.Message}");
+                    }
                 }
+
+                UI.show_dgv_NeedleInfo(dgv_NeedleInfo, Json);
+
+                Dxf.find_Dxf_bounds(Json, out minX, out minY, out maxX, out maxY, out width, out height);
+
+                ZoomFactor = Math.Min(pic_Needles.Width / 10 / (float)width, pic_Needles.Height / 10 / (float)height);
+                Offset.X = -(float)minX * 10 * ZoomFactor;
+                Offset.Y = -(float)minY * 10 * ZoomFactor;
+
+                pic_Needles.Refresh();
             }
         }
 
