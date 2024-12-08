@@ -6,13 +6,13 @@
       "AbsoluteMoniker": "D:0:0:{42F757CF-6C7E-4543-B38F-554AE70DF59F}|DXF2JSON\\DXF2JSON.csproj|\\\\mac\\home\\desktop\\testandstudy\\dxf2json\\dxf2json\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42F757CF-6C7E-4543-B38F-554AE70DF59F}|DXF2JSON\\DXF2JSON.csproj|\\\\mac\\home\\desktop\\testandstudy\\dxf2json\\dxf2json\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{42F757CF-6C7E-4543-B38F-554AE70DF59F}|DXF2JSON\\DXF2JSON.csproj|\\\\mac\\home\\desktop\\testandstudy\\dxf2json\\dxf2json\\dxfdatas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42F757CF-6C7E-4543-B38F-554AE70DF59F}|DXF2JSON\\DXF2JSON.csproj|\\\\mac\\home\\desktop\\testandstudy\\dxf2json\\dxf2json\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F757CF-6C7E-4543-B38F-554AE70DF59F}|DXF2JSON\\DXF2JSON.csproj|\\\\mac\\home\\desktop\\testandstudy\\dxf2json\\dxf2json\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,38 +26,38 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Frm_Main.cs [\u8A2D\u8A08]",
               "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\DXF2JSON\\DXF2JSON\\Frm_Main.cs",
               "RelativeDocumentMoniker": "DXF2JSON\\Frm_Main.cs",
               "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\DXF2JSON\\DXF2JSON\\Frm_Main.cs [\u8A2D\u8A08]",
               "RelativeToolTip": "DXF2JSON\\Frm_Main.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T07:32:34.098Z",
+              "WhenOpened": "2024-12-07T15:39:18.5Z",
               "EditorCaption": " [\u8A2D\u8A08]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Frm_Main.Designer.cs",
               "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\DXF2JSON\\DXF2JSON\\Frm_Main.Designer.cs",
               "RelativeDocumentMoniker": "DXF2JSON\\Frm_Main.Designer.cs",
               "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\DXF2JSON\\DXF2JSON\\Frm_Main.Designer.cs",
               "RelativeToolTip": "DXF2JSON\\Frm_Main.Designer.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAADQvxgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAnwBgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T04:59:44Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DXFDatas.cs",
               "DocumentMoniker": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\DXF2JSON\\DXF2JSON\\DXFDatas.cs",
               "RelativeDocumentMoniker": "DXF2JSON\\DXFDatas.cs",
               "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\DXF2JSON\\DXF2JSON\\DXFDatas.cs",
               "RelativeToolTip": "DXF2JSON\\DXFDatas.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAUwDAAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwD4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T02:43:10.141Z",
               "EditorCaption": ""
@@ -70,9 +70,9 @@
               "RelativeDocumentMoniker": "DXF2JSON\\Frm_Main.cs",
               "ToolTip": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\DXF2JSON\\DXF2JSON\\Frm_Main.cs",
               "RelativeToolTip": "DXF2JSON\\Frm_Main.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAA1wDcAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAA1wDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T07:50:51.461Z",
+              "WhenOpened": "2024-12-07T15:40:15.245Z",
               "EditorCaption": ""
             }
           ]

@@ -46,7 +46,7 @@ namespace DXF2JSON
         /// <param name="maxX">右邊界</param>
         /// <param name="maxY">下邊界</param>
         /// <returns>無回傳值</returns>
-        public static void find_DXFDatas_bounds(DxfDocument dxfDoc, out double minX, out double minY, out double maxX, out double maxY)
+        public static void find_DXFDatas_bounds(DxfDocument dxfDoc, out double minX, out double minY, out double maxX, out double maxY, out double width, out double height)
         {
             // 初始化邊界
             minX = double.MaxValue;
@@ -62,6 +62,9 @@ namespace DXF2JSON
                 maxX = Math.Max(maxX, circle.Center.X + circle.Radius);
                 maxY = Math.Max(maxY, circle.Center.Y + circle.Radius);
             }
+
+            width = maxX - minX;
+            height = maxY - minY;
         }
     }
 }

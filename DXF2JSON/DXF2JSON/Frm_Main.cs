@@ -9,16 +9,18 @@ namespace Training7
     public partial class Frm_Main : Form
     {
         public DxfDocument dxfDoc = new DxfDocument();
-        public double minX, minY, maxX, maxY;
+        public double minX, minY, maxX, maxY, width, height;
 
         private OpenFileDialog openDXFFileDialog = new OpenFileDialog();
 
         private bool zoomHasChanged = true;
-        private float zoomFactor = 1;
+        private float zoomFactor = 1.1f;
 
         private PointF offset = new PointF(0, 0);
         private PointF prevMousePos = new PointF(0, 0);
         private PointF realMousePos = new PointF(0, 0);
+        private PointF realMousePosBeforeZoom = new PointF(0, 0);
+        private PointF realMousePosAfterZoom = new PointF(0, 0);
 
         private double mouse2CircleDistance;
         private Circle highlightedCircle = null;
@@ -50,11 +52,13 @@ namespace Training7
 
                 DXFDatas.show_dgv_DXFDatas(dgv_DXFDatas, dxfDoc);
 
-                DXFDatas.find_DXFDatas_bounds(dxfDoc, out minX, out minY, out maxX, out maxY);
-                
-                offset.X = (float)minX * 10;
-                offset.Y = (float)minY * 10;
+                DXFDatas.find_DXFDatas_bounds(dxfDoc, out minX, out minY, out maxX, out maxY, out width, out height);
 
+
+                zoomFactor = Math.Min(pic_DXFDatas.Width / (float)width, pic_DXFDatas.Height / (float)height);
+                offset.X = -(float)minX * 10 * zoomFactor;
+                offset.Y = -(float)minY * 10 * zoomFactor;
+                
                 pic_DXFDatas.Refresh();
             }
             catch (Exception ex)
@@ -150,30 +154,30 @@ namespace Training7
 
         private void pic_DXFDatas_MouseWheel(object sender, MouseEventArgs e)
         {
-            
+
             // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放前）
-            float realXBeforeZoom = (e.X - offset.X) / zoomFactor;
-            float realYBeforeZoom = (e.Y - offset.Y) / zoomFactor;
+            realMousePosBeforeZoom.X = (e.X - offset.X) / zoomFactor;
+            realMousePosBeforeZoom.Y = (e.Y - offset.Y) / zoomFactor;
 
             if (e.Delta > 0)
             {
-                zoomFactor *= 2f; // 滾輪向上，放大
+                zoomFactor *= 1.1f; // 滾輪向上，放大
             }
             else if (e.Delta < 0)
             {
                 if(zoomFactor > 1) // 最小就 1 倍
                 {
-                    zoomFactor /= 2f; // 滾輪向下，縮小
+                    zoomFactor /= 1.1f; // 滾輪向下，縮小
                 }                   
             }
 
             // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放後）
-            float realXAfterZoom = (e.X - offset.X) / zoomFactor;
-            float realYAfterZoom = (e.Y - offset.Y) / zoomFactor;
+            realMousePosAfterZoom.X = (e.X - offset.X) / zoomFactor;
+            realMousePosAfterZoom.Y = (e.Y - offset.Y) / zoomFactor;
 
             // 根據縮放前後的真實座標差異調整偏移量
-            offset.X += (realXAfterZoom - realXBeforeZoom) * zoomFactor;
-            offset.Y += (realYAfterZoom - realYBeforeZoom) * zoomFactor;
+            offset.X += (realMousePosAfterZoom.X - realMousePosBeforeZoom.X) * zoomFactor;
+            offset.Y += (realMousePosAfterZoom.Y - realMousePosBeforeZoom.Y) * zoomFactor;
 
             pic_DXFDatas.Refresh();
         }
