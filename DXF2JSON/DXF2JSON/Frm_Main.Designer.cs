@@ -31,11 +31,22 @@ namespace DxfReader
         private void InitializeComponent()
         {
             dgv_Dxf = new DataGridView();
+            ColumnName = new DataGridViewTextBoxColumn();
+            Id = new DataGridViewTextBoxColumn();
             PosX = new DataGridViewTextBoxColumn();
             PosY = new DataGridViewTextBoxColumn();
             Diameter = new DataGridViewTextBoxColumn();
+            Place = new DataGridViewTextBoxColumn();
+            Remove = new DataGridViewTextBoxColumn();
+            Replace = new DataGridViewTextBoxColumn();
+            Display = new DataGridViewTextBoxColumn();
+            Enable = new DataGridViewTextBoxColumn();
+            Reserve1 = new DataGridViewTextBoxColumn();
+            Reserve2 = new DataGridViewTextBoxColumn();
+            Reserve3 = new DataGridViewTextBoxColumn();
+            Reserve4 = new DataGridViewTextBoxColumn();
+            Reserve5 = new DataGridViewTextBoxColumn();
             lbl_MousePos = new Label();
-            cmb_Filter = new ComboBox();
             menuStrip1 = new MenuStrip();
             檔案ToolStripMenuItem = new ToolStripMenuItem();
             開啟檔案ToolStripMenuItem = new ToolStripMenuItem();
@@ -43,6 +54,7 @@ namespace DxfReader
             dXFToolStripMenuItem = new ToolStripMenuItem();
             jSONToolStripMenuItem = new ToolStripMenuItem();
             pic_Dxf = new PictureBox();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgv_Dxf).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Dxf).BeginInit();
@@ -51,14 +63,26 @@ namespace DxfReader
             // dgv_Dxf
             // 
             dgv_Dxf.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_Dxf.Columns.AddRange(new DataGridViewColumn[] { PosX, PosY, Diameter });
-            dgv_Dxf.Location = new Point(12, 166);
+            dgv_Dxf.Columns.AddRange(new DataGridViewColumn[] { ColumnName, Id, PosX, PosY, Diameter, Place, Remove, Replace, Display, Enable, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5 });
+            dgv_Dxf.Location = new Point(12, 94);
             dgv_Dxf.Name = "dgv_Dxf";
             dgv_Dxf.RowHeadersWidth = 82;
             dgv_Dxf.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_Dxf.Size = new Size(498, 701);
+            dgv_Dxf.Size = new Size(409, 800);
             dgv_Dxf.TabIndex = 3;
+            dgv_Dxf.CellMouseEnter += dgv_Dxf_CellMouseEnter;
+            dgv_Dxf.CellMouseLeave += dgv_Dxf_CellMouseLeave;
             dgv_Dxf.RowPostPaint += dgv_DxfDatas_RowPostPaint;
+            // 
+            // ColumnName
+            // 
+            ColumnName.HeaderText = "名稱";
+            ColumnName.Name = "ColumnName";
+            // 
+            // Id
+            // 
+            Id.HeaderText = "編號";
+            Id.Name = "Id";
             // 
             // PosX
             // 
@@ -81,24 +105,65 @@ namespace DxfReader
             Diameter.Name = "Diameter";
             Diameter.Width = 200;
             // 
+            // Place
+            // 
+            Place.HeaderText = "放置";
+            Place.Name = "Place";
+            // 
+            // Remove
+            // 
+            Remove.HeaderText = "移除";
+            Remove.Name = "Remove";
+            // 
+            // Replace
+            // 
+            Replace.HeaderText = "置換";
+            Replace.Name = "Replace";
+            // 
+            // Display
+            // 
+            Display.HeaderText = "顯示";
+            Display.Name = "Display";
+            // 
+            // Enable
+            // 
+            Enable.HeaderText = "啟用";
+            Enable.Name = "Enable";
+            // 
+            // Reserve1
+            // 
+            Reserve1.HeaderText = "保留1";
+            Reserve1.Name = "Reserve1";
+            // 
+            // Reserve2
+            // 
+            Reserve2.HeaderText = "保留2";
+            Reserve2.Name = "Reserve2";
+            // 
+            // Reserve3
+            // 
+            Reserve3.HeaderText = "保留3";
+            Reserve3.Name = "Reserve3";
+            // 
+            // Reserve4
+            // 
+            Reserve4.HeaderText = "保留4";
+            Reserve4.Name = "Reserve4";
+            // 
+            // Reserve5
+            // 
+            Reserve5.HeaderText = "保留5";
+            Reserve5.Name = "Reserve5";
+            // 
             // lbl_MousePos
             // 
             lbl_MousePos.AutoSize = true;
             lbl_MousePos.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lbl_MousePos.Location = new Point(526, 870);
+            lbl_MousePos.Location = new Point(427, 906);
             lbl_MousePos.Name = "lbl_MousePos";
             lbl_MousePos.Size = new Size(197, 35);
             lbl_MousePos.TabIndex = 5;
             lbl_MousePos.Text = "當前滑鼠座標 : ";
-            // 
-            // cmb_Filter
-            // 
-            cmb_Filter.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            cmb_Filter.FormattingEnabled = true;
-            cmb_Filter.Location = new Point(93, 110);
-            cmb_Filter.Name = "cmb_Filter";
-            cmb_Filter.Size = new Size(121, 43);
-            cmb_Filter.TabIndex = 6;
             // 
             // menuStrip1
             // 
@@ -149,7 +214,7 @@ namespace DxfReader
             // 
             pic_Dxf.BackColor = Color.Honeydew;
             pic_Dxf.BorderStyle = BorderStyle.Fixed3D;
-            pic_Dxf.Location = new Point(516, 67);
+            pic_Dxf.Location = new Point(427, 94);
             pic_Dxf.Name = "pic_Dxf";
             pic_Dxf.Size = new Size(800, 800);
             pic_Dxf.TabIndex = 0;
@@ -159,14 +224,22 @@ namespace DxfReader
             pic_Dxf.MouseMove += pic_DxfDatas_MouseMove;
             pic_Dxf.MouseWheel += pic_DxfDatas_MouseWheel;
             // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            textBox1.Location = new Point(12, 46);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(85, 42);
+            textBox1.TabIndex = 8;
+            // 
             // Frm_Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Cornsilk;
             ClientSize = new Size(1584, 961);
+            Controls.Add(textBox1);
             Controls.Add(pic_Dxf);
-            Controls.Add(cmb_Filter);
             Controls.Add(lbl_MousePos);
             Controls.Add(dgv_Dxf);
             Controls.Add(menuStrip1);
@@ -189,10 +262,6 @@ namespace DxfReader
         private ColumnHeader col_PointPos1;
         private DataGridView dgv_Dxf;
         private Label lbl_MousePos;
-        private DataGridViewTextBoxColumn PosX;
-        private DataGridViewTextBoxColumn PosY;
-        private DataGridViewTextBoxColumn Diameter;
-        private ComboBox cmb_Filter;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem 檔案ToolStripMenuItem;
         private ToolStripMenuItem 開啟檔案ToolStripMenuItem;
@@ -200,5 +269,21 @@ namespace DxfReader
         private ToolStripMenuItem dXFToolStripMenuItem;
         private ToolStripMenuItem jSONToolStripMenuItem;
         private PictureBox pic_Dxf;
+        private DataGridViewTextBoxColumn ColumnName;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn PosX;
+        private DataGridViewTextBoxColumn PosY;
+        private DataGridViewTextBoxColumn Diameter;
+        private DataGridViewTextBoxColumn Place;
+        private DataGridViewTextBoxColumn Remove;
+        private DataGridViewTextBoxColumn Replace;
+        private DataGridViewTextBoxColumn Display;
+        private DataGridViewTextBoxColumn Enable;
+        private DataGridViewTextBoxColumn Reserve1;
+        private DataGridViewTextBoxColumn Reserve2;
+        private DataGridViewTextBoxColumn Reserve3;
+        private DataGridViewTextBoxColumn Reserve4;
+        private DataGridViewTextBoxColumn Reserve5;
+        private TextBox textBox1;
     }
 }

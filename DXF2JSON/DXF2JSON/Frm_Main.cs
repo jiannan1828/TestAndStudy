@@ -9,7 +9,7 @@ namespace DxfReader
     public partial class Frm_Main : Form
     {
         public DxfDocument DxfDoc = new DxfDocument();
-        public Dxf.Json Json  = new Dxf.Json();
+        public Dxf.Json Json = new Dxf.Json();
         public double minX, minY, maxX, maxY, width, height;
 
         private System.Drawing.Image buddha;
@@ -29,7 +29,7 @@ namespace DxfReader
         private Dxf.Json.Circle HighlightedCircle = null;
         private int PrevHighlightedRow;
         private bool IsHighlightedRow = false;
-
+        private int MouseEnterRowIndex;
 
         public Frm_Main()
         {
@@ -55,7 +55,7 @@ namespace DxfReader
                         (float)(2 * circle.Diameter / 2 * 10)
                     );
 
-                    if (circle == HighlightedCircle)
+                    if (circle == HighlightedCircle || circle.Index == MouseEnterRowIndex)
                     {
                         fillBrush = new SolidBrush(Color.LightBlue);
                     }
@@ -100,12 +100,13 @@ namespace DxfReader
 
                 if (Mouse2CircleDistance <= circle.Diameter / 2)
                 {
-                    if (IsHighlightedRow == true)
+                    if (IsHighlightedRow == true) // 上一次有被 highlight 過
                     {
-                        dgv_Dxf.Rows[PrevHighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window;
+                        dgv_Dxf.Rows[PrevHighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
                     }
 
-                    HighlightedCircle = circle; // 記錄高亮的圓              
+                    HighlightedCircle = circle; // 記錄高亮的圓
+                                                
                     dgv_Dxf.Rows[index].DefaultCellStyle.BackColor = SystemColors.Highlight;  // 高亮 datagridview 該列               
                     dgv_Dxf.FirstDisplayedScrollingRowIndex = index;// 設置自動捲動到該列
 
@@ -115,7 +116,13 @@ namespace DxfReader
                     break;
                 }
 
+                IsHighlightedRow = false;
                 index++;
+            }
+
+            if (IsHighlightedRow == false) // 都沒有指向任何圓
+            {
+                dgv_Dxf.Rows[PrevHighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
             }
 
             pic_Dxf.Refresh();
@@ -214,7 +221,7 @@ namespace DxfReader
         }
 
         private void Frm_Main_Load(object sender, EventArgs e)
-        {
+        { 
             buddha = System.Drawing.Image.FromFile(@"..\..\..\Images\Buddha.png");
             buddhaText = System.Drawing.Image.FromFile(@"..\..\..\Images\BuddhaText.png");
         }
@@ -223,6 +230,26 @@ namespace DxfReader
         {
             e.Graphics.DrawImage(buddhaText, new Rectangle(1290, 500, 300, 300));
             e.Graphics.DrawImage(buddha, new Rectangle(1300, 650, 300, 300));
+        }
+
+        private void dgv_Dxf_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dgv_Dxf.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Highlight; // 高亮顏色
+                MouseEnterRowIndex = e.RowIndex;
+                pic_Dxf.Refresh();
+            }
+        }
+
+        private void dgv_Dxf_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dgv_Dxf.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Window; // 高亮顏色
+                MouseEnterRowIndex = -1;
+            }
+            pic_Dxf.Refresh();
         }
     }
 }
