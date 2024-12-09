@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.Json;
+using System.Windows.Forms;
 using netDxf;
 using netDxf.Entities;
 using static NeedleViewer.Dxf;
@@ -27,9 +28,12 @@ namespace NeedleViewer
         private PointF RealMousePosAfterZoom = new PointF(0, 0);
 
         private double Mouse2CircleDistance;
+
         private Dxf.Json.Circle HighlightedCircle = null;
-        private Dxf.Json.Circle FocusedCircle = null;
         private int HighlightedRow = -1;
+
+        private Dxf.Json.Circle FocusedCircle = null;
+        private int FocusedRow = -1;
 
         public Frm_Main()
         {
@@ -55,7 +59,12 @@ namespace NeedleViewer
                         (float)(2 * circle.Diameter / 2 * 10)
                     );
 
-                    if (circle == HighlightedCircle)
+
+                    if (circle == FocusedCircle)
+                    {
+                        fillBrush = new SolidBrush(Color.Red);
+                    }
+                    else if (circle == HighlightedCircle)
                     {
                         fillBrush = new SolidBrush(Color.LightBlue);
                     }
@@ -74,7 +83,7 @@ namespace NeedleViewer
             RealMousePos.X = (e.X - Offset.X) / ZoomFactor / 10;
             RealMousePos.Y = (e.Y - Offset.Y) / ZoomFactor / 10;
 
-            lbl_MousePos.Text = $"真實座標 : {RealMousePos.X}, {RealMousePos.Y}";
+            lbl_MousePos.Text = $"滑鼠座標 : {RealMousePos.X}, {RealMousePos.Y}";
 
             // 左鍵拖曳
             if (e.Button == MouseButtons.Left)
@@ -105,7 +114,7 @@ namespace NeedleViewer
                     HighlightedCircle = circle; // 記錄高亮的圓
                     HighlightedRow = circle.Index; // 紀錄上一次被highlight過的列
 
-                    dgv_NeedleInfo.Rows[circle.Index].DefaultCellStyle.BackColor = SystemColors.Highlight;  // 高亮 datagridview 該列               
+                    dgv_NeedleInfo.Rows[circle.Index].DefaultCellStyle.BackColor = Color.PaleGoldenrod;  // 高亮 datagridview 該列               
                     dgv_NeedleInfo.FirstDisplayedScrollingRowIndex = circle.Index;// 設置自動捲動到該列
 
                     break;
@@ -161,10 +170,14 @@ namespace NeedleViewer
 
                     UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
 
+                    // 20241209 4xuan : 待新增picturebox上的圓點擊 與dgv綁定
+
                     btn_Update.Enabled = true;
                 }
                 else
                 {
+                    FocusedCircle = null;
+
                     UI.clear_grp_NeedleInfo(grp_NeedleInfo);
 
                     btn_Update.Enabled = false;
@@ -234,7 +247,7 @@ namespace NeedleViewer
         {
             if (e.RowIndex >= 0)
             {
-                dgv_NeedleInfo.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Highlight; // 高亮顏色
+                dgv_NeedleInfo.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.PaleGoldenrod; // 高亮顏色
                 HighlightedCircle = Json.Circles[e.RowIndex];
                 HighlightedRow = e.RowIndex;
                 pic_Needles.Refresh();
@@ -273,14 +286,32 @@ namespace NeedleViewer
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
-            Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
+            try
+            {
+                Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
+                Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
 
-            Json.Circles[FocusedCircle.Index].Place = (chk_Place.Checked).ToString();
-            Json.Circles[FocusedCircle.Index].Remove = (chk_Remove.Checked).ToString();
-            Json.Circles[FocusedCircle.Index].Replace = (chk_Replace.Checked).ToString();
-            Json.Circles[FocusedCircle.Index].Display = (chk_Display.Checked).ToString();
-            Json.Circles[FocusedCircle.Index].Enable = (chk_Enable.Checked).ToString();
+                Json.Circles[FocusedCircle.Index].Place = (chk_Place.Checked).ToString();
+                Json.Circles[FocusedCircle.Index].Remove = (chk_Remove.Checked).ToString();
+                Json.Circles[FocusedCircle.Index].Replace = (chk_Replace.Checked).ToString();
+                Json.Circles[FocusedCircle.Index].Display = (chk_Display.Checked).ToString();
+                Json.Circles[FocusedCircle.Index].Enable = (chk_Enable.Checked).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"更新資料出現錯誤: {ex.Message}");
+            }
+        }
+
+        private void dgv_NeedleInfo_SelectionChanged(object sender, EventArgs e)
+        {
+            FocusedCircle = Json.Circles[dgv_NeedleInfo.CurrentCell.RowIndex];
+
+            FocusedRow = dgv_NeedleInfo.CurrentCell.RowIndex;
+
+            UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
+
+            pic_Needles.Refresh();
         }
     }
 }

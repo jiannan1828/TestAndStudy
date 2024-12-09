@@ -30,6 +30,10 @@ namespace NeedleViewer
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgv_NeedleInfo = new DataGridView();
             Index = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
@@ -48,7 +52,7 @@ namespace NeedleViewer
             Reserve4 = new DataGridViewTextBoxColumn();
             Reserve5 = new DataGridViewTextBoxColumn();
             lbl_MousePos = new Label();
-            menuStrip1 = new MenuStrip();
+            menu_NeedleViewer = new MenuStrip();
             檔案ToolStripMenuItem = new ToolStripMenuItem();
             開啟檔案ToolStripMenuItem = new ToolStripMenuItem();
             儲存檔案ToolStripMenuItem = new ToolStripMenuItem();
@@ -72,7 +76,7 @@ namespace NeedleViewer
             txt_Id = new TextBox();
             lbl_Id = new Label();
             ((System.ComponentModel.ISupportInitialize)dgv_NeedleInfo).BeginInit();
-            menuStrip1.SuspendLayout();
+            menu_NeedleViewer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Needles).BeginInit();
             grp_NeedleInfo.SuspendLayout();
             SuspendLayout();
@@ -81,30 +85,55 @@ namespace NeedleViewer
             // 
             dgv_NeedleInfo.AllowUserToAddRows = false;
             dgv_NeedleInfo.AllowUserToDeleteRows = false;
+            dgv_NeedleInfo.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("微軟正黑體", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 136);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgv_NeedleInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgv_NeedleInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_NeedleInfo.Columns.AddRange(new DataGridViewColumn[] { Index, ColumnName, Id, PosX, PosY, Diameter, Place, Remove, Replace, Display, Enable, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5 });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgv_NeedleInfo.DefaultCellStyle = dataGridViewCellStyle4;
             dgv_NeedleInfo.Location = new Point(12, 352);
             dgv_NeedleInfo.Name = "dgv_NeedleInfo";
+            dgv_NeedleInfo.ReadOnly = true;
             dgv_NeedleInfo.RowHeadersVisible = false;
             dgv_NeedleInfo.RowHeadersWidth = 82;
             dgv_NeedleInfo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_NeedleInfo.Size = new Size(409, 504);
+            dgv_NeedleInfo.Size = new Size(393, 504);
             dgv_NeedleInfo.TabIndex = 3;
             dgv_NeedleInfo.CellMouseEnter += dgv_Dxf_CellMouseEnter;
             dgv_NeedleInfo.CellMouseLeave += dgv_Dxf_CellMouseLeave;
+            dgv_NeedleInfo.SelectionChanged += dgv_NeedleInfo_SelectionChanged;
             // 
             // Index
             // 
+            dataGridViewCellStyle2.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            Index.DefaultCellStyle = dataGridViewCellStyle2;
             Index.HeaderText = "流水號";
             Index.MinimumWidth = 10;
             Index.Name = "Index";
+            Index.ReadOnly = true;
             Index.Width = 200;
             // 
             // ColumnName
             // 
+            dataGridViewCellStyle3.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            ColumnName.DefaultCellStyle = dataGridViewCellStyle3;
             ColumnName.HeaderText = "名稱";
             ColumnName.MinimumWidth = 10;
             ColumnName.Name = "ColumnName";
+            ColumnName.ReadOnly = true;
             ColumnName.Width = 200;
             // 
             // Id
@@ -112,6 +141,7 @@ namespace NeedleViewer
             Id.HeaderText = "編號";
             Id.MinimumWidth = 10;
             Id.Name = "Id";
+            Id.ReadOnly = true;
             Id.Width = 200;
             // 
             // PosX
@@ -119,6 +149,7 @@ namespace NeedleViewer
             PosX.HeaderText = "座標X";
             PosX.MinimumWidth = 10;
             PosX.Name = "PosX";
+            PosX.ReadOnly = true;
             PosX.Width = 125;
             // 
             // PosY
@@ -126,6 +157,7 @@ namespace NeedleViewer
             PosY.HeaderText = "座標Y";
             PosY.MinimumWidth = 10;
             PosY.Name = "PosY";
+            PosY.ReadOnly = true;
             PosY.Width = 125;
             // 
             // Diameter
@@ -133,6 +165,7 @@ namespace NeedleViewer
             Diameter.HeaderText = "直徑";
             Diameter.MinimumWidth = 10;
             Diameter.Name = "Diameter";
+            Diameter.ReadOnly = true;
             Diameter.Width = 200;
             // 
             // Place
@@ -140,6 +173,7 @@ namespace NeedleViewer
             Place.HeaderText = "放置";
             Place.MinimumWidth = 10;
             Place.Name = "Place";
+            Place.ReadOnly = true;
             Place.Width = 200;
             // 
             // Remove
@@ -147,6 +181,7 @@ namespace NeedleViewer
             Remove.HeaderText = "移除";
             Remove.MinimumWidth = 10;
             Remove.Name = "Remove";
+            Remove.ReadOnly = true;
             Remove.Width = 200;
             // 
             // Replace
@@ -154,6 +189,7 @@ namespace NeedleViewer
             Replace.HeaderText = "置換";
             Replace.MinimumWidth = 10;
             Replace.Name = "Replace";
+            Replace.ReadOnly = true;
             Replace.Width = 200;
             // 
             // Display
@@ -161,6 +197,7 @@ namespace NeedleViewer
             Display.HeaderText = "顯示";
             Display.MinimumWidth = 10;
             Display.Name = "Display";
+            Display.ReadOnly = true;
             Display.Width = 200;
             // 
             // Enable
@@ -168,6 +205,7 @@ namespace NeedleViewer
             Enable.HeaderText = "啟用";
             Enable.MinimumWidth = 10;
             Enable.Name = "Enable";
+            Enable.ReadOnly = true;
             Enable.Width = 200;
             // 
             // Reserve1
@@ -175,6 +213,7 @@ namespace NeedleViewer
             Reserve1.HeaderText = "保留1";
             Reserve1.MinimumWidth = 10;
             Reserve1.Name = "Reserve1";
+            Reserve1.ReadOnly = true;
             Reserve1.Width = 200;
             // 
             // Reserve2
@@ -182,6 +221,7 @@ namespace NeedleViewer
             Reserve2.HeaderText = "保留2";
             Reserve2.MinimumWidth = 10;
             Reserve2.Name = "Reserve2";
+            Reserve2.ReadOnly = true;
             Reserve2.Width = 200;
             // 
             // Reserve3
@@ -189,6 +229,7 @@ namespace NeedleViewer
             Reserve3.HeaderText = "保留3";
             Reserve3.MinimumWidth = 10;
             Reserve3.Name = "Reserve3";
+            Reserve3.ReadOnly = true;
             Reserve3.Width = 200;
             // 
             // Reserve4
@@ -196,6 +237,7 @@ namespace NeedleViewer
             Reserve4.HeaderText = "保留4";
             Reserve4.MinimumWidth = 10;
             Reserve4.Name = "Reserve4";
+            Reserve4.ReadOnly = true;
             Reserve4.Width = 200;
             // 
             // Reserve5
@@ -203,28 +245,29 @@ namespace NeedleViewer
             Reserve5.HeaderText = "保留5";
             Reserve5.MinimumWidth = 10;
             Reserve5.Name = "Reserve5";
+            Reserve5.ReadOnly = true;
             Reserve5.Width = 200;
             // 
             // lbl_MousePos
             // 
             lbl_MousePos.AutoSize = true;
             lbl_MousePos.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lbl_MousePos.Location = new Point(427, 906);
+            lbl_MousePos.Location = new Point(427, 879);
             lbl_MousePos.Name = "lbl_MousePos";
-            lbl_MousePos.Size = new Size(197, 35);
+            lbl_MousePos.Size = new Size(130, 35);
             lbl_MousePos.TabIndex = 5;
-            lbl_MousePos.Text = "當前滑鼠座標 : ";
+            lbl_MousePos.Text = "滑鼠座標 ";
             // 
-            // menuStrip1
+            // menu_NeedleViewer
             // 
-            menuStrip1.BackColor = Color.Thistle;
-            menuStrip1.ImageScalingSize = new Size(32, 32);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { 檔案ToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1584, 43);
-            menuStrip1.TabIndex = 7;
-            menuStrip1.Text = "menuStrip1";
+            menu_NeedleViewer.BackColor = Color.Thistle;
+            menu_NeedleViewer.ImageScalingSize = new Size(32, 32);
+            menu_NeedleViewer.Items.AddRange(new ToolStripItem[] { 檔案ToolStripMenuItem });
+            menu_NeedleViewer.Location = new Point(0, 0);
+            menu_NeedleViewer.Name = "menu_NeedleViewer";
+            menu_NeedleViewer.Size = new Size(1584, 43);
+            menu_NeedleViewer.TabIndex = 7;
+            menu_NeedleViewer.Text = "menuStrip1";
             // 
             // 檔案ToolStripMenuItem
             // 
@@ -253,7 +296,7 @@ namespace NeedleViewer
             // 
             pic_Needles.BackColor = Color.Honeydew;
             pic_Needles.BorderStyle = BorderStyle.Fixed3D;
-            pic_Needles.Location = new Point(427, 58);
+            pic_Needles.Location = new Point(427, 56);
             pic_Needles.Name = "pic_Needles";
             pic_Needles.Size = new Size(800, 800);
             pic_Needles.TabIndex = 0;
@@ -478,17 +521,17 @@ namespace NeedleViewer
             Controls.Add(pic_Needles);
             Controls.Add(lbl_MousePos);
             Controls.Add(dgv_NeedleInfo);
-            Controls.Add(menuStrip1);
+            Controls.Add(menu_NeedleViewer);
             ForeColor = SystemColors.ControlText;
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = menu_NeedleViewer;
             Margin = new Padding(2);
             Name = "Frm_Main";
             Text = "NeedleViewer";
             Load += Frm_Main_Load;
             Paint += Frm_Main_Paint;
             ((System.ComponentModel.ISupportInitialize)dgv_NeedleInfo).EndInit();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            menu_NeedleViewer.ResumeLayout(false);
+            menu_NeedleViewer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Needles).EndInit();
             grp_NeedleInfo.ResumeLayout(false);
             grp_NeedleInfo.PerformLayout();
@@ -500,7 +543,7 @@ namespace NeedleViewer
         private ColumnHeader col_PointPos1;
         private DataGridView dgv_NeedleInfo;
         private Label lbl_MousePos;
-        private MenuStrip menuStrip1;
+        private MenuStrip menu_NeedleViewer;
         private ToolStripMenuItem 檔案ToolStripMenuItem;
         private ToolStripMenuItem 開啟檔案ToolStripMenuItem;
         private ToolStripMenuItem 儲存檔案ToolStripMenuItem;
