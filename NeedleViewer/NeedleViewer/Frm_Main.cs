@@ -29,9 +29,7 @@ namespace NeedleViewer
         private double Mouse2CircleDistance;
         private Dxf.Json.Circle HighlightedCircle = null;
         private Dxf.Json.Circle FocusedCircle = null;
-        private int PrevHighlightedRow;
-        private bool IsHighlightedRow = false;
-        private int MouseEnterRowIndex = -1;
+        private int HighlightedRow = -1;
 
         public Frm_Main()
         {
@@ -57,7 +55,7 @@ namespace NeedleViewer
                         (float)(2 * circle.Diameter / 2 * 10)
                     );
 
-                    if (circle == HighlightedCircle || circle.Index == MouseEnterRowIndex)
+                    if (circle == HighlightedCircle)
                     {
                         fillBrush = new SolidBrush(Color.LightBlue);
                     }
@@ -88,9 +86,6 @@ namespace NeedleViewer
                 PrevMousePos = e.Location; // 拖曳當中隨時紀錄當下滑鼠在 PictureBox 上的位置, 不以左鍵點擊當下的位置
             }
 
-            // 鼠標與圓的距離判斷是否高量
-            HighlightedCircle = null; // 每一次移動滑鼠都必須重新判斷是否需要高量
-            int index = 0; // datagridview 的索引行遍歷
 
             foreach (var circle in Json.Circles)
             {
@@ -102,29 +97,23 @@ namespace NeedleViewer
 
                 if (Mouse2CircleDistance <= circle.Diameter / 2)
                 {
-                    if (IsHighlightedRow == true) // 上一次有被 highlight 過
+                    if (HighlightedRow != -1) // 之前有列被 highlight 過
                     {
-                        dgv_NeedleInfo.Rows[PrevHighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
+                        dgv_NeedleInfo.Rows[HighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
                     }
 
                     HighlightedCircle = circle; // 記錄高亮的圓
+                    HighlightedRow = circle.Index; // 紀錄上一次被highlight過的列
 
-                    dgv_NeedleInfo.Rows[index].DefaultCellStyle.BackColor = SystemColors.Highlight;  // 高亮 datagridview 該列               
-                    dgv_NeedleInfo.FirstDisplayedScrollingRowIndex = index;// 設置自動捲動到該列
-
-                    PrevHighlightedRow = index; // 紀錄上一次被highlight過的列
-                    IsHighlightedRow = true;
+                    dgv_NeedleInfo.Rows[circle.Index].DefaultCellStyle.BackColor = SystemColors.Highlight;  // 高亮 datagridview 該列               
+                    dgv_NeedleInfo.FirstDisplayedScrollingRowIndex = circle.Index;// 設置自動捲動到該列
 
                     break;
                 }
-
-                IsHighlightedRow = false;
-                index++;
-            }
-
-            if (IsHighlightedRow == false) // 都沒有指向任何圓
-            {
-                dgv_NeedleInfo.Rows[PrevHighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
+                else
+                {
+                    HighlightedCircle = null;
+                }
             }
 
             pic_Needles.Refresh();
@@ -246,7 +235,8 @@ namespace NeedleViewer
             if (e.RowIndex >= 0)
             {
                 dgv_NeedleInfo.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Highlight; // 高亮顏色
-                MouseEnterRowIndex = e.RowIndex;
+                HighlightedCircle = Json.Circles[e.RowIndex];
+                HighlightedRow = e.RowIndex;
                 pic_Needles.Refresh();
             }
         }
@@ -256,9 +246,10 @@ namespace NeedleViewer
             if (e.RowIndex >= 0)
             {
                 dgv_NeedleInfo.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Window; // 高亮顏色
-                MouseEnterRowIndex = -1;
+                HighlightedCircle = null;
+                HighlightedRow = -1;
+                pic_Needles.Refresh();
             }
-            pic_Needles.Refresh();
         }
 
         private void 儲存檔案ToolStripMenuItem_Click(object sender, EventArgs e)

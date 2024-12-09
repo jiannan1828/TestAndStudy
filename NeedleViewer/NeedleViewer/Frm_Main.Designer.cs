@@ -79,6 +79,8 @@ namespace NeedleViewer
             // 
             // dgv_NeedleInfo
             // 
+            dgv_NeedleInfo.AllowUserToAddRows = false;
+            dgv_NeedleInfo.AllowUserToDeleteRows = false;
             dgv_NeedleInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_NeedleInfo.Columns.AddRange(new DataGridViewColumn[] { Index, ColumnName, Id, PosX, PosY, Diameter, Place, Remove, Replace, Display, Enable, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5 });
             dgv_NeedleInfo.Location = new Point(12, 352);

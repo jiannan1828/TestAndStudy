@@ -47,23 +47,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\4xuann\\.nuget\\packages\\": {},
+    "C:\\Users\\ren_hong\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\NeedleViewer.csproj",
+      "projectUniqueName": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\NeedleViewer.csproj",
       "projectName": "NeedleViewer",
-      "projectPath": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\NeedleViewer.csproj",
-      "packagesPath": "C:\\Users\\4xuann\\.nuget\\packages\\",
-      "outputPath": "\\\\Mac\\Home\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\obj\\",
+      "projectPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\NeedleViewer.csproj",
+      "packagesPath": "C:\\Users\\ren_hong\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\4xuann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ren_hong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -72,6 +72,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
