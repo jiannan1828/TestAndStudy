@@ -32,6 +32,7 @@ namespace NeedleViewer
         private Dxf.Json.Circle HighlightedCircle = null;
         private int HighlightedRow = -1;
 
+        private bool Is_Click_From_pic_Needles;
         private Dxf.Json.Circle FocusedCircle = null;
         private int FocusedRow = -1;
 
@@ -40,7 +41,7 @@ namespace NeedleViewer
             InitializeComponent();
         }
 
-        private void pic_DxfDatas_Paint(object sender, PaintEventArgs e)
+        private void pic_Needles_Paint(object sender, PaintEventArgs e)
         {
 
             e.Graphics.ScaleTransform(ZoomFactor, ZoomFactor);
@@ -78,7 +79,7 @@ namespace NeedleViewer
             }
         }
 
-        private void pic_DxfDatas_MouseMove(object sender, MouseEventArgs e)
+        private void pic_Needles_MouseMove(object sender, MouseEventArgs e)
         {
             RealMousePos.X = (e.X - Offset.X) / ZoomFactor / 10;
             RealMousePos.Y = (e.Y - Offset.Y) / ZoomFactor / 10;
@@ -128,7 +129,7 @@ namespace NeedleViewer
             pic_Needles.Refresh();
         }
 
-        private void pic_DxfDatas_MouseWheel(object sender, MouseEventArgs e)
+        private void pic_Needles_MouseWheel(object sender, MouseEventArgs e)
         {
 
             // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放前）
@@ -158,7 +159,7 @@ namespace NeedleViewer
             pic_Needles.Refresh();
         }
 
-        private void pic_DxfDatas_MouseDown(object sender, MouseEventArgs e)
+        private void pic_Needles_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -170,8 +171,8 @@ namespace NeedleViewer
 
                     UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
 
-                    // 20241209 4xuan : 待新增picturebox上的圓點擊 與 dgv 綁定
-                    dgv_NeedleInfo.Rows[FocusedCircle.Index].Selected = true; // 選擇目標行
+                    // 20241209 4xuan debug
+                    dgv_NeedleInfo.Rows[FocusedCircle.Index].Selected = true; // 觸發 dgv_NeedleInfo_SelectionChanged
 
                     btn_Update.Enabled = true;
                 }
@@ -306,13 +307,24 @@ namespace NeedleViewer
 
         private void dgv_NeedleInfo_SelectionChanged(object sender, EventArgs e)
         {
-            FocusedCircle = Json.Circles[dgv_NeedleInfo.CurrentCell.RowIndex];
+            /* ---------------------------- 20241209 4xuan debug -------------------------------- */
+            // 解決由 picturebox 觸發 dgv 選擇列但不會更新 dgv_NeedleInfo.CurrentCell.RowIndex 屬性問題
+            // 因為如果是在 picturebox 選, 一定會有 HighlightedCircle 存在 
+            // 用這個方式區分到底是由 picturebox 點擊還是 datagridview
+            if (HighlightedCircle != null) // 從 picturebox 點擊
+            {
 
-            FocusedRow = dgv_NeedleInfo.CurrentCell.RowIndex;
-
+            }
+            else // 從 dgv 點擊
+            {
+                FocusedCircle = Json.Circles[dgv_NeedleInfo.CurrentCell.RowIndex];
+                FocusedRow = dgv_NeedleInfo.CurrentCell.RowIndex;
+            }
+            /* ---------------------------------------------------------------------------------- */
             UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
 
             pic_Needles.Refresh();
         }
+
     }
 }

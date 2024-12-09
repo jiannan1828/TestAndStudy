@@ -302,10 +302,10 @@ namespace NeedleViewer
             pic_Needles.Size = new Size(800, 800);
             pic_Needles.TabIndex = 0;
             pic_Needles.TabStop = false;
-            pic_Needles.Paint += pic_DxfDatas_Paint;
-            pic_Needles.MouseDown += pic_DxfDatas_MouseDown;
-            pic_Needles.MouseMove += pic_DxfDatas_MouseMove;
-            pic_Needles.MouseWheel += pic_DxfDatas_MouseWheel;
+            pic_Needles.Paint += pic_Needles_Paint;
+            pic_Needles.MouseDown += pic_Needles_MouseDown;
+            pic_Needles.MouseMove += pic_Needles_MouseMove;
+            pic_Needles.MouseWheel += pic_Needles_MouseWheel;
             // 
             // txt_Name
             // 
