@@ -105,6 +105,7 @@ namespace NeedleViewer
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             dgv_NeedleInfo.DefaultCellStyle = dataGridViewCellStyle4;
             dgv_NeedleInfo.Location = new Point(12, 352);
+            dgv_NeedleInfo.MultiSelect = false;
             dgv_NeedleInfo.Name = "dgv_NeedleInfo";
             dgv_NeedleInfo.ReadOnly = true;
             dgv_NeedleInfo.RowHeadersVisible = false;

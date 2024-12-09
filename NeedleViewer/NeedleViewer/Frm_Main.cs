@@ -170,7 +170,8 @@ namespace NeedleViewer
 
                     UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
 
-                    // 20241209 4xuan : 待新增picturebox上的圓點擊 與dgv綁定
+                    // 20241209 4xuan : 待新增picturebox上的圓點擊 與 dgv 綁定
+                    dgv_NeedleInfo.Rows[FocusedCircle.Index].Selected = true; // 選擇目標行
 
                     btn_Update.Enabled = true;
                 }
