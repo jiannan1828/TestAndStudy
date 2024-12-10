@@ -19,7 +19,9 @@ namespace NeedleViewer
         /// </summary>
         public class JSON
         {
-            public List<Circle> Circles = new List<Circle>();
+            public List<Circle> Circles { get; set; } 
+            // 這裡不能用這種寫法 public List<Circle> Circles = new List<Circle>();
+            // JSON 序列話器會吃不到, 只能是屬性或字段, 初始化改用構造函數
 
             public class Circle
             {
@@ -39,6 +41,11 @@ namespace NeedleViewer
                 public string? Reserve3 { get; set; }
                 public string? Reserve4 { get; set; }
                 public string? Reserve5 { get; set; }
+            }
+
+            public JSON()
+            {
+                Circles = new List<Circle>();
             }
         }
 
