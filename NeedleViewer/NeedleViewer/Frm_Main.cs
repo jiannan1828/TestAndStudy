@@ -3,21 +3,18 @@ using System.Text.Json;
 using System.Windows.Forms;
 using netDxf;
 using netDxf.Entities;
-using static NeedleViewer.Dxf;
+using static NeedleViewer.DataManager;
 
 namespace NeedleViewer
 {
     public partial class Frm_Main : Form
     {
-        private DxfDocument DxfDoc = new DxfDocument();
-        private Dxf.Json Json = new Dxf.Json();
+        private DataManager DataManager = new DataManager();
+
         private double minX, minY, maxX, maxY, width, height;
 
         private System.Drawing.Image buddha;
         private System.Drawing.Image buddhaText;
-
-        private OpenFileDialog OpenDxfFileDialog = new OpenFileDialog();
-        private SaveFileDialog SaveJsonFileDialog = new SaveFileDialog();
 
         private float ZoomFactor = 1;
 
@@ -29,11 +26,11 @@ namespace NeedleViewer
 
         private double Mouse2CircleDistance;
 
-        private Dxf.Json.Circle HighlightedCircle = null;
+        private DataManager.Json.Circle HighlightedCircle = null;
         private int HighlightedRow = -1;
 
         private bool Is_Click_From_pic_Needles;
-        private Dxf.Json.Circle FocusedCircle = null;
+        private DataManager.Json.Circle FocusedCircle = null;
         private int FocusedRow = -1;
 
         public Frm_Main()
@@ -49,7 +46,7 @@ namespace NeedleViewer
 
             try
             {
-                foreach (var circle in Json.Circles)
+                foreach (var circle in DataManager.Json.Circles)
                 {
                     Brush fillBrush = new SolidBrush(Color.ForestGreen); // 預設顏色
 
@@ -97,7 +94,7 @@ namespace NeedleViewer
             }
 
 
-            foreach (var circle in Json.Circles)
+            foreach (var circle in DataManager.Json.Circles)
             {
                 // 计算鼠标位置与圆心的距离
                 Mouse2CircleDistance = Math.Sqrt(
@@ -189,48 +186,18 @@ namespace NeedleViewer
 
         private void 開啟檔案ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenDxfFileDialog.Filter = "DXF Files (*.dxf)|*.dxf|JSON Files (*.json)|*.json";
+            DataManager.OpenFile();
 
-            if (OpenDxfFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                if (OpenDxfFileDialog.FilterIndex == 1) //剛剛選擇檔案類型的第一行是 .dxf
-                {
-                    try
-                    {
-                        DxfDoc = DxfDocument.Load(OpenDxfFileDialog.FileName);
-                        MessageBox.Show($"檔案 {OpenDxfFileDialog.FileName} 成功讀取！");
+            UI.show_dgv_NeedleInfo(dgv_NeedleInfo, DataManager.Json);
 
-                        Dxf.transform_Dxf2Json(DxfDoc, out Json);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"讀取 DXF 檔時發生錯誤: {ex.Message}");
-                    }
-                }
-                else if (OpenDxfFileDialog.FilterIndex == 2) //剛剛選擇檔案類型的第二行是 .json
-                {
-                    try
-                    {
-                        Json = JsonSerializer.Deserialize<Json>(File.ReadAllText(OpenDxfFileDialog.FileName));
-                        MessageBox.Show($"檔案 {OpenDxfFileDialog.FileName} 成功讀取！");
-                    }
-                    catch (Exception ex)
-                    {
+            DataManager.find_boundary(DataManager.Json, out minX, out minY, out maxX, out maxY, out width, out height);
 
-                        MessageBox.Show($"讀取 JSON 檔時發生錯誤: {ex.Message}");
-                    }
-                }
+            ZoomFactor = Math.Min(pic_Needles.Width / 10 / (float)width, pic_Needles.Height / 10 / (float)height);
+            Offset.X = -(float)minX * 10 * ZoomFactor;
+            Offset.Y = -(float)minY * 10 * ZoomFactor;
 
-                UI.show_dgv_NeedleInfo(dgv_NeedleInfo, Json);
-
-                Dxf.find_Dxf_bounds(Json, out minX, out minY, out maxX, out maxY, out width, out height);
-
-                ZoomFactor = Math.Min(pic_Needles.Width / 10 / (float)width, pic_Needles.Height / 10 / (float)height);
-                Offset.X = -(float)minX * 10 * ZoomFactor;
-                Offset.Y = -(float)minY * 10 * ZoomFactor;
-
-                pic_Needles.Refresh();
-            }
+            pic_Needles.Refresh();
+            
         }
 
         private void Frm_Main_Load(object sender, EventArgs e)
@@ -239,18 +206,12 @@ namespace NeedleViewer
             buddhaText = System.Drawing.Image.FromFile(@"..\..\..\Images\BuddhaText.png");
         }
 
-        private void Frm_Main_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawImage(buddhaText, new Rectangle(1290, 500, 300, 300));
-            e.Graphics.DrawImage(buddha, new Rectangle(1300, 650, 300, 300));
-        }
-
         private void dgv_Dxf_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 dgv_NeedleInfo.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.PaleGoldenrod; // 高亮顏色
-                HighlightedCircle = Json.Circles[e.RowIndex];
+                HighlightedCircle = DataManager.Json.Circles[e.RowIndex];
                 HighlightedRow = e.RowIndex;
                 pic_Needles.Refresh();
             }
@@ -269,35 +230,21 @@ namespace NeedleViewer
 
         private void 儲存檔案ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveJsonFileDialog.Filter = "JSON Files (*.json)|*.json";
-
-            if (SaveJsonFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // 使用 System.Text.Json 進行物件序列化，並設定格式化輸出（會縮排顯示）
-                string json = JsonSerializer.Serialize(Json, new JsonSerializerOptions { WriteIndented = true });
-
-                // 使用 StreamWriter 儲存 JSON 到選定的檔案
-                using (StreamWriter writer = new StreamWriter(SaveJsonFileDialog.FileName))
-                {
-                    writer.Write(json);
-                }
-
-                MessageBox.Show("檔案儲存成功！", "儲存成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            DataManager.SaveFile();
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
             try
             {
-                Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
-                Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
+                DataManager.Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
+                DataManager.Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
 
-                Json.Circles[FocusedCircle.Index].Place = (chk_Place.Checked).ToString();
-                Json.Circles[FocusedCircle.Index].Remove = (chk_Remove.Checked).ToString();
-                Json.Circles[FocusedCircle.Index].Replace = (chk_Replace.Checked).ToString();
-                Json.Circles[FocusedCircle.Index].Display = (chk_Display.Checked).ToString();
-                Json.Circles[FocusedCircle.Index].Enable = (chk_Enable.Checked).ToString();
+                DataManager.Json.Circles[FocusedCircle.Index].Place = (chk_Place.Checked).ToString();
+                DataManager.Json.Circles[FocusedCircle.Index].Remove = (chk_Remove.Checked).ToString();
+                DataManager.Json.Circles[FocusedCircle.Index].Replace = (chk_Replace.Checked).ToString();
+                DataManager.Json.Circles[FocusedCircle.Index].Display = (chk_Display.Checked).ToString();
+                DataManager.Json.Circles[FocusedCircle.Index].Enable = (chk_Enable.Checked).ToString();
             }
             catch (Exception ex)
             {
@@ -311,13 +258,14 @@ namespace NeedleViewer
             // 解決由 picturebox 觸發 dgv 選擇列但不會更新 dgv_NeedleInfo.CurrentCell.RowIndex 屬性問題
             // 因為如果是在 picturebox 選, 一定會有 HighlightedCircle 存在 
             // 用這個方式區分到底是由 picturebox 點擊還是 datagridview
+            // 但從dgv點擊無法顯示到grp上 highlightedCircle是有東西的
             if (HighlightedCircle != null) // 從 picturebox 點擊
             {
 
             }
             else // 從 dgv 點擊
             {
-                FocusedCircle = Json.Circles[dgv_NeedleInfo.CurrentCell.RowIndex];
+                FocusedCircle = DataManager.Json.Circles[dgv_NeedleInfo.CurrentCell.RowIndex];
                 FocusedRow = dgv_NeedleInfo.CurrentCell.RowIndex;
             }
             /* ---------------------------------------------------------------------------------- */
@@ -326,5 +274,18 @@ namespace NeedleViewer
             pic_Needles.Refresh();
         }
 
+        private void Frm_Main_Paint(object sender, PaintEventArgs e)
+        {
+            
+            int x = this.ClientSize.Width - 300;
+            int y = this.ClientSize.Height - 300;
+            e.Graphics.DrawImage(buddhaText, new Rectangle(x - 15, y - 150, 300, 300));
+            e.Graphics.DrawImage(buddha, new Rectangle(x, y, 300, 300));
+        }
+
+        private void Frm_Main_SizeChanged(object sender, EventArgs e)
+        {
+                this.Invalidate();
+        }
     }
 }

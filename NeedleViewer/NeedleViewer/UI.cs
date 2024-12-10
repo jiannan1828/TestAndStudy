@@ -1,6 +1,6 @@
 ﻿using System;
 
-using static NeedleViewer.Dxf;
+using static NeedleViewer.DataManager;
 
 namespace NeedleViewer
 {

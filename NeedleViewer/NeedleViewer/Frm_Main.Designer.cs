@@ -30,10 +30,10 @@ namespace NeedleViewer
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             dgv_NeedleInfo = new DataGridView();
             Index = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
@@ -75,6 +75,7 @@ namespace NeedleViewer
             lbl_Pos = new Label();
             txt_Id = new TextBox();
             lbl_Id = new Label();
+            grp_Search = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dgv_NeedleInfo).BeginInit();
             menu_NeedleViewer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Needles).BeginInit();
@@ -86,32 +87,32 @@ namespace NeedleViewer
             dgv_NeedleInfo.AllowUserToAddRows = false;
             dgv_NeedleInfo.AllowUserToDeleteRows = false;
             dgv_NeedleInfo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("微軟正黑體", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 136);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgv_NeedleInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("微軟正黑體", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 136);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgv_NeedleInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgv_NeedleInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_NeedleInfo.Columns.AddRange(new DataGridViewColumn[] { Index, ColumnName, Id, PosX, PosY, Diameter, Place, Remove, Replace, Display, Enable, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgv_NeedleInfo.DefaultCellStyle = dataGridViewCellStyle4;
-            dgv_NeedleInfo.Location = new Point(12, 352);
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgv_NeedleInfo.DefaultCellStyle = dataGridViewCellStyle8;
+            dgv_NeedleInfo.Location = new Point(11, 752);
             dgv_NeedleInfo.MultiSelect = false;
             dgv_NeedleInfo.Name = "dgv_NeedleInfo";
             dgv_NeedleInfo.ReadOnly = true;
             dgv_NeedleInfo.RowHeadersVisible = false;
             dgv_NeedleInfo.RowHeadersWidth = 82;
             dgv_NeedleInfo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_NeedleInfo.Size = new Size(393, 504);
+            dgv_NeedleInfo.Size = new Size(1453, 197);
             dgv_NeedleInfo.TabIndex = 3;
             dgv_NeedleInfo.CellMouseEnter += dgv_Dxf_CellMouseEnter;
             dgv_NeedleInfo.CellMouseLeave += dgv_Dxf_CellMouseLeave;
@@ -119,8 +120,8 @@ namespace NeedleViewer
             // 
             // Index
             // 
-            dataGridViewCellStyle2.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            Index.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            Index.DefaultCellStyle = dataGridViewCellStyle6;
             Index.HeaderText = "流水號";
             Index.MinimumWidth = 10;
             Index.Name = "Index";
@@ -129,8 +130,8 @@ namespace NeedleViewer
             // 
             // ColumnName
             // 
-            dataGridViewCellStyle3.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            ColumnName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            ColumnName.DefaultCellStyle = dataGridViewCellStyle7;
             ColumnName.HeaderText = "名稱";
             ColumnName.MinimumWidth = 10;
             ColumnName.Name = "ColumnName";
@@ -253,7 +254,7 @@ namespace NeedleViewer
             // 
             lbl_MousePos.AutoSize = true;
             lbl_MousePos.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lbl_MousePos.Location = new Point(427, 879);
+            lbl_MousePos.Location = new Point(1115, 711);
             lbl_MousePos.Name = "lbl_MousePos";
             lbl_MousePos.Size = new Size(130, 35);
             lbl_MousePos.TabIndex = 5;
@@ -266,7 +267,7 @@ namespace NeedleViewer
             menu_NeedleViewer.Items.AddRange(new ToolStripItem[] { 檔案ToolStripMenuItem });
             menu_NeedleViewer.Location = new Point(0, 0);
             menu_NeedleViewer.Name = "menu_NeedleViewer";
-            menu_NeedleViewer.Size = new Size(1584, 43);
+            menu_NeedleViewer.Size = new Size(1784, 43);
             menu_NeedleViewer.TabIndex = 7;
             menu_NeedleViewer.Text = "menuStrip1";
             // 
@@ -297,9 +298,9 @@ namespace NeedleViewer
             // 
             pic_Needles.BackColor = Color.Honeydew;
             pic_Needles.BorderStyle = BorderStyle.Fixed3D;
-            pic_Needles.Location = new Point(427, 56);
+            pic_Needles.Location = new Point(409, 46);
             pic_Needles.Name = "pic_Needles";
-            pic_Needles.Size = new Size(800, 800);
+            pic_Needles.Size = new Size(700, 700);
             pic_Needles.TabIndex = 0;
             pic_Needles.TabStop = false;
             pic_Needles.Paint += pic_Needles_Paint;
@@ -310,18 +311,18 @@ namespace NeedleViewer
             // txt_Name
             // 
             txt_Name.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Name.Location = new Point(74, 76);
+            txt_Name.Location = new Point(74, 80);
             txt_Name.Name = "txt_Name";
-            txt_Name.Size = new Size(85, 42);
+            txt_Name.Size = new Size(174, 42);
             txt_Name.TabIndex = 8;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 82);
+            label1.Location = new Point(1, 84);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(56, 28);
+            label1.Size = new Size(69, 34);
             label1.TabIndex = 9;
             label1.Text = "名稱";
             // 
@@ -345,12 +346,12 @@ namespace NeedleViewer
             grp_NeedleInfo.Controls.Add(lbl_Id);
             grp_NeedleInfo.Controls.Add(label1);
             grp_NeedleInfo.Controls.Add(txt_Name);
-            grp_NeedleInfo.Font = new Font("微軟正黑體", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            grp_NeedleInfo.Location = new Point(12, 51);
+            grp_NeedleInfo.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            grp_NeedleInfo.Location = new Point(11, 46);
             grp_NeedleInfo.Margin = new Padding(2);
             grp_NeedleInfo.Name = "grp_NeedleInfo";
             grp_NeedleInfo.Padding = new Padding(2);
-            grp_NeedleInfo.Size = new Size(393, 285);
+            grp_NeedleInfo.Size = new Size(393, 331);
             grp_NeedleInfo.TabIndex = 10;
             grp_NeedleInfo.TabStop = false;
             grp_NeedleInfo.Text = "植針資訊";
@@ -359,7 +360,7 @@ namespace NeedleViewer
             // 
             btn_Update.BackColor = Color.LightCoral;
             btn_Update.Enabled = false;
-            btn_Update.Location = new Point(246, 222);
+            btn_Update.Location = new Point(274, 272);
             btn_Update.Margin = new Padding(2);
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(105, 50);
@@ -371,19 +372,19 @@ namespace NeedleViewer
             // txt_Index
             // 
             txt_Index.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Index.Location = new Point(96, 32);
+            txt_Index.Location = new Point(105, 32);
             txt_Index.Name = "txt_Index";
             txt_Index.ReadOnly = true;
-            txt_Index.Size = new Size(85, 42);
+            txt_Index.Size = new Size(143, 42);
             txt_Index.TabIndex = 23;
             // 
             // lbl_Index
             // 
             lbl_Index.AutoSize = true;
-            lbl_Index.Location = new Point(15, 38);
+            lbl_Index.Location = new Point(4, 36);
             lbl_Index.Margin = new Padding(2, 0, 2, 0);
             lbl_Index.Name = "lbl_Index";
-            lbl_Index.Size = new Size(78, 28);
+            lbl_Index.Size = new Size(96, 34);
             lbl_Index.TabIndex = 22;
             lbl_Index.Text = "流水號";
             // 
@@ -391,10 +392,10 @@ namespace NeedleViewer
             // 
             chk_Enable.Appearance = Appearance.Button;
             chk_Enable.AutoSize = true;
-            chk_Enable.Location = new Point(271, 183);
+            chk_Enable.Location = new Point(290, 224);
             chk_Enable.Margin = new Padding(2);
             chk_Enable.Name = "chk_Enable";
-            chk_Enable.Size = new Size(66, 38);
+            chk_Enable.Size = new Size(79, 44);
             chk_Enable.TabIndex = 21;
             chk_Enable.Text = "啟用";
             chk_Enable.UseVisualStyleBackColor = true;
@@ -403,10 +404,10 @@ namespace NeedleViewer
             // 
             chk_Display.Appearance = Appearance.Button;
             chk_Display.AutoSize = true;
-            chk_Display.Location = new Point(271, 146);
+            chk_Display.Location = new Point(290, 176);
             chk_Display.Margin = new Padding(2);
             chk_Display.Name = "chk_Display";
-            chk_Display.Size = new Size(66, 38);
+            chk_Display.Size = new Size(79, 44);
             chk_Display.TabIndex = 20;
             chk_Display.Text = "顯示";
             chk_Display.UseVisualStyleBackColor = true;
@@ -415,10 +416,10 @@ namespace NeedleViewer
             // 
             chk_Replace.Appearance = Appearance.Button;
             chk_Replace.AutoSize = true;
-            chk_Replace.Location = new Point(271, 108);
+            chk_Replace.Location = new Point(290, 128);
             chk_Replace.Margin = new Padding(2);
             chk_Replace.Name = "chk_Replace";
-            chk_Replace.Size = new Size(66, 38);
+            chk_Replace.Size = new Size(79, 44);
             chk_Replace.TabIndex = 19;
             chk_Replace.Text = "置換";
             chk_Replace.UseVisualStyleBackColor = true;
@@ -427,10 +428,10 @@ namespace NeedleViewer
             // 
             chk_Remove.Appearance = Appearance.Button;
             chk_Remove.AutoSize = true;
-            chk_Remove.Location = new Point(271, 71);
+            chk_Remove.Location = new Point(290, 80);
             chk_Remove.Margin = new Padding(2);
             chk_Remove.Name = "chk_Remove";
-            chk_Remove.Size = new Size(66, 38);
+            chk_Remove.Size = new Size(79, 44);
             chk_Remove.TabIndex = 18;
             chk_Remove.Text = "移除";
             chk_Remove.UseVisualStyleBackColor = true;
@@ -439,10 +440,10 @@ namespace NeedleViewer
             // 
             chk_Place.Appearance = Appearance.Button;
             chk_Place.AutoSize = true;
-            chk_Place.Location = new Point(271, 32);
+            chk_Place.Location = new Point(290, 32);
             chk_Place.Margin = new Padding(2);
             chk_Place.Name = "chk_Place";
-            chk_Place.Size = new Size(66, 38);
+            chk_Place.Size = new Size(79, 44);
             chk_Place.TabIndex = 17;
             chk_Place.Text = "放置";
             chk_Place.UseVisualStyleBackColor = true;
@@ -450,85 +451,99 @@ namespace NeedleViewer
             // txt_Diameter
             // 
             txt_Diameter.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Diameter.Location = new Point(74, 208);
+            txt_Diameter.Location = new Point(74, 272);
             txt_Diameter.Name = "txt_Diameter";
             txt_Diameter.ReadOnly = true;
-            txt_Diameter.Size = new Size(85, 42);
+            txt_Diameter.Size = new Size(174, 42);
             txt_Diameter.TabIndex = 16;
             // 
             // lbl_Diameter
             // 
             lbl_Diameter.AutoSize = true;
-            lbl_Diameter.Location = new Point(15, 214);
+            lbl_Diameter.Location = new Point(1, 278);
             lbl_Diameter.Margin = new Padding(2, 0, 2, 0);
             lbl_Diameter.Name = "lbl_Diameter";
-            lbl_Diameter.Size = new Size(56, 28);
+            lbl_Diameter.Size = new Size(69, 34);
             lbl_Diameter.TabIndex = 15;
             lbl_Diameter.Text = "直徑";
             // 
             // txt_PosX
             // 
             txt_PosX.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_PosX.Location = new Point(74, 164);
+            txt_PosX.Location = new Point(74, 176);
             txt_PosX.Name = "txt_PosX";
             txt_PosX.ReadOnly = true;
-            txt_PosX.Size = new Size(85, 42);
+            txt_PosX.Size = new Size(174, 42);
             txt_PosX.TabIndex = 14;
             // 
             // txt_PosY
             // 
             txt_PosY.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_PosY.Location = new Point(163, 164);
+            txt_PosY.Location = new Point(74, 224);
             txt_PosY.Name = "txt_PosY";
             txt_PosY.ReadOnly = true;
-            txt_PosY.Size = new Size(85, 42);
+            txt_PosY.Size = new Size(174, 42);
             txt_PosY.TabIndex = 13;
             // 
             // lbl_Pos
             // 
             lbl_Pos.AutoSize = true;
-            lbl_Pos.Location = new Point(15, 170);
+            lbl_Pos.Location = new Point(1, 181);
             lbl_Pos.Margin = new Padding(2, 0, 2, 0);
             lbl_Pos.Name = "lbl_Pos";
-            lbl_Pos.Size = new Size(56, 28);
+            lbl_Pos.Size = new Size(69, 34);
             lbl_Pos.TabIndex = 12;
             lbl_Pos.Text = "座標";
             // 
             // txt_Id
             // 
             txt_Id.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Id.Location = new Point(74, 120);
+            txt_Id.Location = new Point(74, 128);
             txt_Id.Name = "txt_Id";
-            txt_Id.Size = new Size(85, 42);
+            txt_Id.Size = new Size(174, 42);
             txt_Id.TabIndex = 11;
             // 
             // lbl_Id
             // 
             lbl_Id.AutoSize = true;
-            lbl_Id.Location = new Point(15, 126);
+            lbl_Id.Location = new Point(4, 133);
             lbl_Id.Margin = new Padding(2, 0, 2, 0);
             lbl_Id.Name = "lbl_Id";
-            lbl_Id.Size = new Size(56, 28);
+            lbl_Id.Size = new Size(69, 34);
             lbl_Id.TabIndex = 10;
             lbl_Id.Text = "編號";
+            // 
+            // grp_Search
+            // 
+            grp_Search.BackColor = Color.FloralWhite;
+            grp_Search.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            grp_Search.Location = new Point(12, 382);
+            grp_Search.Name = "grp_Search";
+            grp_Search.Size = new Size(391, 364);
+            grp_Search.TabIndex = 11;
+            grp_Search.TabStop = false;
+            grp_Search.Text = "搜尋";
             // 
             // Frm_Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Cornsilk;
-            ClientSize = new Size(1584, 961);
+            ClientSize = new Size(1784, 961);
+            Controls.Add(grp_Search);
             Controls.Add(grp_NeedleInfo);
             Controls.Add(pic_Needles);
             Controls.Add(lbl_MousePos);
             Controls.Add(dgv_NeedleInfo);
             Controls.Add(menu_NeedleViewer);
+            DoubleBuffered = true;
             ForeColor = SystemColors.ControlText;
             MainMenuStrip = menu_NeedleViewer;
             Margin = new Padding(2);
             Name = "Frm_Main";
             Text = "NeedleViewer";
             Load += Frm_Main_Load;
+            SizeChanged += Frm_Main_SizeChanged;
             Paint += Frm_Main_Paint;
             ((System.ComponentModel.ISupportInitialize)dgv_NeedleInfo).EndInit();
             menu_NeedleViewer.ResumeLayout(false);
@@ -583,5 +598,6 @@ namespace NeedleViewer
         private DataGridViewTextBoxColumn Reserve3;
         private DataGridViewTextBoxColumn Reserve4;
         private DataGridViewTextBoxColumn Reserve5;
+        private GroupBox grp_Search;
     }
 }
