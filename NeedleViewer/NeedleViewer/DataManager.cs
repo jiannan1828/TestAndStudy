@@ -31,11 +31,11 @@ namespace NeedleViewer
                 public double X { get; set; }
                 public double Y { get; set; }
                 public double Diameter { get; set; }
-                public string? Place { get; set; }
-                public string? Remove { get; set; }
-                public string? Replace { get; set; }
-                public string? Display { get; set; }
-                public string? Enable { get; set; }
+                public bool Place { get; set; }
+                public bool Remove { get; set; }
+                public bool Replace { get; set; }
+                public bool Display { get; set; }
+                public bool Enable { get; set; }
                 public string? Reserve1 { get; set; }
                 public string? Reserve2 { get; set; }
                 public string? Reserve3 { get; set; }
@@ -93,15 +93,20 @@ namespace NeedleViewer
 
             foreach (var circle in DxfDoc.Entities.Circles)
             {
-                
                 dxf2Json.Circles.Add(new JSON.Circle
                 {
                     Index = index,
                     X = circle.Center.X,
                     Y = circle.Center.Y,
                     Diameter = circle.Radius * 2,
-                });
 
+                    Place = false,
+                    Remove = false,
+                    Replace = false,
+                    Display = true, // 20241210 4xuan added : 顯示預設改為 1
+                    Enable = false
+                });
+                
                 index++;
             }
         }

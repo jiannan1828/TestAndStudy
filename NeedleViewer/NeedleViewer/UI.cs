@@ -9,17 +9,17 @@ namespace NeedleViewer
         /// <summary>
         /// 在 DataGridView 顯示 DXF 資料
         /// </summary>
-        /// <param name="dgv_DxfDatas">要顯示 DXF 檔的 DataGridView</param>
-        /// <param name="DxfDoc">已讀取的 DXF 文件</param>
+        /// <param name="dgv_Needles">要顯示 DXF 檔的 DataGridView</param>
+        /// <param name="dxfJson">已讀取的 DXF 文件</param>
         /// <returns>無回傳值</returns>
-        public static void show_dgv_NeedleInfo(DataGridView dgv_DxfDatas, DataManager.JSON dxfJson)
+        public static void show_dgv_Needles(DataGridView dgv_Needles, DataManager.JSON dxfJson)
         {
 
-            dgv_DxfDatas.Rows.Clear();
+            dgv_Needles.Rows.Clear();
 
             foreach (var Circle in dxfJson.Circles)
             {
-                dgv_DxfDatas.Rows.Add(
+                dgv_Needles.Rows.Add(
                     Circle.Index,
                     Circle.Name,
                     Circle.Id,
@@ -39,12 +39,12 @@ namespace NeedleViewer
         /// <summary>
         /// 在 groupbox 中顯示植針資訊
         /// </summary>
-        /// <param name="grpNeedleInfo">植針資訊的 Groupbox</param>
+        /// <param name="grp_NeedleInfo">植針資訊的 Groupbox</param>
         /// <param name="focusedCircle">在 picturebox 上按下的圓</param>
         /// <returns>無回傳值</returns>
-        public static void show_grp_NeedleInfo(GroupBox grpNeedleInfo, JSON.Circle focusedCircle)
+        public static void show_grp_NeedleInfo(GroupBox grp_NeedleInfo, JSON.Circle focusedCircle)
         {
-            foreach (Control control in grpNeedleInfo.Controls)
+            foreach (Control control in grp_NeedleInfo.Controls)
             {
                 switch (control)
                 {
@@ -79,19 +79,19 @@ namespace NeedleViewer
                         switch (checkBox.Name)
                         {
                             case "chk_Place":
-                                checkBox.Checked = Convert.ToBoolean(focusedCircle.Place);
+                                checkBox.Checked = focusedCircle.Place;
                                 break;
                             case "chk_Remove":
-                                checkBox.Checked = Convert.ToBoolean(focusedCircle.Remove);
+                                checkBox.Checked = focusedCircle.Remove;
                                 break;
                             case "chk_Replace":
-                                checkBox.Checked = Convert.ToBoolean(focusedCircle.Replace);
+                                checkBox.Checked = focusedCircle.Replace;
                                 break;
                             case "chk_Display":
-                                checkBox.Checked = Convert.ToBoolean(focusedCircle.Display);
+                                checkBox.Checked = focusedCircle.Display;
                                 break;
                             case "chk_Enable":
-                                checkBox.Checked = Convert.ToBoolean(focusedCircle.Enable);
+                                checkBox.Checked = focusedCircle.Enable;
                                 break;
 
                         }
@@ -104,11 +104,11 @@ namespace NeedleViewer
         /// <summary>
         /// 清空 groupbox 內的資訊
         /// </summary>
-        /// <param name="grpNeedleInfo">植針資訊的 Groupbox</param>
+        /// <param name="grp_NeedleInfo">植針資訊的 Groupbox</param>
         /// <returns>無回傳值</returns>
-        public static void clear_grp_NeedleInfo(GroupBox grpNeedleInfo)
+        public static void clear_grp_NeedleInfo(GroupBox grp_NeedleInfo)
         {
-            foreach (Control control in grpNeedleInfo.Controls)
+            foreach (Control control in grp_NeedleInfo.Controls)
             {
                 switch (control)
                 {
@@ -122,6 +122,25 @@ namespace NeedleViewer
                 }
             }
 
+        }
+
+        /// <summary>
+        /// 排序過的資料 Index 未必會按到由上到下排序, 重新遍歷他的流水號
+        /// </summary>
+        /// <param name="dgv_Needles">植針 DataGridView</param>
+        /// <param name="Index">由 picturebox 傳進來的 Index DataGridView</param>
+        /// <returns>無回傳值</returns>
+        public static int find_dgv_Needles_Index(DataGridView dgv_Needles, int Index)
+        {
+            for (int i = 0; i < dgv_Needles.Rows.Count; i++)
+            {
+                if (Index == (int)dgv_Needles.Rows[i].Cells[0].Value)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
     }
 }

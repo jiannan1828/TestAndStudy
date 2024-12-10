@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Windows.Forms;
 using netDxf;
 using netDxf.Entities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static NeedleViewer.DataManager;
 
 namespace NeedleViewer
@@ -26,6 +27,7 @@ namespace NeedleViewer
         private PointF RealMousePosAfterZoom = new PointF(0, 0);
 
         private readonly Color DefaltCircleColor = Color.ForestGreen;
+        private readonly Color HiddenCircleColor = Color.FromArgb(64, Color.ForestGreen);
         private readonly Color HighlightedCircleColor = Color.LightBlue;
         private readonly Color FocusedCircleColor = Color.Red;
 
@@ -35,7 +37,6 @@ namespace NeedleViewer
         private int HighlightedRow = -1;
 
         private DataManager.JSON.Circle FocusedCircle = new DataManager.JSON.Circle();
-        private int FocusedRow = -1;
 
         public Frm_Main()
         {
@@ -66,7 +67,7 @@ namespace NeedleViewer
         {
             DataManager.OpenFile();
 
-            UI.show_dgv_NeedleInfo(dgv_Needles, DataManager.Json);
+            UI.show_dgv_Needles(dgv_Needles, DataManager.Json);
 
             DataManager.find_boundary(DataManager.Json, out minX, out minY, out maxX, out maxY, out width, out height);
 
@@ -93,7 +94,21 @@ namespace NeedleViewer
             {
                 foreach (var circle in DataManager.Json.Circles)
                 {
-                    Brush fillBrush = new SolidBrush(DefaltCircleColor); // 預設顏色
+                    Brush fillBrush;
+
+                    if (circle.Index == 0) 
+                    {
+                        Console.WriteLine("林浩圓抵達");
+                    }
+
+                    if (circle.Display == false)
+                    {
+                        fillBrush = new SolidBrush(HiddenCircleColor);
+                    }
+                    else
+                    {
+                        fillBrush = new SolidBrush(DefaltCircleColor);
+                    }
 
                     RectangleF rectangleF = new RectangleF(
                         (float)(circle.X * ScaleFactor - circle.Diameter / 2 * ScaleFactor),
@@ -151,14 +166,14 @@ namespace NeedleViewer
                 {
                     if (HighlightedRow != -1) // 之前有列被 highlight 過
                     {
-                        dgv_Needles.Rows[HighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
+                        dgv_Needles.Rows[UI.find_dgv_Needles_Index(dgv_Needles, HighlightedRow)].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
                     }
 
                     HighlightedCircle = circle; // 記錄高亮的圓
                     HighlightedRow = circle.Index; // 紀錄上一次被highlight過的列
 
-                    dgv_Needles.Rows[circle.Index].DefaultCellStyle.BackColor = Color.PaleGoldenrod;  // 高亮 datagridview 該列               
-                    dgv_Needles.FirstDisplayedScrollingRowIndex = circle.Index;// 設置自動捲動到該列
+                    dgv_Needles.Rows[UI.find_dgv_Needles_Index(dgv_Needles, HighlightedRow)].DefaultCellStyle.BackColor = Color.PaleGoldenrod;  // 高亮 datagridview 該列               
+                    dgv_Needles.FirstDisplayedScrollingRowIndex = UI.find_dgv_Needles_Index(dgv_Needles, HighlightedRow);// 設置自動捲動到該列
 
                     break;
                 }
@@ -213,8 +228,7 @@ namespace NeedleViewer
 
                     UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
 
-                    // 20241209 4xuan debug
-                    dgv_Needles.Rows[FocusedCircle.Index].Selected = true; // 觸發 dgv_NeedleInfo_SelectionChanged
+                    dgv_Needles.Rows[UI.find_dgv_Needles_Index(dgv_Needles, FocusedCircle.Index)].Selected = true; // 觸發 dgv_NeedleInfo_SelectionChanged
 
                     btn_Update.Enabled = true;
                 }
@@ -234,7 +248,7 @@ namespace NeedleViewer
             if (e.RowIndex >= 0)
             {
                 dgv_Needles.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.PaleGoldenrod; // 高亮顏色
-                HighlightedCircle = DataManager.Json.Circles[e.RowIndex];
+                HighlightedCircle = DataManager.Json.Circles[(int)dgv_Needles.Rows[e.RowIndex].Cells["Index"].Value]; // 20241210 4xuan edit : 以流水號為選擇而不是由上至下的列順序
                 HighlightedRow = e.RowIndex;
                 pic_Needles.Refresh();
             }
@@ -256,12 +270,12 @@ namespace NeedleViewer
             /* ---------------------------- 20241209 4xuan debug -------------------------------- */
             // 解決由 picturebox 觸發 dgv 選擇列但不會更新 dgv_NeedleInfo.CurrentCell.RowIndex 屬性問題
             // 不管是 picturebox 選還是 dgv 選, 都會有 HighlightedCircle 存在 
-            
+
             FocusedCircle = HighlightedCircle;
-            
+
             //FocusedCircle = DataManager.Json.Circles[dgv_Needles.CurrentCell.RowIndex];
             //FocusedRow = dgv_Needles.CurrentCell.RowIndex;
-            
+
             /* ---------------------------------------------------------------------------------- */
             UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
 
@@ -275,15 +289,37 @@ namespace NeedleViewer
                 DataManager.Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
                 DataManager.Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
 
-                DataManager.Json.Circles[FocusedCircle.Index].Place = (chk_Place.Checked).ToString();
-                DataManager.Json.Circles[FocusedCircle.Index].Remove = (chk_Remove.Checked).ToString();
-                DataManager.Json.Circles[FocusedCircle.Index].Replace = (chk_Replace.Checked).ToString();
-                DataManager.Json.Circles[FocusedCircle.Index].Display = (chk_Display.Checked).ToString();
-                DataManager.Json.Circles[FocusedCircle.Index].Enable = (chk_Enable.Checked).ToString();
+                DataManager.Json.Circles[FocusedCircle.Index].Place = chk_Place.Checked;
+                DataManager.Json.Circles[FocusedCircle.Index].Remove = chk_Remove.Checked;
+                DataManager.Json.Circles[FocusedCircle.Index].Replace = chk_Replace.Checked;
+                DataManager.Json.Circles[FocusedCircle.Index].Display = chk_Display.Checked;
+                DataManager.Json.Circles[FocusedCircle.Index].Enable = chk_Enable.Checked;
+
+                dgv_Needles.Rows[FocusedCircle.Index].Cells["ColumnName"].Value = txt_Name.Text;
+                dgv_Needles.Rows[FocusedCircle.Index].Cells["Id"].Value = txt_Id.Text;
+
+                dgv_Needles.Rows[FocusedCircle.Index].Cells["Place"].Value = chk_Place.Checked;
+                dgv_Needles.Rows[FocusedCircle.Index].Cells["Remove"].Value = chk_Remove.Checked;
+                dgv_Needles.Rows[FocusedCircle.Index].Cells["Replace"].Value = chk_Replace.Checked;
+                dgv_Needles.Rows[FocusedCircle.Index].Cells["Display"].Value = chk_Display.Checked;
+                dgv_Needles.Rows[FocusedCircle.Index].Cells["Enable"].Value = chk_Enable.Checked;
+                MessageBox.Show($"更新成功");
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"更新資料出現錯誤: {ex.Message}");
+            }
+        }
+
+        private void chk_Display_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_Display.Checked)
+            {
+                chk_Display.BackColor = Color.Red;
+            }
+            else
+            {
+                chk_Display.BackColor = SystemColors.Control;
             }
         }
     }

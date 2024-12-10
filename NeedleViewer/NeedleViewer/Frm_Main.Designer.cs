@@ -30,10 +30,10 @@ namespace NeedleViewer
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgv_Needles = new DataGridView();
             Index = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
@@ -87,24 +87,24 @@ namespace NeedleViewer
             dgv_Needles.AllowUserToAddRows = false;
             dgv_Needles.AllowUserToDeleteRows = false;
             dgv_Needles.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("微軟正黑體", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 136);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgv_Needles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("微軟正黑體", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 136);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgv_Needles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgv_Needles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_Needles.Columns.AddRange(new DataGridViewColumn[] { Index, ColumnName, Id, PosX, PosY, Diameter, Place, Remove, Replace, Display, Enable, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5 });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgv_Needles.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Brown;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgv_Needles.DefaultCellStyle = dataGridViewCellStyle4;
             dgv_Needles.Location = new Point(11, 752);
             dgv_Needles.MultiSelect = false;
             dgv_Needles.Name = "dgv_Needles";
@@ -120,8 +120,8 @@ namespace NeedleViewer
             // 
             // Index
             // 
-            dataGridViewCellStyle6.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            Index.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            Index.DefaultCellStyle = dataGridViewCellStyle2;
             Index.HeaderText = "流水號";
             Index.MinimumWidth = 10;
             Index.Name = "Index";
@@ -130,8 +130,8 @@ namespace NeedleViewer
             // 
             // ColumnName
             // 
-            dataGridViewCellStyle7.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            ColumnName.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            ColumnName.DefaultCellStyle = dataGridViewCellStyle3;
             ColumnName.HeaderText = "名稱";
             ColumnName.MinimumWidth = 10;
             ColumnName.Name = "ColumnName";
@@ -245,7 +245,7 @@ namespace NeedleViewer
             // Reserve5
             // 
             Reserve5.HeaderText = "保留5";
-            Reserve5.MinimumWidth = 10;     
+            Reserve5.MinimumWidth = 10;
             Reserve5.Name = "Reserve5";
             Reserve5.ReadOnly = true;
             Reserve5.Width = 200;
@@ -411,6 +411,7 @@ namespace NeedleViewer
             chk_Display.TabIndex = 20;
             chk_Display.Text = "顯示";
             chk_Display.UseVisualStyleBackColor = true;
+            chk_Display.CheckedChanged += chk_Display_CheckedChanged;
             // 
             // chk_Replace
             // 
