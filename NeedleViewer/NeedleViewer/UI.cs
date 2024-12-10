@@ -12,7 +12,7 @@ namespace NeedleViewer
         /// <param name="dgv_DxfDatas">要顯示 DXF 檔的 DataGridView</param>
         /// <param name="DxfDoc">已讀取的 DXF 文件</param>
         /// <returns>無回傳值</returns>
-        public static void show_dgv_NeedleInfo(DataGridView dgv_DxfDatas, Json dxfJson)
+        public static void show_dgv_NeedleInfo(DataGridView dgv_DxfDatas, DataManager.JSON dxfJson)
         {
 
             dgv_DxfDatas.Rows.Clear();
@@ -42,7 +42,7 @@ namespace NeedleViewer
         /// <param name="grpNeedleInfo">植針資訊的 Groupbox</param>
         /// <param name="focusedCircle">在 picturebox 上按下的圓</param>
         /// <returns>無回傳值</returns>
-        public static void show_grp_NeedleInfo(GroupBox grpNeedleInfo, Json.Circle focusedCircle)
+        public static void show_grp_NeedleInfo(GroupBox grpNeedleInfo, JSON.Circle focusedCircle)
         {
             foreach (Control control in grpNeedleInfo.Controls)
             {

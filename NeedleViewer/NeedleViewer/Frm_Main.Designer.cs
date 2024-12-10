@@ -34,7 +34,7 @@ namespace NeedleViewer
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            dgv_NeedleInfo = new DataGridView();
+            dgv_Needles = new DataGridView();
             Index = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
             Id = new DataGridViewTextBoxColumn();
@@ -53,9 +53,9 @@ namespace NeedleViewer
             Reserve5 = new DataGridViewTextBoxColumn();
             lbl_MousePos = new Label();
             menu_NeedleViewer = new MenuStrip();
-            檔案ToolStripMenuItem = new ToolStripMenuItem();
-            開啟檔案ToolStripMenuItem = new ToolStripMenuItem();
-            儲存檔案ToolStripMenuItem = new ToolStripMenuItem();
+            tsmi_File = new ToolStripMenuItem();
+            tsmi_OpenFile = new ToolStripMenuItem();
+            tsmi_SaveFile = new ToolStripMenuItem();
             pic_Needles = new PictureBox();
             txt_Name = new TextBox();
             label1 = new Label();
@@ -76,17 +76,17 @@ namespace NeedleViewer
             txt_Id = new TextBox();
             lbl_Id = new Label();
             grp_Search = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)dgv_NeedleInfo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_Needles).BeginInit();
             menu_NeedleViewer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Needles).BeginInit();
             grp_NeedleInfo.SuspendLayout();
             SuspendLayout();
             // 
-            // dgv_NeedleInfo
+            // dgv_Needles
             // 
-            dgv_NeedleInfo.AllowUserToAddRows = false;
-            dgv_NeedleInfo.AllowUserToDeleteRows = false;
-            dgv_NeedleInfo.AllowUserToResizeRows = false;
+            dgv_Needles.AllowUserToAddRows = false;
+            dgv_Needles.AllowUserToDeleteRows = false;
+            dgv_Needles.AllowUserToResizeRows = false;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = SystemColors.Control;
             dataGridViewCellStyle5.Font = new Font("微軟正黑體", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 136);
@@ -94,9 +94,9 @@ namespace NeedleViewer
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgv_NeedleInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dgv_NeedleInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_NeedleInfo.Columns.AddRange(new DataGridViewColumn[] { Index, ColumnName, Id, PosX, PosY, Diameter, Place, Remove, Replace, Display, Enable, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5 });
+            dgv_Needles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgv_Needles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_Needles.Columns.AddRange(new DataGridViewColumn[] { Index, ColumnName, Id, PosX, PosY, Diameter, Place, Remove, Replace, Display, Enable, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5 });
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = SystemColors.Window;
             dataGridViewCellStyle8.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -104,19 +104,19 @@ namespace NeedleViewer
             dataGridViewCellStyle8.SelectionBackColor = Color.Brown;
             dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgv_NeedleInfo.DefaultCellStyle = dataGridViewCellStyle8;
-            dgv_NeedleInfo.Location = new Point(11, 752);
-            dgv_NeedleInfo.MultiSelect = false;
-            dgv_NeedleInfo.Name = "dgv_NeedleInfo";
-            dgv_NeedleInfo.ReadOnly = true;
-            dgv_NeedleInfo.RowHeadersVisible = false;
-            dgv_NeedleInfo.RowHeadersWidth = 82;
-            dgv_NeedleInfo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_NeedleInfo.Size = new Size(1453, 197);
-            dgv_NeedleInfo.TabIndex = 3;
-            dgv_NeedleInfo.CellMouseEnter += dgv_Dxf_CellMouseEnter;
-            dgv_NeedleInfo.CellMouseLeave += dgv_Dxf_CellMouseLeave;
-            dgv_NeedleInfo.SelectionChanged += dgv_NeedleInfo_SelectionChanged;
+            dgv_Needles.DefaultCellStyle = dataGridViewCellStyle8;
+            dgv_Needles.Location = new Point(11, 752);
+            dgv_Needles.MultiSelect = false;
+            dgv_Needles.Name = "dgv_Needles";
+            dgv_Needles.ReadOnly = true;
+            dgv_Needles.RowHeadersVisible = false;
+            dgv_Needles.RowHeadersWidth = 82;
+            dgv_Needles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_Needles.Size = new Size(1453, 197);
+            dgv_Needles.TabIndex = 3;
+            dgv_Needles.CellMouseEnter += dgv_Needles_CellMouseEnter;
+            dgv_Needles.CellMouseLeave += dgv_Needles_CellMouseLeave;
+            dgv_Needles.SelectionChanged += dgv_Needles_SelectionChanged;
             // 
             // Index
             // 
@@ -245,7 +245,7 @@ namespace NeedleViewer
             // Reserve5
             // 
             Reserve5.HeaderText = "保留5";
-            Reserve5.MinimumWidth = 10;
+            Reserve5.MinimumWidth = 10;     
             Reserve5.Name = "Reserve5";
             Reserve5.ReadOnly = true;
             Reserve5.Width = 200;
@@ -264,35 +264,35 @@ namespace NeedleViewer
             // 
             menu_NeedleViewer.BackColor = Color.Thistle;
             menu_NeedleViewer.ImageScalingSize = new Size(32, 32);
-            menu_NeedleViewer.Items.AddRange(new ToolStripItem[] { 檔案ToolStripMenuItem });
+            menu_NeedleViewer.Items.AddRange(new ToolStripItem[] { tsmi_File });
             menu_NeedleViewer.Location = new Point(0, 0);
             menu_NeedleViewer.Name = "menu_NeedleViewer";
             menu_NeedleViewer.Size = new Size(1784, 43);
             menu_NeedleViewer.TabIndex = 7;
             menu_NeedleViewer.Text = "menuStrip1";
             // 
-            // 檔案ToolStripMenuItem
+            // tsmi_File
             // 
-            檔案ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 開啟檔案ToolStripMenuItem, 儲存檔案ToolStripMenuItem });
-            檔案ToolStripMenuItem.Font = new Font("微軟正黑體", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 136);
-            檔案ToolStripMenuItem.ForeColor = SystemColors.ControlLightLight;
-            檔案ToolStripMenuItem.Name = "檔案ToolStripMenuItem";
-            檔案ToolStripMenuItem.Size = new Size(81, 39);
-            檔案ToolStripMenuItem.Text = "檔案";
+            tsmi_File.DropDownItems.AddRange(new ToolStripItem[] { tsmi_OpenFile, tsmi_SaveFile });
+            tsmi_File.Font = new Font("微軟正黑體", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 136);
+            tsmi_File.ForeColor = SystemColors.ControlLightLight;
+            tsmi_File.Name = "tsmi_File";
+            tsmi_File.Size = new Size(81, 39);
+            tsmi_File.Text = "檔案";
             // 
-            // 開啟檔案ToolStripMenuItem
+            // tsmi_OpenFile
             // 
-            開啟檔案ToolStripMenuItem.Name = "開啟檔案ToolStripMenuItem";
-            開啟檔案ToolStripMenuItem.Size = new Size(198, 40);
-            開啟檔案ToolStripMenuItem.Text = "開啟檔案";
-            開啟檔案ToolStripMenuItem.Click += 開啟檔案ToolStripMenuItem_Click;
+            tsmi_OpenFile.Name = "tsmi_OpenFile";
+            tsmi_OpenFile.Size = new Size(198, 40);
+            tsmi_OpenFile.Text = "開啟檔案";
+            tsmi_OpenFile.Click += tsmi_OpenFile_Click;
             // 
-            // 儲存檔案ToolStripMenuItem
+            // tsmi_SaveFile
             // 
-            儲存檔案ToolStripMenuItem.Name = "儲存檔案ToolStripMenuItem";
-            儲存檔案ToolStripMenuItem.Size = new Size(198, 40);
-            儲存檔案ToolStripMenuItem.Text = "儲存檔案";
-            儲存檔案ToolStripMenuItem.Click += 儲存檔案ToolStripMenuItem_Click;
+            tsmi_SaveFile.Name = "tsmi_SaveFile";
+            tsmi_SaveFile.Size = new Size(198, 40);
+            tsmi_SaveFile.Text = "儲存檔案";
+            tsmi_SaveFile.Click += tsmi_SaveFile_Click;
             // 
             // pic_Needles
             // 
@@ -534,7 +534,7 @@ namespace NeedleViewer
             Controls.Add(grp_NeedleInfo);
             Controls.Add(pic_Needles);
             Controls.Add(lbl_MousePos);
-            Controls.Add(dgv_NeedleInfo);
+            Controls.Add(dgv_Needles);
             Controls.Add(menu_NeedleViewer);
             DoubleBuffered = true;
             ForeColor = SystemColors.ControlText;
@@ -545,7 +545,7 @@ namespace NeedleViewer
             Load += Frm_Main_Load;
             SizeChanged += Frm_Main_SizeChanged;
             Paint += Frm_Main_Paint;
-            ((System.ComponentModel.ISupportInitialize)dgv_NeedleInfo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgv_Needles).EndInit();
             menu_NeedleViewer.ResumeLayout(false);
             menu_NeedleViewer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Needles).EndInit();
@@ -557,12 +557,12 @@ namespace NeedleViewer
 
         #endregion
         private ColumnHeader col_PointPos1;
-        private DataGridView dgv_NeedleInfo;
+        private DataGridView dgv_Needles;
         private Label lbl_MousePos;
         private MenuStrip menu_NeedleViewer;
-        private ToolStripMenuItem 檔案ToolStripMenuItem;
-        private ToolStripMenuItem 開啟檔案ToolStripMenuItem;
-        private ToolStripMenuItem 儲存檔案ToolStripMenuItem;
+        private ToolStripMenuItem tsmi_File;
+        private ToolStripMenuItem tsmi_OpenFile;
+        private ToolStripMenuItem tsmi_SaveFile;
         private PictureBox pic_Needles;
         private TextBox txt_Name;
         private Label label1;

@@ -9,13 +9,14 @@ namespace NeedleViewer
 {
     public partial class Frm_Main : Form
     {
+        private System.Drawing.Image buddha;
+        private System.Drawing.Image buddhaText;
+
         private DataManager DataManager = new DataManager();
 
         private double minX, minY, maxX, maxY, width, height;
 
-        private System.Drawing.Image buddha;
-        private System.Drawing.Image buddhaText;
-
+        private const float ScaleFactor = 10;
         private float ZoomFactor = 1;
 
         private PointF Offset = new PointF(0, 0);
@@ -24,18 +25,62 @@ namespace NeedleViewer
         private PointF RealMousePosBeforeZoom = new PointF(0, 0);
         private PointF RealMousePosAfterZoom = new PointF(0, 0);
 
+        private readonly Color DefaltCircleColor = Color.ForestGreen;
+        private readonly Color HighlightedCircleColor = Color.LightBlue;
+        private readonly Color FocusedCircleColor = Color.Red;
+
         private double Mouse2CircleDistance;
 
-        private DataManager.Json.Circle HighlightedCircle = null;
+        private DataManager.JSON.Circle HighlightedCircle = new DataManager.JSON.Circle();
         private int HighlightedRow = -1;
 
-        private bool Is_Click_From_pic_Needles;
-        private DataManager.Json.Circle FocusedCircle = null;
+        private DataManager.JSON.Circle FocusedCircle = new DataManager.JSON.Circle();
         private int FocusedRow = -1;
 
         public Frm_Main()
         {
             InitializeComponent();
+        }
+
+        private void Frm_Main_Load(object sender, EventArgs e)
+        {
+            buddha = System.Drawing.Image.FromFile(@"..\..\..\Images\Buddha.png");
+            buddhaText = System.Drawing.Image.FromFile(@"..\..\..\Images\BuddhaText.png");
+        }
+
+        private void Frm_Main_Paint(object sender, PaintEventArgs e)
+        {
+
+            int x = this.ClientSize.Width - 300;
+            int y = this.ClientSize.Height - 300;
+            e.Graphics.DrawImage(buddhaText, new Rectangle(x - 15, y - 150, 300, 300));
+            e.Graphics.DrawImage(buddha, new Rectangle(x, y, 300, 300));
+        }
+
+        private void Frm_Main_SizeChanged(object sender, EventArgs e)
+        {
+            this.Invalidate();
+        }
+
+        private void tsmi_OpenFile_Click(object sender, EventArgs e)
+        {
+            DataManager.OpenFile();
+
+            UI.show_dgv_NeedleInfo(dgv_Needles, DataManager.Json);
+
+            DataManager.find_boundary(DataManager.Json, out minX, out minY, out maxX, out maxY, out width, out height);
+
+            ZoomFactor = Math.Min(pic_Needles.Width / ScaleFactor / (float)width, pic_Needles.Height / ScaleFactor / (float)height);
+            Offset.X = -(float)minX * ScaleFactor * ZoomFactor;
+            Offset.Y = -(float)minY * ScaleFactor * ZoomFactor;
+
+            pic_Needles.Refresh();
+
+        }
+
+        private void tsmi_SaveFile_Click(object sender, EventArgs e)
+        {
+            DataManager.SaveFile();
         }
 
         private void pic_Needles_Paint(object sender, PaintEventArgs e)
@@ -48,23 +93,23 @@ namespace NeedleViewer
             {
                 foreach (var circle in DataManager.Json.Circles)
                 {
-                    Brush fillBrush = new SolidBrush(Color.ForestGreen); // 預設顏色
+                    Brush fillBrush = new SolidBrush(DefaltCircleColor); // 預設顏色
 
                     RectangleF rectangleF = new RectangleF(
-                        (float)(circle.X * 10 - circle.Diameter / 2 * 10),
-                        (float)(circle.Y * 10 - circle.Diameter / 2 * 10),
-                        (float)(2 * circle.Diameter / 2 * 10),
-                        (float)(2 * circle.Diameter / 2 * 10)
+                        (float)(circle.X * ScaleFactor - circle.Diameter / 2 * ScaleFactor),
+                        (float)(circle.Y * ScaleFactor - circle.Diameter / 2 * ScaleFactor),
+                        (float)(2 * circle.Diameter / 2 * ScaleFactor),
+                        (float)(2 * circle.Diameter / 2 * ScaleFactor)
                     );
 
 
                     if (circle == FocusedCircle)
                     {
-                        fillBrush = new SolidBrush(Color.Red);
+                        fillBrush = new SolidBrush(FocusedCircleColor);
                     }
                     else if (circle == HighlightedCircle)
                     {
-                        fillBrush = new SolidBrush(Color.LightBlue);
+                        fillBrush = new SolidBrush(HighlightedCircleColor);
                     }
 
                     e.Graphics.FillEllipse(fillBrush, rectangleF);
@@ -78,8 +123,8 @@ namespace NeedleViewer
 
         private void pic_Needles_MouseMove(object sender, MouseEventArgs e)
         {
-            RealMousePos.X = (e.X - Offset.X) / ZoomFactor / 10;
-            RealMousePos.Y = (e.Y - Offset.Y) / ZoomFactor / 10;
+            RealMousePos.X = (e.X - Offset.X) / ZoomFactor / ScaleFactor;
+            RealMousePos.Y = (e.Y - Offset.Y) / ZoomFactor / ScaleFactor;
 
             lbl_MousePos.Text = $"滑鼠座標 : {RealMousePos.X}, {RealMousePos.Y}";
 
@@ -98,22 +143,22 @@ namespace NeedleViewer
             {
                 // 计算鼠标位置与圆心的距离
                 Mouse2CircleDistance = Math.Sqrt(
-                    Math.Pow((e.X - Offset.X) / 10 / ZoomFactor - circle.X, 2) +
-                    Math.Pow((e.Y - Offset.Y) / 10 / ZoomFactor - circle.Y, 2)
+                    Math.Pow((e.X - Offset.X) / ScaleFactor / ZoomFactor - circle.X, 2) +
+                    Math.Pow((e.Y - Offset.Y) / ScaleFactor / ZoomFactor - circle.Y, 2)
                 );
 
                 if (Mouse2CircleDistance <= circle.Diameter / 2)
                 {
                     if (HighlightedRow != -1) // 之前有列被 highlight 過
                     {
-                        dgv_NeedleInfo.Rows[HighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
+                        dgv_Needles.Rows[HighlightedRow].DefaultCellStyle.BackColor = SystemColors.Window; // 洗掉上一次 highlight 的列
                     }
 
                     HighlightedCircle = circle; // 記錄高亮的圓
                     HighlightedRow = circle.Index; // 紀錄上一次被highlight過的列
 
-                    dgv_NeedleInfo.Rows[circle.Index].DefaultCellStyle.BackColor = Color.PaleGoldenrod;  // 高亮 datagridview 該列               
-                    dgv_NeedleInfo.FirstDisplayedScrollingRowIndex = circle.Index;// 設置自動捲動到該列
+                    dgv_Needles.Rows[circle.Index].DefaultCellStyle.BackColor = Color.PaleGoldenrod;  // 高亮 datagridview 該列               
+                    dgv_Needles.FirstDisplayedScrollingRowIndex = circle.Index;// 設置自動捲動到該列
 
                     break;
                 }
@@ -169,7 +214,7 @@ namespace NeedleViewer
                     UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
 
                     // 20241209 4xuan debug
-                    dgv_NeedleInfo.Rows[FocusedCircle.Index].Selected = true; // 觸發 dgv_NeedleInfo_SelectionChanged
+                    dgv_Needles.Rows[FocusedCircle.Index].Selected = true; // 觸發 dgv_NeedleInfo_SelectionChanged
 
                     btn_Update.Enabled = true;
                 }
@@ -184,53 +229,43 @@ namespace NeedleViewer
             }
         }
 
-        private void 開啟檔案ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DataManager.OpenFile();
-
-            UI.show_dgv_NeedleInfo(dgv_NeedleInfo, DataManager.Json);
-
-            DataManager.find_boundary(DataManager.Json, out minX, out minY, out maxX, out maxY, out width, out height);
-
-            ZoomFactor = Math.Min(pic_Needles.Width / 10 / (float)width, pic_Needles.Height / 10 / (float)height);
-            Offset.X = -(float)minX * 10 * ZoomFactor;
-            Offset.Y = -(float)minY * 10 * ZoomFactor;
-
-            pic_Needles.Refresh();
-            
-        }
-
-        private void Frm_Main_Load(object sender, EventArgs e)
-        {
-            buddha = System.Drawing.Image.FromFile(@"..\..\..\Images\Buddha.png");
-            buddhaText = System.Drawing.Image.FromFile(@"..\..\..\Images\BuddhaText.png");
-        }
-
-        private void dgv_Dxf_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void dgv_Needles_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                dgv_NeedleInfo.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.PaleGoldenrod; // 高亮顏色
+                dgv_Needles.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.PaleGoldenrod; // 高亮顏色
                 HighlightedCircle = DataManager.Json.Circles[e.RowIndex];
                 HighlightedRow = e.RowIndex;
                 pic_Needles.Refresh();
             }
         }
 
-        private void dgv_Dxf_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        private void dgv_Needles_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                dgv_NeedleInfo.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Window; // 高亮顏色
+                dgv_Needles.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Window; // 高亮顏色
                 HighlightedCircle = null;
                 HighlightedRow = -1;
                 pic_Needles.Refresh();
             }
         }
 
-        private void 儲存檔案ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dgv_Needles_SelectionChanged(object sender, EventArgs e)
         {
-            DataManager.SaveFile();
+            /* ---------------------------- 20241209 4xuan debug -------------------------------- */
+            // 解決由 picturebox 觸發 dgv 選擇列但不會更新 dgv_NeedleInfo.CurrentCell.RowIndex 屬性問題
+            // 不管是 picturebox 選還是 dgv 選, 都會有 HighlightedCircle 存在 
+            
+            FocusedCircle = HighlightedCircle;
+            
+            //FocusedCircle = DataManager.Json.Circles[dgv_Needles.CurrentCell.RowIndex];
+            //FocusedRow = dgv_Needles.CurrentCell.RowIndex;
+            
+            /* ---------------------------------------------------------------------------------- */
+            UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
+
+            pic_Needles.Refresh();
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
@@ -250,42 +285,6 @@ namespace NeedleViewer
             {
                 MessageBox.Show($"更新資料出現錯誤: {ex.Message}");
             }
-        }
-
-        private void dgv_NeedleInfo_SelectionChanged(object sender, EventArgs e)
-        {
-            /* ---------------------------- 20241209 4xuan debug -------------------------------- */
-            // 解決由 picturebox 觸發 dgv 選擇列但不會更新 dgv_NeedleInfo.CurrentCell.RowIndex 屬性問題
-            // 因為如果是在 picturebox 選, 一定會有 HighlightedCircle 存在 
-            // 用這個方式區分到底是由 picturebox 點擊還是 datagridview
-            // 但從dgv點擊無法顯示到grp上 highlightedCircle是有東西的
-            if (HighlightedCircle != null) // 從 picturebox 點擊
-            {
-
-            }
-            else // 從 dgv 點擊
-            {
-                FocusedCircle = DataManager.Json.Circles[dgv_NeedleInfo.CurrentCell.RowIndex];
-                FocusedRow = dgv_NeedleInfo.CurrentCell.RowIndex;
-            }
-            /* ---------------------------------------------------------------------------------- */
-            UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
-
-            pic_Needles.Refresh();
-        }
-
-        private void Frm_Main_Paint(object sender, PaintEventArgs e)
-        {
-            
-            int x = this.ClientSize.Width - 300;
-            int y = this.ClientSize.Height - 300;
-            e.Graphics.DrawImage(buddhaText, new Rectangle(x - 15, y - 150, 300, 300));
-            e.Graphics.DrawImage(buddha, new Rectangle(x, y, 300, 300));
-        }
-
-        private void Frm_Main_SizeChanged(object sender, EventArgs e)
-        {
-                this.Invalidate();
         }
     }
 }

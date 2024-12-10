@@ -14,29 +14,32 @@ namespace NeedleViewer
         public DxfDocument DxfDoc = new DxfDocument();
         public DataManager.JSON Json = new DataManager.JSON();
 
+        /// <summary>
+        /// 讀取 DXF 後儲存到這個物件, 後面惠存成 JSON 黨
+        /// </summary>
         public class JSON
         {
             public List<Circle> Circles = new List<Circle>();
-        }
 
-        public class Circle
-        {
-            public int Index { get; set; }
-            public string? Name { get; set; }
-            public string? Id { get; set; }
-            public double X { get; set; }
-            public double Y { get; set; }
-            public double Diameter { get; set; }
-            public string? Place { get; set; }
-            public string? Remove { get; set; }
-            public string? Replace { get; set; }
-            public string? Display { get; set; }
-            public string? Enable { get; set; }
-            public string? Reserve1 { get; set; }
-            public string? Reserve2 { get; set; }
-            public string? Reserve3 { get; set; }
-            public string? Reserve4 { get; set; }
-            public string? Reserve5 { get; set; }
+            public class Circle
+            {
+                public int Index { get; set; }
+                public string? Name { get; set; }
+                public string? Id { get; set; }
+                public double X { get; set; }
+                public double Y { get; set; }
+                public double Diameter { get; set; }
+                public string? Place { get; set; }
+                public string? Remove { get; set; }
+                public string? Replace { get; set; }
+                public string? Display { get; set; }
+                public string? Enable { get; set; }
+                public string? Reserve1 { get; set; }
+                public string? Reserve2 { get; set; }
+                public string? Reserve3 { get; set; }
+                public string? Reserve4 { get; set; }
+                public string? Reserve5 { get; set; }
+            }
         }
 
         /// <summary>
@@ -77,14 +80,14 @@ namespace NeedleViewer
         /// <returns>無回傳值</returns>
         public void transform_Dxf2Json(DxfDocument DxfDoc, out JSON dxf2Json)
         {
-            dxf2Json = new Json();
+            dxf2Json = new JSON();
 
             int index = 0;
 
             foreach (var circle in DxfDoc.Entities.Circles)
             {
                 
-                dxf2Json.Circles.Add(new Json.Circle
+                dxf2Json.Circles.Add(new JSON.Circle
                 {
                     Index = index,
                     X = circle.Center.X,
