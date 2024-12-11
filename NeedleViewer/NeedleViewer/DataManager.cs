@@ -122,7 +122,7 @@ namespace NeedleViewer
 
             for (int i = 0; i < json.Circles.Count; i++)
             {
-                resortedIndex[i] = (json.Circles[i].X + json.Circles[i].Y * 10000, json.Circles[i].Index);
+                resortedIndex[i] = (json.Circles[i].X - json.Circles[i].Y * 10000, json.Circles[i].Index);
             }
 
             Array.Sort(resortedIndex, (prev, next) => prev.XaddY.CompareTo(next.XaddY)); // 由小排到大
