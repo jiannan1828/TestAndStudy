@@ -105,14 +105,15 @@ namespace NeedleViewer
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             dgv_Needles.DefaultCellStyle = dataGridViewCellStyle4;
-            dgv_Needles.Location = new Point(11, 752);
+            dgv_Needles.Location = new Point(22, 1504);
+            dgv_Needles.Margin = new Padding(6);
             dgv_Needles.MultiSelect = false;
             dgv_Needles.Name = "dgv_Needles";
             dgv_Needles.ReadOnly = true;
             dgv_Needles.RowHeadersVisible = false;
             dgv_Needles.RowHeadersWidth = 82;
             dgv_Needles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_Needles.Size = new Size(1453, 197);
+            dgv_Needles.Size = new Size(2906, 394);
             dgv_Needles.TabIndex = 3;
             dgv_Needles.CellMouseEnter += dgv_Needles_CellMouseEnter;
             dgv_Needles.CellMouseLeave += dgv_Needles_CellMouseLeave;
@@ -254,9 +255,10 @@ namespace NeedleViewer
             // 
             lbl_MousePos.AutoSize = true;
             lbl_MousePos.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lbl_MousePos.Location = new Point(1115, 711);
+            lbl_MousePos.Location = new Point(2230, 1422);
+            lbl_MousePos.Margin = new Padding(6, 0, 6, 0);
             lbl_MousePos.Name = "lbl_MousePos";
-            lbl_MousePos.Size = new Size(130, 35);
+            lbl_MousePos.Size = new Size(259, 68);
             lbl_MousePos.TabIndex = 5;
             lbl_MousePos.Text = "滑鼠座標 ";
             // 
@@ -267,7 +269,8 @@ namespace NeedleViewer
             menu_NeedleViewer.Items.AddRange(new ToolStripItem[] { tsmi_File });
             menu_NeedleViewer.Location = new Point(0, 0);
             menu_NeedleViewer.Name = "menu_NeedleViewer";
-            menu_NeedleViewer.Size = new Size(1784, 43);
+            menu_NeedleViewer.Padding = new Padding(12, 4, 0, 4);
+            menu_NeedleViewer.Size = new Size(3534, 80);
             menu_NeedleViewer.TabIndex = 7;
             menu_NeedleViewer.Text = "menuStrip1";
             // 
@@ -277,20 +280,20 @@ namespace NeedleViewer
             tsmi_File.Font = new Font("微軟正黑體", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 136);
             tsmi_File.ForeColor = SystemColors.ControlLightLight;
             tsmi_File.Name = "tsmi_File";
-            tsmi_File.Size = new Size(81, 39);
+            tsmi_File.Size = new Size(157, 72);
             tsmi_File.Text = "檔案";
             // 
             // tsmi_OpenFile
             // 
             tsmi_OpenFile.Name = "tsmi_OpenFile";
-            tsmi_OpenFile.Size = new Size(198, 40);
+            tsmi_OpenFile.Size = new Size(393, 76);
             tsmi_OpenFile.Text = "開啟檔案";
             tsmi_OpenFile.Click += tsmi_OpenFile_Click;
             // 
             // tsmi_SaveFile
             // 
             tsmi_SaveFile.Name = "tsmi_SaveFile";
-            tsmi_SaveFile.Size = new Size(198, 40);
+            tsmi_SaveFile.Size = new Size(393, 76);
             tsmi_SaveFile.Text = "儲存檔案";
             tsmi_SaveFile.Click += tsmi_SaveFile_Click;
             // 
@@ -298,9 +301,10 @@ namespace NeedleViewer
             // 
             pic_Needles.BackColor = Color.Honeydew;
             pic_Needles.BorderStyle = BorderStyle.Fixed3D;
-            pic_Needles.Location = new Point(409, 46);
+            pic_Needles.Location = new Point(818, 92);
+            pic_Needles.Margin = new Padding(6);
             pic_Needles.Name = "pic_Needles";
-            pic_Needles.Size = new Size(700, 700);
+            pic_Needles.Size = new Size(1396, 1396);
             pic_Needles.TabIndex = 0;
             pic_Needles.TabStop = false;
             pic_Needles.Paint += pic_Needles_Paint;
@@ -311,18 +315,19 @@ namespace NeedleViewer
             // txt_Name
             // 
             txt_Name.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Name.Location = new Point(74, 80);
+            txt_Name.Location = new Point(148, 160);
+            txt_Name.Margin = new Padding(6);
             txt_Name.Name = "txt_Name";
-            txt_Name.Size = new Size(174, 42);
+            txt_Name.Size = new Size(344, 76);
             txt_Name.TabIndex = 8;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(1, 84);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(2, 168);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(69, 34);
+            label1.Size = new Size(138, 69);
             label1.TabIndex = 9;
             label1.Text = "名稱";
             // 
@@ -330,8 +335,8 @@ namespace NeedleViewer
             // 
             grp_NeedleInfo.BackColor = Color.FloralWhite;
             grp_NeedleInfo.Controls.Add(btn_Update);
-            grp_NeedleInfo.Controls.Add(txt_Index);
             grp_NeedleInfo.Controls.Add(lbl_Index);
+            grp_NeedleInfo.Controls.Add(txt_Index);
             grp_NeedleInfo.Controls.Add(chk_Enable);
             grp_NeedleInfo.Controls.Add(chk_Display);
             grp_NeedleInfo.Controls.Add(chk_Replace);
@@ -347,11 +352,11 @@ namespace NeedleViewer
             grp_NeedleInfo.Controls.Add(label1);
             grp_NeedleInfo.Controls.Add(txt_Name);
             grp_NeedleInfo.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            grp_NeedleInfo.Location = new Point(11, 46);
-            grp_NeedleInfo.Margin = new Padding(2);
+            grp_NeedleInfo.Location = new Point(22, 92);
+            grp_NeedleInfo.Margin = new Padding(4);
             grp_NeedleInfo.Name = "grp_NeedleInfo";
-            grp_NeedleInfo.Padding = new Padding(2);
-            grp_NeedleInfo.Size = new Size(393, 331);
+            grp_NeedleInfo.Padding = new Padding(4);
+            grp_NeedleInfo.Size = new Size(786, 662);
             grp_NeedleInfo.TabIndex = 10;
             grp_NeedleInfo.TabStop = false;
             grp_NeedleInfo.Text = "植針資訊";
@@ -360,10 +365,10 @@ namespace NeedleViewer
             // 
             btn_Update.BackColor = Color.LightCoral;
             btn_Update.Enabled = false;
-            btn_Update.Location = new Point(274, 272);
-            btn_Update.Margin = new Padding(2);
+            btn_Update.Location = new Point(548, 544);
+            btn_Update.Margin = new Padding(4);
             btn_Update.Name = "btn_Update";
-            btn_Update.Size = new Size(105, 50);
+            btn_Update.Size = new Size(210, 100);
             btn_Update.TabIndex = 24;
             btn_Update.Text = "更新";
             btn_Update.UseVisualStyleBackColor = false;
@@ -372,19 +377,20 @@ namespace NeedleViewer
             // txt_Index
             // 
             txt_Index.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Index.Location = new Point(105, 32);
+            txt_Index.Location = new Point(210, 64);
+            txt_Index.Margin = new Padding(6);
             txt_Index.Name = "txt_Index";
             txt_Index.ReadOnly = true;
-            txt_Index.Size = new Size(143, 42);
+            txt_Index.Size = new Size(282, 76);
             txt_Index.TabIndex = 23;
             // 
             // lbl_Index
             // 
             lbl_Index.AutoSize = true;
-            lbl_Index.Location = new Point(4, 36);
-            lbl_Index.Margin = new Padding(2, 0, 2, 0);
+            lbl_Index.Location = new Point(8, 72);
+            lbl_Index.Margin = new Padding(4, 0, 4, 0);
             lbl_Index.Name = "lbl_Index";
-            lbl_Index.Size = new Size(96, 34);
+            lbl_Index.Size = new Size(192, 69);
             lbl_Index.TabIndex = 22;
             lbl_Index.Text = "流水號";
             // 
@@ -392,10 +398,10 @@ namespace NeedleViewer
             // 
             chk_Enable.Appearance = Appearance.Button;
             chk_Enable.AutoSize = true;
-            chk_Enable.Location = new Point(290, 224);
-            chk_Enable.Margin = new Padding(2);
+            chk_Enable.Location = new Point(580, 448);
+            chk_Enable.Margin = new Padding(4);
             chk_Enable.Name = "chk_Enable";
-            chk_Enable.Size = new Size(79, 44);
+            chk_Enable.Size = new Size(148, 79);
             chk_Enable.TabIndex = 21;
             chk_Enable.Text = "啟用";
             chk_Enable.UseVisualStyleBackColor = true;
@@ -404,10 +410,10 @@ namespace NeedleViewer
             // 
             chk_Display.Appearance = Appearance.Button;
             chk_Display.AutoSize = true;
-            chk_Display.Location = new Point(290, 176);
-            chk_Display.Margin = new Padding(2);
+            chk_Display.Location = new Point(580, 352);
+            chk_Display.Margin = new Padding(4);
             chk_Display.Name = "chk_Display";
-            chk_Display.Size = new Size(79, 44);
+            chk_Display.Size = new Size(148, 79);
             chk_Display.TabIndex = 20;
             chk_Display.Text = "顯示";
             chk_Display.UseVisualStyleBackColor = true;
@@ -417,10 +423,10 @@ namespace NeedleViewer
             // 
             chk_Replace.Appearance = Appearance.Button;
             chk_Replace.AutoSize = true;
-            chk_Replace.Location = new Point(290, 128);
-            chk_Replace.Margin = new Padding(2);
+            chk_Replace.Location = new Point(580, 256);
+            chk_Replace.Margin = new Padding(4);
             chk_Replace.Name = "chk_Replace";
-            chk_Replace.Size = new Size(79, 44);
+            chk_Replace.Size = new Size(148, 79);
             chk_Replace.TabIndex = 19;
             chk_Replace.Text = "置換";
             chk_Replace.UseVisualStyleBackColor = true;
@@ -429,10 +435,10 @@ namespace NeedleViewer
             // 
             chk_Remove.Appearance = Appearance.Button;
             chk_Remove.AutoSize = true;
-            chk_Remove.Location = new Point(290, 80);
-            chk_Remove.Margin = new Padding(2);
+            chk_Remove.Location = new Point(580, 160);
+            chk_Remove.Margin = new Padding(4);
             chk_Remove.Name = "chk_Remove";
-            chk_Remove.Size = new Size(79, 44);
+            chk_Remove.Size = new Size(148, 79);
             chk_Remove.TabIndex = 18;
             chk_Remove.Text = "移除";
             chk_Remove.UseVisualStyleBackColor = true;
@@ -441,10 +447,10 @@ namespace NeedleViewer
             // 
             chk_Place.Appearance = Appearance.Button;
             chk_Place.AutoSize = true;
-            chk_Place.Location = new Point(290, 32);
-            chk_Place.Margin = new Padding(2);
+            chk_Place.Location = new Point(580, 64);
+            chk_Place.Margin = new Padding(4);
             chk_Place.Name = "chk_Place";
-            chk_Place.Size = new Size(79, 44);
+            chk_Place.Size = new Size(148, 79);
             chk_Place.TabIndex = 17;
             chk_Place.Text = "放置";
             chk_Place.UseVisualStyleBackColor = true;
@@ -452,65 +458,69 @@ namespace NeedleViewer
             // txt_Diameter
             // 
             txt_Diameter.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Diameter.Location = new Point(74, 272);
+            txt_Diameter.Location = new Point(148, 544);
+            txt_Diameter.Margin = new Padding(6);
             txt_Diameter.Name = "txt_Diameter";
             txt_Diameter.ReadOnly = true;
-            txt_Diameter.Size = new Size(174, 42);
+            txt_Diameter.Size = new Size(344, 76);
             txt_Diameter.TabIndex = 16;
             // 
             // lbl_Diameter
             // 
             lbl_Diameter.AutoSize = true;
-            lbl_Diameter.Location = new Point(1, 278);
-            lbl_Diameter.Margin = new Padding(2, 0, 2, 0);
+            lbl_Diameter.Location = new Point(2, 556);
+            lbl_Diameter.Margin = new Padding(4, 0, 4, 0);
             lbl_Diameter.Name = "lbl_Diameter";
-            lbl_Diameter.Size = new Size(69, 34);
+            lbl_Diameter.Size = new Size(138, 69);
             lbl_Diameter.TabIndex = 15;
             lbl_Diameter.Text = "直徑";
             // 
             // txt_PosX
             // 
             txt_PosX.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_PosX.Location = new Point(74, 176);
+            txt_PosX.Location = new Point(148, 352);
+            txt_PosX.Margin = new Padding(6);
             txt_PosX.Name = "txt_PosX";
             txt_PosX.ReadOnly = true;
-            txt_PosX.Size = new Size(174, 42);
+            txt_PosX.Size = new Size(344, 76);
             txt_PosX.TabIndex = 14;
             // 
             // txt_PosY
             // 
             txt_PosY.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_PosY.Location = new Point(74, 224);
+            txt_PosY.Location = new Point(148, 448);
+            txt_PosY.Margin = new Padding(6);
             txt_PosY.Name = "txt_PosY";
             txt_PosY.ReadOnly = true;
-            txt_PosY.Size = new Size(174, 42);
+            txt_PosY.Size = new Size(344, 76);
             txt_PosY.TabIndex = 13;
             // 
             // lbl_Pos
             // 
             lbl_Pos.AutoSize = true;
-            lbl_Pos.Location = new Point(1, 181);
-            lbl_Pos.Margin = new Padding(2, 0, 2, 0);
+            lbl_Pos.Location = new Point(2, 362);
+            lbl_Pos.Margin = new Padding(4, 0, 4, 0);
             lbl_Pos.Name = "lbl_Pos";
-            lbl_Pos.Size = new Size(69, 34);
+            lbl_Pos.Size = new Size(138, 69);
             lbl_Pos.TabIndex = 12;
             lbl_Pos.Text = "座標";
             // 
             // txt_Id
             // 
             txt_Id.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Id.Location = new Point(74, 128);
+            txt_Id.Location = new Point(148, 256);
+            txt_Id.Margin = new Padding(6);
             txt_Id.Name = "txt_Id";
-            txt_Id.Size = new Size(174, 42);
+            txt_Id.Size = new Size(344, 76);
             txt_Id.TabIndex = 11;
             // 
             // lbl_Id
             // 
             lbl_Id.AutoSize = true;
-            lbl_Id.Location = new Point(4, 133);
-            lbl_Id.Margin = new Padding(2, 0, 2, 0);
+            lbl_Id.Location = new Point(8, 266);
+            lbl_Id.Margin = new Padding(4, 0, 4, 0);
             lbl_Id.Name = "lbl_Id";
-            lbl_Id.Size = new Size(69, 34);
+            lbl_Id.Size = new Size(138, 69);
             lbl_Id.TabIndex = 10;
             lbl_Id.Text = "編號";
             // 
@@ -518,19 +528,22 @@ namespace NeedleViewer
             // 
             grp_Search.BackColor = Color.FloralWhite;
             grp_Search.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            grp_Search.Location = new Point(12, 382);
+            grp_Search.Location = new Point(24, 764);
+            grp_Search.Margin = new Padding(6);
             grp_Search.Name = "grp_Search";
-            grp_Search.Size = new Size(391, 364);
+            grp_Search.Padding = new Padding(6);
+            grp_Search.Size = new Size(782, 728);
             grp_Search.TabIndex = 11;
             grp_Search.TabStop = false;
             grp_Search.Text = "搜尋";
             // 
             // Frm_Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(14F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.Cornsilk;
-            ClientSize = new Size(1784, 961);
+            ClientSize = new Size(3568, 1815);
             Controls.Add(grp_Search);
             Controls.Add(grp_NeedleInfo);
             Controls.Add(pic_Needles);
@@ -540,7 +553,7 @@ namespace NeedleViewer
             DoubleBuffered = true;
             ForeColor = SystemColors.ControlText;
             MainMenuStrip = menu_NeedleViewer;
-            Margin = new Padding(2);
+            Margin = new Padding(4);
             Name = "Frm_Main";
             Text = "NeedleViewer";
             Load += Frm_Main_Load;

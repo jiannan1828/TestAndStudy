@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dtnBStsXCJo=",
+  "dgSpecHash": "dT2QheiVNok=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\NeedleViewer.csproj",
+  "projectFilePath": "\\\\Mac\\Home\\Desktop\\NeedleViewer\\NeedleViewer\\NeedleViewer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ren_hong\\.nuget\\packages\\netdxf\\2022.11.2\\netdxf.2022.11.2.nupkg.sha512"
+    "C:\\Users\\4xuann\\.nuget\\packages\\netdxf\\2022.11.2\\netdxf.2022.11.2.nupkg.sha512"
   ],
   "logs": []
 }

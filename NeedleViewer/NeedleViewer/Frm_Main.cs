@@ -45,6 +45,12 @@ namespace NeedleViewer
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
+            /*------------------------------ Needle Viewer Version ---------------------------
+
+            '[V1.0.0.1] - [20241210] 4xuan -> 初版完成
+            
+            --------------------------------------------------------------------------------*/
+
             buddha = System.Drawing.Image.FromFile(@"..\..\..\Images\Buddha.png");
             buddhaText = System.Drawing.Image.FromFile(@"..\..\..\Images\BuddhaText.png");
         }
@@ -95,11 +101,6 @@ namespace NeedleViewer
                 foreach (var circle in DataManager.Json.Circles)
                 {
                     Brush fillBrush;
-
-                    if (circle.Index == 0) 
-                    {
-                        Console.WriteLine("林浩圓抵達");
-                    }
 
                     if (circle.Display == false)
                     {
@@ -270,10 +271,16 @@ namespace NeedleViewer
             /* ---------------------------- 20241209 4xuan debug -------------------------------- */
             // 解決由 picturebox 觸發 dgv 選擇列但不會更新 dgv_NeedleInfo.CurrentCell.RowIndex 屬性問題
             // 不管是 picturebox 選還是 dgv 選, 都會有 HighlightedCircle 存在 
+            if (HighlightedCircle != null)
+            {
+                FocusedCircle = HighlightedCircle;
+            }
+            else
+            {
+                FocusedCircle = DataManager.Json.Circles[dgv_Needles.CurrentRow.Index]; // 如果屬標停留在圓上在按上下按鍵還是會吃到 HighlightedCircle
+                                                                                        
+            }
 
-            FocusedCircle = HighlightedCircle;
-
-            //FocusedCircle = DataManager.Json.Circles[dgv_Needles.CurrentCell.RowIndex];
             //FocusedRow = dgv_Needles.CurrentCell.RowIndex;
 
             /* ---------------------------------------------------------------------------------- */
