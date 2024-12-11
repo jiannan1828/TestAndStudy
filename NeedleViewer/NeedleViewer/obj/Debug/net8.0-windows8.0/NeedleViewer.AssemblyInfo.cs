@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NeedleViewer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc39d7dff2c0acfcb3f6568994932f3cc2822497")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76557241bfcf3dac7bd0cf48126fa84e718abb3c")]
 [assembly: System.Reflection.AssemblyProductAttribute("NeedleViewer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NeedleViewer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

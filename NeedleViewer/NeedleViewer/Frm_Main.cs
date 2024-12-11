@@ -3,7 +3,6 @@ using System.Text.Json;
 using System.Windows.Forms;
 using netDxf;
 using netDxf.Entities;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static NeedleViewer.DataManager;
 
 namespace NeedleViewer
@@ -41,6 +40,7 @@ namespace NeedleViewer
         public Frm_Main()
         {
             InitializeComponent();
+            Initialize_grp_NeedleInfo_ChildControlChanged_Listener(grp_NeedleInfo);
         }
 
         private void Frm_Main_Load(object sender, EventArgs e)
@@ -49,6 +49,7 @@ namespace NeedleViewer
 
             [V0.0.1] - [20241210] 4xuan -> 初版完成
             [V0.0.2] - [20241211] 4xuan -> 重新排序座標, 更改繪圖坐標系, Y軸ZoomFactor變為負
+            [V0.0.3] - [20241211] 4xuan -> grp_NeedleInfo 支援動態更新
             
             --------------------------------------------------------------------------------*/
 
@@ -231,16 +232,12 @@ namespace NeedleViewer
                     UI.show_grp_NeedleInfo(grp_NeedleInfo, FocusedCircle);
 
                     dgv_Needles.Rows[UI.find_dgv_Needles_Index(dgv_Needles, FocusedCircle.Index)].Selected = true; // 觸發 dgv_NeedleInfo_SelectionChanged
-
-                    btn_Update.Enabled = true;
                 }
                 else
                 {
                     FocusedCircle = null;
 
                     UI.clear_grp_NeedleInfo(grp_NeedleInfo);
-
-                    btn_Update.Enabled = false;
                 }
             }
         }
@@ -290,34 +287,7 @@ namespace NeedleViewer
             pic_Needles.Refresh();
         }
 
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DataManager.Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
-                DataManager.Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
-
-                DataManager.Json.Circles[FocusedCircle.Index].Place = chk_Place.Checked;
-                DataManager.Json.Circles[FocusedCircle.Index].Remove = chk_Remove.Checked;
-                DataManager.Json.Circles[FocusedCircle.Index].Replace = chk_Replace.Checked;
-                DataManager.Json.Circles[FocusedCircle.Index].Display = chk_Display.Checked;
-                DataManager.Json.Circles[FocusedCircle.Index].Enable = chk_Enable.Checked;
-
-                dgv_Needles.Rows[FocusedCircle.Index].Cells["ColumnName"].Value = txt_Name.Text;
-                dgv_Needles.Rows[FocusedCircle.Index].Cells["Id"].Value = txt_Id.Text;
-
-                dgv_Needles.Rows[FocusedCircle.Index].Cells["Place"].Value = chk_Place.Checked;
-                dgv_Needles.Rows[FocusedCircle.Index].Cells["Remove"].Value = chk_Remove.Checked;
-                dgv_Needles.Rows[FocusedCircle.Index].Cells["Replace"].Value = chk_Replace.Checked;
-                dgv_Needles.Rows[FocusedCircle.Index].Cells["Display"].Value = chk_Display.Checked;
-                dgv_Needles.Rows[FocusedCircle.Index].Cells["Enable"].Value = chk_Enable.Checked;
-                MessageBox.Show($"更新成功");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"更新資料出現錯誤: {ex.Message}");
-            }
-        }
+        
 
         private void chk_Display_CheckedChanged(object sender, EventArgs e)
         {
@@ -328,6 +298,70 @@ namespace NeedleViewer
             else
             {
                 chk_Display.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void grp_NeedleInfo_ChildControlChanged(object sender, EventArgs e)
+        {
+            switch (sender)
+            {
+                case TextBox textBox:
+                    
+                    switch (textBox.Name)
+                    {
+                        case "txt_Name":
+                            DataManager.Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
+                            dgv_Needles.Rows[FocusedCircle.Index].Cells["ColumnName"].Value = txt_Name.Text;
+                            break;
+
+                        case "txt_Id":
+                            DataManager.Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
+                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Id"].Value = txt_Id.Text;
+                            break;
+                    }
+                    break;
+
+                case RadioButton radioButton:
+
+                    switch (radioButton.Name)
+                    {
+                        case "rad_Place":
+                            DataManager.Json.Circles[FocusedCircle.Index].Place = rad_Place.Checked;
+                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Place"].Value = rad_Place.Checked;
+                            break;
+
+                        case "rad_Remove":
+                            DataManager.Json.Circles[FocusedCircle.Index].Remove = rad_Remove.Checked;
+                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Remove"].Value = rad_Remove.Checked;
+                            break;
+
+                        case "rad_Replace":
+                            DataManager.Json.Circles[FocusedCircle.Index].Replace = rad_Replace.Checked;
+                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Replace"].Value = rad_Replace.Checked;
+                            break;
+                    }
+
+                    break;
+
+                case CheckBox checkBox:
+
+                    switch (checkBox.Name)
+                    {
+                        case "chk_Display":
+                            DataManager.Json.Circles[FocusedCircle.Index].Display = chk_Display.Checked;
+                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Display"].Value = chk_Display.Checked;
+                            break;
+
+                        case "txt_Id":
+                            DataManager.Json.Circles[FocusedCircle.Index].Enable = chk_Enable.Checked;
+                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Enable"].Value = chk_Enable.Checked;
+                            break;
+                    }
+
+                    break;
+
+                default:
+                    break;
             }
         }
     }
