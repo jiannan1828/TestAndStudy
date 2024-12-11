@@ -14,7 +14,6 @@ namespace NeedleViewer
         /// <returns>無回傳值</returns>
         public static void show_dgv_Needles(DataGridView dgv_Needles, DataManager.JSON dxfJson)
         {
-
             dgv_Needles.Rows.Clear();
 
             foreach (var Circle in dxfJson.Circles)

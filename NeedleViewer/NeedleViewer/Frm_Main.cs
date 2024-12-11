@@ -12,8 +12,6 @@ namespace NeedleViewer
         private System.Drawing.Image buddha;
         private System.Drawing.Image buddhaText;
 
-        private DataManager DataManager = new DataManager();
-
         private double minX, minY, maxX, maxY, width, height;
 
         private const float ScaleFactor = 10;
@@ -77,7 +75,7 @@ namespace NeedleViewer
 
             UI.show_dgv_Needles(dgv_Needles, DataManager.Json);
 
-            DataManager.find_boundary(DataManager.Json, out minX, out minY, out maxX, out maxY, out width, out height);
+            DataManager.find_Boundary(DataManager.Json, out minX, out minY, out maxX, out maxY, out width, out height);
 
             ZoomFactor = Math.Min(pic_Needles.Width / ScaleFactor / (float)width, pic_Needles.Height / ScaleFactor / (float)height);
             Offset.X = -(float)minX * ScaleFactor * ZoomFactor;
