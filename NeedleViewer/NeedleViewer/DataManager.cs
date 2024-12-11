@@ -5,23 +5,20 @@ using netDxf.Entities;
 
 namespace NeedleViewer
 {
-
-    internal class DataManager
+    internal static class DataManager
     {
-        private OpenFileDialog OpenDxfFileDialog = new OpenFileDialog();
-        private SaveFileDialog SaveJsonFileDialog = new SaveFileDialog();
+        private static OpenFileDialog OpenDxfFileDialog = new OpenFileDialog();
+        private static SaveFileDialog SaveJsonFileDialog = new SaveFileDialog();
 
-        public DxfDocument DxfDoc = new DxfDocument();
-        public DataManager.JSON Json = new DataManager.JSON();
+        public static DxfDocument DxfDoc = new DxfDocument();
+        public static JSON Json = new JSON();
 
         /// <summary>
-        /// 讀取 DXF 後儲存到這個物件, 後面惠存成 JSON 黨
+        /// 讀取 DXF 後儲存到這個物件, 後面會存成 JSON 檔
         /// </summary>
         public class JSON
         {
-            public List<Circle> Circles { get; set; } 
-            // 這裡不能用這種寫法 public List<Circle> Circles = new List<Circle>();
-            // JSON 序列話器會吃不到, 只能是屬性或字段, 初始化改用構造函數
+            public List<Circle> Circles { get; set; }
 
             public class Circle
             {
@@ -52,13 +49,14 @@ namespace NeedleViewer
         /// <summary>
         /// 計算 dxf 檔所有圓的邊界
         /// </summary>
-        /// <param name="DxfDoc">已讀取的 DXF 文件</param>
+        /// <param name="dxfJson">已讀取的 JSON 資料</param>
         /// <param name="minX">左邊界</param>
         /// <param name="minY">上邊界</param>
         /// <param name="maxX">右邊界</param>
         /// <param name="maxY">下邊界</param>
-        /// <returns>無回傳值</returns>
-        public void find_boundary(JSON dxfJson, out double minX, out double minY, out double maxX, out double maxY, out double width, out double height)
+        /// <param name="width">邊界寬度</param>
+        /// <param name="height">邊界高度</param>
+        public static void find_Boundary(JSON dxfJson, out double minX, out double minY, out double maxX, out double maxY, out double width, out double height)
         {
             // 初始化邊界
             minX = double.MaxValue;
@@ -80,12 +78,11 @@ namespace NeedleViewer
         }
 
         /// <summary>
-        /// 將 DXF 檔中的資料轉成 Json
+        /// 將 DXF 檔中的資料轉成 JSON
         /// </summary>
-        /// <param name="Dxfdoc">要顯示 DXF 檔</param>
-        /// <param name="dxf2Json)">已轉換的 JSON 文件</param>
-        /// <returns>無回傳值</returns>
-        public void transform_Dxf2Json(DxfDocument DxfDoc,ref JSON json) 
+        /// <param name="DxfDoc">要顯示的 DXF 檔案</param>
+        /// <param name="json">已轉換的 JSON 文件</param>
+        public static void TransformDxf2Json(DxfDocument DxfDoc, ref JSON json)
         {
             int index = 0;
 
@@ -101,20 +98,19 @@ namespace NeedleViewer
                     Place = false,
                     Remove = false,
                     Replace = false,
-                    Display = true, // 20241210 4xuan added : 顯示預設改為 1
+                    Display = true, // 顯示預設為 true
                     Enable = false
                 });
-                
+
                 index++;
             }
         }
 
         /// <summary>
-        /// 從新排序座標 由左至右 由上至下
+        /// 從新排序座標由左至右、由上至下
         /// </summary>
-        /// <param name="Json">已讀取的 DXF 文件</param>
-        /// <returns>無回傳值</returns>
-        public void resort_Position(ref JSON json)
+        /// <param name="json">已讀取的 JSON 資料</param>
+        public static void ResortPosition(ref JSON json)
         {
             JSON resortedJson = new JSON();
 
@@ -129,40 +125,38 @@ namespace NeedleViewer
 
             for (int i = 0; i < json.Circles.Count; i++)
             {
-                
                 resortedJson.Circles.Add(json.Circles[resortedIndex[i].fakeIndex]);
-                resortedJson.Circles[i].Index = i; 
+                resortedJson.Circles[i].Index = i;
             }
 
             json = resortedJson;
         }
 
         /// <summary>
-        /// 打開 DXF 黨 或者是 Json 黨
+        /// 打開 DXF 或者 JSON 檔案
         /// </summary>
-        /// <returns>無回傳值</returns>
-        public void OpenFile()
+        public static void OpenFile()
         {
             OpenDxfFileDialog.Filter = "DXF Files (*.dxf)|*.dxf|Json Files (*.json)|*.json";
 
             if (OpenDxfFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (OpenDxfFileDialog.FilterIndex == 1) // 剛剛選擇檔案類型的第一行是 .dxf
+                if (OpenDxfFileDialog.FilterIndex == 1) // 如果選擇 .dxf
                 {
                     try
                     {
                         DxfDoc = DxfDocument.Load(OpenDxfFileDialog.FileName);
                         MessageBox.Show($"檔案 {OpenDxfFileDialog.FileName} 成功讀取！");
 
-                        transform_Dxf2Json(DxfDoc, ref Json);
-                        resort_Position(ref Json);
+                        TransformDxf2Json(DxfDoc, ref Json);
+                        ResortPosition(ref Json);
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show($"讀取 DXF 檔時發生錯誤: {ex.Message}");
                     }
                 }
-                else if (OpenDxfFileDialog.FilterIndex == 2) //剛剛選擇檔案類型的第二行是 .json
+                else if (OpenDxfFileDialog.FilterIndex == 2) // 如果選擇 .json
                 {
                     try
                     {
@@ -171,7 +165,6 @@ namespace NeedleViewer
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show($"讀取 Json 檔時發生錯誤: {ex.Message}");
                     }
                 }
@@ -179,10 +172,9 @@ namespace NeedleViewer
         }
 
         /// <summary>
-        /// 儲存 Json 黨
+        /// 儲存 JSON 檔案
         /// </summary>
-        /// <returns>無回傳值</returns>
-        public void SaveFile()
+        public static void SaveFile()
         {
             SaveJsonFileDialog.Filter = "Json Files (*.json)|*.json";
 
