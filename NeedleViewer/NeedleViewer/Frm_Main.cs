@@ -303,65 +303,68 @@ namespace NeedleViewer
 
         private void grp_NeedleInfo_ChildControlChanged(object sender, EventArgs e)
         {
-            switch (sender)
+            if(FocusedCircle != null)
             {
-                case TextBox textBox:
-                    
-                    switch (textBox.Name)
-                    {
-                        case "txt_Name":
-                            DataManager.Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
-                            dgv_Needles.Rows[FocusedCircle.Index].Cells["ColumnName"].Value = txt_Name.Text;
-                            break;
+                switch (sender)
+                {
+                    case TextBox textBox:
 
-                        case "txt_Id":
-                            DataManager.Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
-                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Id"].Value = txt_Id.Text;
-                            break;
-                    }
-                    break;
+                        switch (textBox.Name)
+                        {
+                            case "txt_Name":
+                                DataManager.Json.Circles[FocusedCircle.Index].Name = txt_Name.Text;
+                                dgv_Needles.Rows[FocusedCircle.Index].Cells["ColumnName"].Value = txt_Name.Text;
+                                break;
 
-                case RadioButton radioButton:
+                            case "txt_Id":
+                                DataManager.Json.Circles[FocusedCircle.Index].Id = txt_Id.Text;
+                                dgv_Needles.Rows[FocusedCircle.Index].Cells["Id"].Value = txt_Id.Text;
+                                break;
+                        }
+                        break;
 
-                    switch (radioButton.Name)
-                    {
-                        case "rad_Place":
-                            DataManager.Json.Circles[FocusedCircle.Index].Place = rad_Place.Checked;
-                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Place"].Value = rad_Place.Checked;
-                            break;
+                    case RadioButton radioButton:
 
-                        case "rad_Remove":
-                            DataManager.Json.Circles[FocusedCircle.Index].Remove = rad_Remove.Checked;
-                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Remove"].Value = rad_Remove.Checked;
-                            break;
+                        switch (radioButton.Name)
+                        {
+                            case "rad_Place":
+                                DataManager.Json.Circles[FocusedCircle.Index].Place = rad_Place.Checked;
+                                dgv_Needles.Rows[FocusedCircle.Index].Cells["Place"].Value = rad_Place.Checked;
+                                break;
 
-                        case "rad_Replace":
-                            DataManager.Json.Circles[FocusedCircle.Index].Replace = rad_Replace.Checked;
-                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Replace"].Value = rad_Replace.Checked;
-                            break;
-                    }
+                            case "rad_Remove":
+                                DataManager.Json.Circles[FocusedCircle.Index].Remove = rad_Remove.Checked;
+                                dgv_Needles.Rows[FocusedCircle.Index].Cells["Remove"].Value = rad_Remove.Checked;
+                                break;
 
-                    break;
+                            case "rad_Replace":
+                                DataManager.Json.Circles[FocusedCircle.Index].Replace = rad_Replace.Checked;
+                                dgv_Needles.Rows[FocusedCircle.Index].Cells["Replace"].Value = rad_Replace.Checked;
+                                break;
+                        }
 
-                case CheckBox checkBox:
+                        break;
 
-                    switch (checkBox.Name)
-                    {
-                        case "chk_Display":
-                            DataManager.Json.Circles[FocusedCircle.Index].Display = chk_Display.Checked;
-                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Display"].Value = chk_Display.Checked;
-                            break;
+                    case CheckBox checkBox:
 
-                        case "txt_Id":
-                            DataManager.Json.Circles[FocusedCircle.Index].Enable = chk_Enable.Checked;
-                            dgv_Needles.Rows[FocusedCircle.Index].Cells["Enable"].Value = chk_Enable.Checked;
-                            break;
-                    }
+                        switch (checkBox.Name)
+                        {
+                            case "chk_Display":
+                                DataManager.Json.Circles[FocusedCircle.Index].Display = chk_Display.Checked;
+                                dgv_Needles.Rows[FocusedCircle.Index].Cells["Display"].Value = chk_Display.Checked;
+                                break;
 
-                    break;
+                            case "txt_Id":
+                                DataManager.Json.Circles[FocusedCircle.Index].Enable = chk_Enable.Checked;
+                                dgv_Needles.Rows[FocusedCircle.Index].Cells["Enable"].Value = chk_Enable.Checked;
+                                break;
+                        }
 
-                default:
-                    break;
+                        break;
+
+                    default:
+                        break;
+                }
             }
         }
     }

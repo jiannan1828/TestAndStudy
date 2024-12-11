@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|solutionrelative:needleviewer\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\needleviewer\\needleviewer\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|solutionrelative:needleviewer\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\needleviewer\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|solutionrelative:needleviewer\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\needleviewer\\needleviewer\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|solutionrelative:needleviewer\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\needleviewer\\needleviewer\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{957B2067-314C-43B4-9AE0-51B6C0866DFE}|NeedleViewer\\NeedleViewer.csproj|solutionrelative:needleviewer\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\Program.cs",
               "RelativeDocumentMoniker": "NeedleViewer\\Program.cs",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Frm_Main.Designer.cs",
               "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\Frm_Main.Designer.cs",
               "RelativeDocumentMoniker": "NeedleViewer\\Frm_Main.Designer.cs",
@@ -63,15 +63,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "DataManager.cs",
               "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\DataManager.cs",
               "RelativeDocumentMoniker": "NeedleViewer\\DataManager.cs",
               "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\DataManager.cs",
               "RelativeToolTip": "NeedleViewer\\DataManager.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAkwAgAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAA6wAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T02:07:00.838Z"
+              "WhenOpened": "2024-12-11T02:07:00.838Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -81,14 +82,14 @@
               "RelativeDocumentMoniker": "NeedleViewer\\Frm_Main.cs",
               "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\Frm_Main.cs",
               "RelativeToolTip": "NeedleViewer\\Frm_Main.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAMwDQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACcBAAAAAAAAAAAiwHABAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T02:05:42.876Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UI.cs",
               "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\UI.cs",
               "RelativeDocumentMoniker": "NeedleViewer\\UI.cs",
@@ -100,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Frm_Main.cs [\u8A2D\u8A08]",
               "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\NeedleViewer\\NeedleViewer\\Frm_Main.cs",
               "RelativeDocumentMoniker": "NeedleViewer\\Frm_Main.cs",
