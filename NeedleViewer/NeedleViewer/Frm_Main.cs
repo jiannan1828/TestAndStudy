@@ -33,7 +33,7 @@ namespace NeedleViewer
 
         private double Mouse2CircleDistance;
 
-        private DataManager.JSON.Circle HighlightedCircle = new DataManager.JSON.Circle();
+        private DataManager.JSON.Circle HighlightedCircle = null;
         private int HighlightedRow = -1;
 
         private DataManager.JSON.Circle FocusedCircle = new DataManager.JSON.Circle();
@@ -47,7 +47,8 @@ namespace NeedleViewer
         {
             /*------------------------------ Needle Viewer Version ---------------------------
 
-            '[V1.0.0.1] - [20241210] 4xuan -> 初版完成
+            [V0.0.1] - [20241210] 4xuan -> 初版完成
+            [V0.0.2] - [20241211] 4xuan -> 重新排序座標, 更改繪圖坐標系, Y軸ZoomFactor變為負
             
             --------------------------------------------------------------------------------*/
 
@@ -79,7 +80,7 @@ namespace NeedleViewer
 
             ZoomFactor = Math.Min(pic_Needles.Width / ScaleFactor / (float)width, pic_Needles.Height / ScaleFactor / (float)height);
             Offset.X = -(float)minX * ScaleFactor * ZoomFactor;
-            Offset.Y = -(float)minY * ScaleFactor * ZoomFactor;
+            Offset.Y = -(float)maxY * ScaleFactor * -ZoomFactor;
 
             pic_Needles.Refresh();
 
@@ -93,8 +94,8 @@ namespace NeedleViewer
         private void pic_Needles_Paint(object sender, PaintEventArgs e)
         {
 
-            e.Graphics.ScaleTransform(ZoomFactor, ZoomFactor);
-            e.Graphics.TranslateTransform(Offset.X / ZoomFactor, Offset.Y / ZoomFactor); // 拖曳圖片轉換座標
+            e.Graphics.ScaleTransform(ZoomFactor, -ZoomFactor); 
+            e.Graphics.TranslateTransform(Offset.X / ZoomFactor, Offset.Y / -ZoomFactor); // 拖曳圖片轉換座標
 
             try
             {
@@ -140,7 +141,7 @@ namespace NeedleViewer
         private void pic_Needles_MouseMove(object sender, MouseEventArgs e)
         {
             RealMousePos.X = (e.X - Offset.X) / ZoomFactor / ScaleFactor;
-            RealMousePos.Y = (e.Y - Offset.Y) / ZoomFactor / ScaleFactor;
+            RealMousePos.Y = (e.Y - Offset.Y) / -ZoomFactor / ScaleFactor;
 
             lbl_MousePos.Text = $"滑鼠座標 : {RealMousePos.X}, {RealMousePos.Y}";
 
@@ -160,7 +161,7 @@ namespace NeedleViewer
                 // 计算鼠标位置与圆心的距离
                 Mouse2CircleDistance = Math.Sqrt(
                     Math.Pow((e.X - Offset.X) / ScaleFactor / ZoomFactor - circle.X, 2) +
-                    Math.Pow((e.Y - Offset.Y) / ScaleFactor / ZoomFactor - circle.Y, 2)
+                    Math.Pow((e.Y - Offset.Y) / ScaleFactor / -ZoomFactor - circle.Y, 2)
                 );
 
                 if (Mouse2CircleDistance <= circle.Diameter / 2)
@@ -192,7 +193,7 @@ namespace NeedleViewer
 
             // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放前）
             RealMousePosBeforeZoom.X = (e.X - Offset.X) / ZoomFactor;
-            RealMousePosBeforeZoom.Y = (e.Y - Offset.Y) / ZoomFactor;
+            RealMousePosBeforeZoom.Y = (e.Y - Offset.Y) / -ZoomFactor;
 
             if (e.Delta > 0)
             {
@@ -208,11 +209,11 @@ namespace NeedleViewer
 
             // 滑鼠在 PictureBox 上的位置對應的真實座標（縮放後）
             RealMousePosAfterZoom.X = (e.X - Offset.X) / ZoomFactor;
-            RealMousePosAfterZoom.Y = (e.Y - Offset.Y) / ZoomFactor;
+            RealMousePosAfterZoom.Y = (e.Y - Offset.Y) / -ZoomFactor;
 
             // 根據縮放前後的真實座標差異調整偏移量
             Offset.X += (RealMousePosAfterZoom.X - RealMousePosBeforeZoom.X) * ZoomFactor;
-            Offset.Y += (RealMousePosAfterZoom.Y - RealMousePosBeforeZoom.Y) * ZoomFactor;
+            Offset.Y += (RealMousePosAfterZoom.Y - RealMousePosBeforeZoom.Y) * -ZoomFactor;
 
             pic_Needles.Refresh();
         }

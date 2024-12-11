@@ -82,18 +82,16 @@ namespace NeedleViewer
         /// <summary>
         /// 將 DXF 檔中的資料轉成 Json
         /// </summary>
-        /// <param name="dgv_DxfDatas">要顯示 DXF 檔的 DataGridView</param>
-        /// <param name="DxfDoc">已讀取的 DXF 文件</param>
+        /// <param name="Dxfdoc">要顯示 DXF 檔</param>
+        /// <param name="dxf2Json)">已轉換的 JSON 文件</param>
         /// <returns>無回傳值</returns>
-        public void transform_Dxf2Json(DxfDocument DxfDoc, out JSON dxf2Json)
+        public void transform_Dxf2Json(DxfDocument DxfDoc,ref JSON json) 
         {
-            dxf2Json = new JSON();
-
             int index = 0;
 
             foreach (var circle in DxfDoc.Entities.Circles)
             {
-                dxf2Json.Circles.Add(new JSON.Circle
+                json.Circles.Add(new JSON.Circle
                 {
                     Index = index,
                     X = circle.Center.X,
@@ -112,6 +110,34 @@ namespace NeedleViewer
         }
 
         /// <summary>
+        /// 從新排序座標 由左至右 由上至下
+        /// </summary>
+        /// <param name="Json">已讀取的 DXF 文件</param>
+        /// <returns>無回傳值</returns>
+        public void resort_Position(ref JSON json)
+        {
+            JSON resortedJson = new JSON();
+
+            var resortedIndex = new (double XaddY, int fakeIndex)[json.Circles.Count];
+
+            for (int i = 0; i < json.Circles.Count; i++)
+            {
+                resortedIndex[i] = (json.Circles[i].X + json.Circles[i].Y * 10000, json.Circles[i].Index);
+            }
+
+            Array.Sort(resortedIndex, (prev, next) => prev.XaddY.CompareTo(next.XaddY)); // 由小排到大
+
+            for (int i = 0; i < json.Circles.Count; i++)
+            {
+                
+                resortedJson.Circles.Add(json.Circles[resortedIndex[i].fakeIndex]);
+                resortedJson.Circles[i].Index = i; 
+            }
+
+            json = resortedJson;
+        }
+
+        /// <summary>
         /// 打開 DXF 黨 或者是 Json 黨
         /// </summary>
         /// <returns>無回傳值</returns>
@@ -121,14 +147,15 @@ namespace NeedleViewer
 
             if (OpenDxfFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (OpenDxfFileDialog.FilterIndex == 1) //剛剛選擇檔案類型的第一行是 .dxf
+                if (OpenDxfFileDialog.FilterIndex == 1) // 剛剛選擇檔案類型的第一行是 .dxf
                 {
                     try
                     {
                         DxfDoc = DxfDocument.Load(OpenDxfFileDialog.FileName);
                         MessageBox.Show($"檔案 {OpenDxfFileDialog.FileName} 成功讀取！");
 
-                        transform_Dxf2Json(DxfDoc, out Json);
+                        transform_Dxf2Json(DxfDoc, ref Json);
+                        resort_Position(ref Json);
                     }
                     catch (Exception ex)
                     {
