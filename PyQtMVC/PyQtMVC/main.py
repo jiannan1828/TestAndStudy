@@ -4,9 +4,7 @@ from PyQt5.QtCore import *  # 使用 from xxx import * 可以不用打模組前綴名稱
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from Model.Author import *
-from View.Hello_PyQt import *
-from Controller.Hello_PyQt import *
+from View.v_Hello_PyQt import *
 
 def main():
     app = QApplication(sys.argv)  # 直接使用 QApplication，因為已從 QtWidgets 匯入

@@ -12,7 +12,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from Controller.Hello_PyQt import *
+from Controller.c_Hello_PyQt import *
 
 class Frm_PyQtMVC(QMainWindow): # PyQtMVC 繼承 QMainWindow 
     def __init__(self, parent = None): # 如果沒有父視窗預設為 null

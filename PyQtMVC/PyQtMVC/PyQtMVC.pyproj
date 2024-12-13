@@ -21,10 +21,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Controller\Hello_PyQt.py" />
+    <Compile Include="Controller\c_Hello_PyQt.py" />
     <Compile Include="main.py" />
-    <Compile Include="Model\Author.py" />
-    <Compile Include="View\Hello_PyQt.py" />
+    <Compile Include="Model\m_Author.py" />
+    <Compile Include="View\v_Hello_PyQt.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

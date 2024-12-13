@@ -1,5 +1,5 @@
 # Controller/Hello_PyQt.py
-from Model.Author import Author
+from Model.m_Author import Author
 
 def btn_PyQt_Clicked(sender):
     # 創建 Author 類的實例
