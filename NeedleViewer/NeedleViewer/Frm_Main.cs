@@ -285,8 +285,6 @@ namespace NeedleViewer
             pic_Needles.Refresh();
         }
 
-        
-
         private void chk_Display_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_Display.Checked)

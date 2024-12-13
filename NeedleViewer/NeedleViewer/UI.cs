@@ -120,7 +120,6 @@ namespace NeedleViewer
                         break;
                 }
             }
-
         }
 
         /// <summary>

@@ -11,7 +11,7 @@ namespace NeedleViewer
         private static SaveFileDialog SaveJsonFileDialog = new SaveFileDialog();
 
         public static DxfDocument DxfDoc = new DxfDocument();
-        public static JSON Json = new JSON();
+        public static JSON Json = new JSON(); // 底下 JSON 不寫成靜態, HighlightedCircle, FocusedCircle會用到
 
         /// <summary>
         /// 讀取 DXF 後儲存到這個物件, 後面會存成 JSON 檔
