@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{48D6F956-72E1-407C-9A68-AECDE52A081A}|Training6\\Training6.csproj|solutionrelative:training6\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{48D6F956-72E1-407C-9A68-AECDE52A081A}|Training6\\Training6.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\training6\\training6\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{48D6F956-72E1-407C-9A68-AECDE52A081A}|Training6\\Training6.csproj|C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training6\\training6\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{48D6F956-72E1-407C-9A68-AECDE52A081A}|Training6\\Training6.csproj|solutionrelative:training6\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "Training6\\Frm_Main.cs",
               "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training6\\Training6\\Frm_Main.cs",
               "RelativeToolTip": "Training6\\Frm_Main.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAkwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wAYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T02:40:44.314Z",
               "EditorCaption": ""
@@ -42,8 +42,7 @@
               "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\Training6\\Training6\\Frm_Main.cs [\u8A2D\u8A08]",
               "RelativeToolTip": "Training6\\Frm_Main.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T02:36:04.583Z",
-              "EditorCaption": " [\u8A2D\u8A08]"
+              "WhenOpened": "2024-12-06T02:36:04.583Z"
             }
           ]
         }

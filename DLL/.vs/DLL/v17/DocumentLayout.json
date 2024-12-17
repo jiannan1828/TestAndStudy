@@ -1,16 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\DLL\\",
+  "WorkspaceRootPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\DLL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{65CA1103-9EDE-4479-BDF2-53E945E34CB4}|DLL\\DLL.csproj|c:\\users\\ren_hong\\desktop\\testandstudy\\dll\\dll\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{65CA1103-9EDE-4479-BDF2-53E945E34CB4}|DLL\\DLL.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\dll\\dll\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65CA1103-9EDE-4479-BDF2-53E945E34CB4}|DLL\\DLL.csproj|solutionrelative:dll\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65CA1103-9EDE-4479-BDF2-53E945E34CB4}|DLL\\DLL.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\dll\\dll\\dll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{65CA1103-9EDE-4479-BDF2-53E945E34CB4}|DLL\\DLL.csproj|solutionrelative:dll\\dll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\RS232\\RS232\\Frm_Main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65CA1103-9EDE-4479-BDF2-53E945E34CB4}|DLL\\DLL.csproj|C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\DLL\\dll\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{65CA1103-9EDE-4479-BDF2-53E945E34CB4}|DLL\\DLL.csproj|C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\DLL\\dll\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{65CA1103-9EDE-4479-BDF2-53E945E34CB4}|DLL\\DLL.csproj|solutionrelative:dll\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -21,41 +25,53 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DLL",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\DLL\\DLL\\DLL.csproj",
+              "RelativeDocumentMoniker": "DLL\\DLL.csproj",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\DLL\\DLL\\DLL.csproj",
+              "RelativeToolTip": "DLL\\DLL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-17T07:32:48.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Frm_Main.cs",
               "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\RS232\\RS232\\Frm_Main.cs",
-              "RelativeDocumentMoniker": "..\\RS232\\RS232\\Frm_Main.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\ren_hong\\Desktop\\TestAndStudy\\RS232\\RS232\\Frm_Main.cs",
               "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\RS232\\RS232\\Frm_Main.cs",
-              "RelativeToolTip": "..\\RS232\\RS232\\Frm_Main.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\ren_hong\\Desktop\\TestAndStudy\\RS232\\RS232\\Frm_Main.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T06:08:48.513Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T06:08:48.513Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Frm_Main.cs",
-              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\DLL\\DLL\\Frm_Main.cs",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\DLL\\DLL\\Frm_Main.cs",
               "RelativeDocumentMoniker": "DLL\\Frm_Main.cs",
-              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\DLL\\DLL\\Frm_Main.cs",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\DLL\\DLL\\Frm_Main.cs",
               "RelativeToolTip": "DLL\\Frm_Main.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAA4wBQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T06:06:11.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Frm_Main.cs [\u8A2D\u8A08]",
-              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\DLL\\DLL\\Frm_Main.cs",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\DLL\\DLL\\Frm_Main.cs",
               "RelativeDocumentMoniker": "DLL\\Frm_Main.cs",
-              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\DLL\\DLL\\Frm_Main.cs [\u8A2D\u8A08]",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\DLL\\DLL\\Frm_Main.cs [\u8A2D\u8A08]",
               "RelativeToolTip": "DLL\\Frm_Main.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T06:02:38.577Z",
