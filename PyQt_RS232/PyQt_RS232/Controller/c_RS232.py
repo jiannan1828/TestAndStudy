@@ -20,7 +20,7 @@ class RS232(QMainWindow):
         Enable_ports = list(serial.tools.list_ports.comports())
 
         for port in Enable_ports:
-            self.ui.cmb_Port.addItem(port)
+            self.ui.cmb_Port.addItem(port.name)
 
     def linkEvent(self):
         ## 在這裡加入視窗內部元件對應的事件
