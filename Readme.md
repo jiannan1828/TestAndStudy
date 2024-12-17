@@ -14,8 +14,6 @@ RenHong:
     4. 建立dll
     5. 引用自己建立的dll
     6. pyQT(暫停)
-    
-[Xavier] 請幫忙研究:
     1. 會先提供一個71x71=5041個圓的DXF檔案，要做:
         1-1. 轉成Json檔，要包含: 
             1-1-A. 流水號
@@ -34,4 +32,15 @@ RenHong:
             1-1-N. 保留4
             1-1-O. 保留5
         1-2. 依照Json檔，忠實畫出全部的圓
+    1. ptQT Thread ok
+        
+[Xavier] 請幫忙研究:
+    1. pyQT 開RS232 對傳
+    2. C# / pyQT / python 互傳資料
+    3. 研究 MOBUS-485 以及 MOBUS TCP 
+    3. Parallel port 開啟 與控制 (非常難)
+    4. FreeRTOS 找資料 看一看, VisualStudio的範例, (*****)
+    5. STM 周邊練習
+
+
     
