@@ -37,9 +37,10 @@ RenHong:
 [Xavier] 請幫忙研究:
     1. pyQT 開RS232 對傳
     2. C# / pyQT / python 互傳資料
+    3. 研究 MOBUS-485 以及 MOBUS TCP 
     3. Parallel port 開啟 與控制 (非常難)
     4. FreeRTOS 找資料 看一看, VisualStudio的範例, (*****)
-    5. STM
+    5. STM 周邊練習
 
 
     
