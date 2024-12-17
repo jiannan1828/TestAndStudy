@@ -41,6 +41,7 @@ RenHong:
     3. Parallel port 開啟 與控制 (非常難)
     4. FreeRTOS 找資料 看一看, VisualStudio的範例, (*****)
     5. STM 周邊練習
-
+    6. https://blog.csdn.net/zzz_xxj/article/details/119862465
+    7. 
 
     
