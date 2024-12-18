@@ -53,16 +53,11 @@ namespace NeedleViewer
             --------------------------------------------------------------------------------*/
 
             buddha = System.Drawing.Image.FromFile(@"..\..\Images\Buddha.png");
-            buddhaText = System.Drawing.Image.FromFile(@"..\..\Images\BuddhaText.png");
         }
 
         private void Frm_Main_Paint(object sender, PaintEventArgs e)
         {
-
-            int x = this.ClientSize.Width - 300;
-            int y = this.ClientSize.Height - 300;
-            e.Graphics.DrawImage(buddhaText, new Rectangle(x - 15, y - 150, 300, 300));
-            e.Graphics.DrawImage(buddha, new Rectangle(x, y, 300, 300));
+            e.Graphics.DrawImage(buddha, new Rectangle(65, 350, 250, 250));
         }
 
         private void Frm_Main_SizeChanged(object sender, EventArgs e)
@@ -240,6 +235,7 @@ namespace NeedleViewer
                 }
             }
         }
+
 
         private void dgv_Needles_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
