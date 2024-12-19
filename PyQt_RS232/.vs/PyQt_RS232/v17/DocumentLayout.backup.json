@@ -9,10 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D1B65224-ABBB-4CA1-BF3D-118A59769038}|PyQt_RS232\\PyQt_RS232.pyproj|C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\PyQt_RS232\\PyQt_RS232\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{D1B65224-ABBB-4CA1-BF3D-118A59769038}|PyQt_RS232\\PyQt_RS232.pyproj|solutionrelative:PyQt_RS232\\main.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1B65224-ABBB-4CA1-BF3D-118A59769038}|PyQt_RS232\\PyQt_RS232.pyproj|C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\PyQt_RS232\\PyQt_RS232\\View\\V_RS232.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D1B65224-ABBB-4CA1-BF3D-118A59769038}|PyQt_RS232\\PyQt_RS232.pyproj|solutionrelative:PyQt_RS232\\View\\V_RS232.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,22 +28,10 @@
               "RelativeDocumentMoniker": "PyQt_RS232\\Controller\\c_RS232.py",
               "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\PyQt_RS232\\PyQt_RS232\\Controller\\c_RS232.py",
               "RelativeToolTip": "PyQt_RS232\\Controller\\c_RS232.py",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAD8AAAArAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHeSURBVDhPpVMxa1NRFP7ebZLSlgaltNpSVCySRUxL0NAh4FJpHWpxcZAUBEPG/AKHDsVBN5eGrCnoYKCDoDiUCKKBjtZBUZtJ2ojYJr40ue\u002B\u002B47k3VzD0hQr94OOed8853/k47z2cCETk2NAgk8mQDQMhhFjK5/Mb9vEotIDruoEsFovEzVvZbPaWLTcQ9uxCpVLp4l\u002Bk0\u002BlEPB5/wIPm7RVC9uxCMpm0UTdKpRKi0WiCQy3wUt8FCvw7VSNxbRapG4voDwucGgyjXC7bzH84ePt1HysbH/GhWoNstzA1OoSFhZuxQqFg8sfu4FutAd\u002BT8KSEYm7v7GJ0YnLClgYLaAcjU9N4Vx9Dda8OBz7OjwywSNsIXY39vEL7TxWpxv2eO3hWHUZ19xc8ti25UdvXzdpNWH0BDj8JiLOrPXfweOu9mRgRhOXUEPr7IiBfYeacB9HaBNRvQH4f6\u002BlgMERwGxJP7grEoq9shj9Uz\u002BVGpmIi4vXcwdzlcePgzLAuZPiSGw869Jg\u002Biw1Mvw50oLGcuoh71y8h1HwB1Js8UfFLnwScNnBhdYVLWsy1IwK5XM5GHaw9uu0LeSCMddZA32lz7zjOQxMcByK1SPU3O/Rjnai2fkjNz8/5L77TyQJ/AJc67LNf3QeWAAAAAElFTkSuQmCC",
               "WhenOpened": "2024-12-17T02:11:13.38Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "v_RS232.py",
-              "DocumentMoniker": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\PyQt_RS232\\PyQt_RS232\\View\\V_RS232.py",
-              "RelativeDocumentMoniker": "PyQt_RS232\\View\\V_RS232.py",
-              "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\PyQt_RS232\\PyQt_RS232\\View\\V_RS232.py",
-              "RelativeToolTip": "PyQt_RS232\\View\\V_RS232.py",
-              "ViewState": "AgIAADYAAAAANDMzMzMTwAAAAAAAAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKfSURBVDhPZVNLTBNRFD0znSn90MZpBaEKKYjEX4BEk2qhhgXRdOXGBStMdOPGlew1Lty5cePKhJgQjSQmmGhijBo0MRKIRgJFAastoSBDWyjT6XQ\u002Bb3wDk4ZmTnKT9\u002B4777z7eZeBjXg8HkgkEoLH42FtVw2KomBnZ0deXFwsTE1N6bYbIOQzZy/B8/xwZ2fnw3A43Gi7apAkycxmszO6rt8VRfFjKpVS9w5YNlETsBCLxRAMBu3dPqgwqtUqs7y83NvV1XWPRtNYLpdfZzIZxTp37bEootHouWQyeUUQBLd16aCpqgrTNLm\u002Bvr4jfr\u002B/u1KprFJemooQR74cxznMRe3X0hJeTEzw6XT6hNfr7aGpeCy\u002BQ6BQKNSZWNiGzPhw8sIQ\u002BpPXMJi8qrZFo5JNdwqwLFtnu/Dj3cImnn5awaM383g5u\u002BYRIsebI5HIXvoOAauIBy2br\u002BDLz3UsrRWQXi8itZrnNdZjtZu3\u002BA4BCzox8WfbwLNZET8yeUQP\u002B9AScIMYGkyj6h7oMW5Njt\u002BeM7WNobo2WiiVSigqBJNzRXz7W6QdqAL0ItE1MKYBwccg6FoBdnMthD/2wBEBIQSyokHcLkPVVESCJobPVzFyUcaNfgXXYyLaG9cBdQvQNnsdEYRCISisggZ\u002BCwZ99eYAh1jrPM2VUPUqWEOCi9AmGGVagIDiiIB\u002BV/hpec60\u002BtEmeNHRRNDAyODNMnhocJmUxPh0NHRLhA0/dkQgyzKsCbt8tgWJ00fRFPhOh4G\u002BRgsLrhVwew2NOzWjch2vFuZ\u002Bj9UJTE9Pgw6TvdtHJC4UPCYTgrpBwzZh\u002Bno0SY98HRt//2R0dHSrJqBp2nP6Td/mcrm6tIYGR5qZQ3fuQxcvgfWXGHf7bOWf9IFy6TAB/wHvDCS96T4l0wAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-12-17T02:08:59.287Z"
             },
             {
               "$type": "Document",
@@ -57,10 +41,9 @@
               "RelativeDocumentMoniker": "PyQt_RS232\\main.py",
               "ToolTip": "C:\\Users\\ren_hong\\Desktop\\TestAndStudy\\PyQt_RS232\\PyQt_RS232\\main.py",
               "RelativeToolTip": "PyQt_RS232\\main.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHeSURBVDhPpVMxa1NRFP7ebZLSlgaltNpSVCySRUxL0NAh4FJpHWpxcZAUBEPG/AKHDsVBN5eGrCnoYKCDoDiUCKKBjtZBUZtJ2ojYJr40ue\u002B\u002B47k3VzD0hQr94OOed8853/k47z2cCETk2NAgk8mQDQMhhFjK5/Mb9vEotIDruoEsFovEzVvZbPaWLTcQ9uxCpVLp4l\u002Bk0\u002BlEPB5/wIPm7RVC9uxCMpm0UTdKpRKi0WiCQy3wUt8FCvw7VSNxbRapG4voDwucGgyjXC7bzH84ePt1HysbH/GhWoNstzA1OoSFhZuxQqFg8sfu4FutAd\u002BT8KSEYm7v7GJ0YnLClgYLaAcjU9N4Vx9Dda8OBz7OjwywSNsIXY39vEL7TxWpxv2eO3hWHUZ19xc8ti25UdvXzdpNWH0BDj8JiLOrPXfweOu9mRgRhOXUEPr7IiBfYeacB9HaBNRvQH4f6\u002BlgMERwGxJP7grEoq9shj9Uz\u002BVGpmIi4vXcwdzlcePgzLAuZPiSGw869Jg\u002Biw1Mvw50oLGcuoh71y8h1HwB1Js8UfFLnwScNnBhdYVLWsy1IwK5XM5GHaw9uu0LeSCMddZA32lz7zjOQxMcByK1SPU3O/Rjnai2fkjNz8/5L77TyQJ/AJc67LNf3QeWAAAAAElFTkSuQmCC",
-              "WhenOpened": "2024-12-17T02:00:06.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T02:00:06.887Z"
             }
           ]
         }

@@ -23,6 +23,12 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
    </widget>
    <widget class="QComboBox" name="cmb_Port">
     <property name="geometry">
