@@ -13,9 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="RS232">
-      <HintPath>..\..\RS232\RS232\bin\Debug\net8.0-windows\RS232.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\RS232\RS232\RS232.csproj" />
   </ItemGroup>
 
 </Project>
