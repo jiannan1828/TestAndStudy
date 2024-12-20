@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A8A30CE-5261-4EA2-A9CE-93D3C866FA6B}|CS2PYImage\\CS2PYImage.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\cs2pyimage\\cs2pyimage\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A8A30CE-5261-4EA2-A9CE-93D3C866FA6B}|CS2PYImage\\CS2PYImage.csproj|solutionrelative:cs2pyimage\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A8A30CE-5261-4EA2-A9CE-93D3C866FA6B}|CS2PYImage\\CS2PYImage.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\cs2pyimage\\cs2pyimage\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A8A30CE-5261-4EA2-A9CE-93D3C866FA6B}|CS2PYImage\\CS2PYImage.csproj|solutionrelative:cs2pyimage\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A8A30CE-5261-4EA2-A9CE-93D3C866FA6B}|CS2PYImage\\CS2PYImage.csproj|C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\cs2pyimage\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5A8A30CE-5261-4EA2-A9CE-93D3C866FA6B}|CS2PYImage\\CS2PYImage.csproj|solutionrelative:cs2pyimage\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Frm_Main.cs",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\Frm_Main.cs",
+              "RelativeDocumentMoniker": "CS2PYImage\\Frm_Main.cs",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\Frm_Main.cs",
+              "RelativeToolTip": "CS2PYImage\\Frm_Main.cs",
+              "ViewState": "AgIAAA8AAACwmJmZmZkywBoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T06:12:01.265Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Frm_Main.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\Frm_Main.Designer.cs",
+              "RelativeDocumentMoniker": "CS2PYImage\\Frm_Main.Designer.cs",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\Frm_Main.Designer.cs",
+              "RelativeToolTip": "CS2PYImage\\Frm_Main.Designer.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAzwD8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T08:51:58.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Frm_Main.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\Frm_Main.cs",
+              "RelativeDocumentMoniker": "CS2PYImage\\Frm_Main.cs",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\Frm_Main.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "CS2PYImage\\Frm_Main.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:52:13.968Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
