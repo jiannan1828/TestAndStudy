@@ -33,8 +33,8 @@ namespace Training8
 
                 ProcessStartInfo startInfo = new ProcessStartInfo
                 {
-                    FileName = @"C:\Users\4xuann\AppData\Local\Programs\Python\Python313\python.exe", // @ 表示 // 替換成 / 的意思
-                    Arguments = $"\"{txt_OpenPythonFilePath.Text}\"", // /" 表示在字串中插入"的意思
+                    FileName = @"C:\Users\r417t\AppData\Local\Programs\Python\Python39\python.exe", // @ 表示 // 替換成 / 的意思
+                    Arguments = $"\"{txt_OpenPythonFilePath.Text}\"", // \" 表示在字串中插入"的意思
                     RedirectStandardOutput = true, // 捕獲標準輸出
                     UseShellExecute = false, // 不使用命令提示字元執行程式
                     CreateNoWindow = true // 不顯示命令提示字元窗口
