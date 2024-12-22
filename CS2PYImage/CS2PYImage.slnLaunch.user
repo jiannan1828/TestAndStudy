@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "新增設定檔",
+    "Projects": [
+      {
+        "Path": "CS2PYImage\\CS2PYImage.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "CS2PYImage_Python\\CS2PYImage_Python.pyproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

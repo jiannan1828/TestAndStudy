@@ -21,7 +21,7 @@ namespace CS2PYImage
         private void Frm_Main_Load(object sender, EventArgs e)
         {
             // 创建共享内存
-            mmf = MemoryMappedFile.CreateOrOpen("SharedMemory", 1024 * 1024);
+            mmf = MemoryMappedFile.CreateOrOpen("SharedMemory", 10 * 1024 * 1024);
 
             // 初始化攝像頭捕獲
             capture = new VideoCapture(0);  // 0 是第一個攝像頭，若有多個攝像頭可選擇不同的編號
@@ -75,7 +75,7 @@ namespace CS2PYImage
                 using (var vectorOfByte = new Emgu.CV.Util.VectorOfByte()) //宣告一個動態大小的字節
                 {
                     // 使用 CvInvoke.Imencode 編碼影像並儲存到 VectorOfByte
-                    bool success = CvInvoke.Imencode(".jpeg", frame, vectorOfByte);
+                    bool success = CvInvoke.Imencode(".png", frame, vectorOfByte);
 
                     if (success)
                     {
