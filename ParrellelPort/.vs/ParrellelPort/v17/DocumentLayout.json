@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\ParrellelPort\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BB6D71D5-04F5-4BE2-979C-4BE452676372}|ParrellelPort\\ParrellelPort.vcxproj|C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\ParrellelPort\\ParrellelPort\\ParrellelPort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB6D71D5-04F5-4BE2-979C-4BE452676372}|ParrellelPort\\ParrellelPort.vcxproj|solutionrelative:ParrellelPort\\ParrellelPort.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ParrellelPort.cpp",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\ParrellelPort\\ParrellelPort\\ParrellelPort.cpp",
+              "RelativeDocumentMoniker": "ParrellelPort\\ParrellelPort.cpp",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\ParrellelPort\\ParrellelPort\\ParrellelPort.cpp",
+              "RelativeToolTip": "ParrellelPort\\ParrellelPort.cpp",
+              "ViewState": "AgIAAAEAAAAQyszMzMwcwAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-23T02:36:48.094Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
