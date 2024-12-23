@@ -18,12 +18,19 @@ class Ui_CS2PYImage(object):
         self.centralwidget = QtWidgets.QWidget(CS2PYImage)
         self.centralwidget.setObjectName("centralwidget")
         self.btn_ReadImage = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_ReadImage.setGeometry(QtCore.QRect(290, 350, 231, 101))
+        self.btn_ReadImage.setGeometry(QtCore.QRect(300, 120, 231, 101))
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(16)
         self.btn_ReadImage.setFont(font)
         self.btn_ReadImage.setObjectName("btn_ReadImage")
+        self.btn_ReadJson = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_ReadJson.setGeometry(QtCore.QRect(290, 330, 231, 101))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(16)
+        self.btn_ReadJson.setFont(font)
+        self.btn_ReadJson.setObjectName("btn_ReadJson")
         CS2PYImage.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(CS2PYImage)
         self.statusbar.setObjectName("statusbar")
@@ -36,6 +43,7 @@ class Ui_CS2PYImage(object):
         _translate = QtCore.QCoreApplication.translate
         CS2PYImage.setWindowTitle(_translate("CS2PYImage", "CS2PYImage"))
         self.btn_ReadImage.setText(_translate("CS2PYImage", "ReadImage"))
+        self.btn_ReadJson.setText(_translate("CS2PYImage", "ReadJson"))
 
 
 if __name__ == "__main__":

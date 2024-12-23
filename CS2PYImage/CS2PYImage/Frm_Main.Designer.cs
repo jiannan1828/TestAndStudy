@@ -31,7 +31,8 @@
             components = new System.ComponentModel.Container();
             img_Camera = new Emgu.CV.UI.ImageBox();
             btn_Capture = new Button();
-            btn_SharedMemory = new Button();
+            btn_CS2PYImage = new Button();
+            btn_CS2PYJson = new Button();
             ((System.ComponentModel.ISupportInitialize)img_Camera).BeginInit();
             SuspendLayout();
             // 
@@ -55,23 +56,35 @@
             btn_Capture.UseVisualStyleBackColor = true;
             btn_Capture.Click += btn_Capture_Click;
             // 
-            // btn_SharedMemory
+            // btn_CS2PYImage
             // 
-            btn_SharedMemory.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_SharedMemory.Location = new Point(183, 596);
-            btn_SharedMemory.Name = "btn_SharedMemory";
-            btn_SharedMemory.Size = new Size(276, 92);
-            btn_SharedMemory.TabIndex = 4;
-            btn_SharedMemory.Text = "傳送至共享記憶體";
-            btn_SharedMemory.UseVisualStyleBackColor = true;
-            btn_SharedMemory.Click += btn_SharedMemory_Click;
+            btn_CS2PYImage.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_CS2PYImage.Location = new Point(183, 596);
+            btn_CS2PYImage.Name = "btn_CS2PYImage";
+            btn_CS2PYImage.Size = new Size(276, 92);
+            btn_CS2PYImage.TabIndex = 4;
+            btn_CS2PYImage.Text = "傳送影像";
+            btn_CS2PYImage.UseVisualStyleBackColor = true;
+            btn_CS2PYImage.Click += btn_CS2PYImage_Click;
+            // 
+            // btn_CS2PYJson
+            // 
+            btn_CS2PYJson.Font = new Font("Consolas", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_CS2PYJson.Location = new Point(465, 596);
+            btn_CS2PYJson.Name = "btn_CS2PYJson";
+            btn_CS2PYJson.Size = new Size(276, 92);
+            btn_CS2PYJson.TabIndex = 5;
+            btn_CS2PYJson.Text = "傳送Json";
+            btn_CS2PYJson.UseVisualStyleBackColor = true;
+            btn_CS2PYJson.Click += btn_CS2PYJson_Click;
             // 
             // Frm_Main
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(797, 700);
-            Controls.Add(btn_SharedMemory);
+            Controls.Add(btn_CS2PYJson);
+            Controls.Add(btn_CS2PYImage);
             Controls.Add(btn_Capture);
             Controls.Add(img_Camera);
             Name = "Frm_Main";
@@ -86,6 +99,7 @@
 
         private Emgu.CV.UI.ImageBox img_Camera;
         private Button btn_Capture;
-        private Button btn_SharedMemory;
+        private Button btn_CS2PYImage;
+        private Button btn_CS2PYJson;
     }
 }

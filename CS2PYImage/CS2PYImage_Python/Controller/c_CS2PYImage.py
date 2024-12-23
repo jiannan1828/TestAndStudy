@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import *
 import numpy as np
 import cv2
 import mmap
+import json
 
 from View.v_CS2PYImage import *
 from Controller.c_CS2PYImage import *
@@ -17,15 +18,16 @@ class CS2PYImage(QMainWindow):
         self.linkEvent() 
 
     def linkEvent(self):
-        ## 在這裡加入視窗內部元件對應的事件
         self.ui.btn_ReadImage.clicked.connect(self.btn_ReadImage_Clicked) 
+        self.ui.btn_ReadJson.clicked.connect(self.btn_ReadJson_Clicked) 
+
 
     def btn_ReadImage_Clicked(self):
         # 共享記憶體名稱和大小
-        SHARED_MEMORY_NAME = "SharedMemory"  # 與 C# 中的名稱一致
-        SHARED_MEMORY_SIZE = 1024 * 1024  # 與 C# 中設定的大小一致 (1MB)
+        SHARED_MEMORY_NAME = "CS2PYImage"  # 與 C# 中的名稱一致
+        SHARED_MEMORY_SIZE = 10 * 1024 * 1024  # 與 C# 中設定的大小一致 (10MB)
 
-        # 讀取共享記憶體數據
+        # 讀取共享記憶體數據, -1 代表不去映射任何文件, 創建一個空的記憶體空間
         with mmap.mmap(-1, SHARED_MEMORY_SIZE, SHARED_MEMORY_NAME) as shared_mem:
 
             # 從共享記憶體讀取數據
@@ -41,3 +43,16 @@ class CS2PYImage(QMainWindow):
             cv2.imshow("Image", image)
             cv2.waitKey(0)
             cv2.destroyAllWindows()
+
+    def btn_ReadJson_Clicked(self):
+        SHARED_MEMORY_NAME = "CS2PYJson"  
+        SHARED_MEMORY_SIZE = 1024 * 1024  
+
+        with mmap.mmap(-1, SHARED_MEMORY_SIZE, SHARED_MEMORY_NAME) as shared_mem:
+            Json_bytes = shared_mem[:SHARED_MEMORY_SIZE]
+
+            # 去除尾部填充字節（例如 \x00），確保 JSON 字符串的結尾正確
+            json_str = Json_bytes.rstrip(b'\x00').decode('utf-8')
+
+            data = json.loads(json_str)
+            print(data)
