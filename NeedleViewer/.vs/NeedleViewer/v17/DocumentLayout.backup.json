@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "NeedleViewer\\DataManager.cs",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\NeedleViewer\\NeedleViewer\\DataManager.cs",
               "RelativeToolTip": "NeedleViewer\\DataManager.cs",
-              "ViewState": "AgIAABoAAADADwAAAAAYwC0AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAApszMzMz8vy0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-13T01:23:09.826Z",
               "EditorCaption": ""
@@ -64,18 +64,20 @@
               "RelativeToolTip": "NeedleViewer\\UI.cs",
               "ViewState": "AgIAAAkAAACwzszMzMwQwCIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T01:23:13.772Z"
+              "WhenOpened": "2024-12-13T01:23:13.772Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Frm_Main.cs [\u8A2D\u8A08]",
+              "Title": "Frm_Main.cs [Design]",
               "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\NeedleViewer\\NeedleViewer\\Frm_Main.cs",
               "RelativeDocumentMoniker": "NeedleViewer\\Frm_Main.cs",
-              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\NeedleViewer\\NeedleViewer\\Frm_Main.cs [\u8A2D\u8A08]",
-              "RelativeToolTip": "NeedleViewer\\Frm_Main.cs [\u8A2D\u8A08]",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\NeedleViewer\\NeedleViewer\\Frm_Main.cs [Design]",
+              "RelativeToolTip": "NeedleViewer\\Frm_Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T01:14:51.384Z"
+              "WhenOpened": "2024-12-13T01:14:51.384Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

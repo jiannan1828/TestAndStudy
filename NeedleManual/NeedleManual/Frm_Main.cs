@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace NeedleManual
 {
@@ -16,11 +17,7 @@ namespace NeedleManual
         public Frm_Main()
         {
             InitializeComponent();
-        }
-
-        private void Frm_Main_Load(object sender, EventArgs e)
-        {
-
+            Initialize_grp_位置與IO_ChildControlChanged_Listener(grp_位置與IO);
         }
 
         private void Frm_Main_Paint(object sender, PaintEventArgs e)
@@ -39,6 +36,25 @@ namespace NeedleManual
                 };
 
                 g.DrawLines(pen, points);
+            }
+        }
+        private void grp_位置按鍵判斷(object sender, KeyPressEventArgs e)
+        {
+            // 如果按下的键不是数字或删除键
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // 取消事件，阻止非数字输入
+                e.Handled = true;
+            }
+        }
+
+        private void grp_IO按鍵判斷(object sender, KeyPressEventArgs e)
+        {
+            // 只允许按下 '0' 或 '1' 或删除键
+            if (e.KeyChar != '0' && e.KeyChar != '1' && e.KeyChar != (char)Keys.Back)
+            {
+                // 取消事件，阻止非 '0' 和 '1' 输入
+                e.Handled = true;
             }
         }
     }

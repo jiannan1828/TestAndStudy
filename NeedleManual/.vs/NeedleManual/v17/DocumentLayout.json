@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{78CD472E-7EA0-4FBC-94A9-9E1EB16DF5F6}|NeedleManual\\NeedleManual.csproj|solutionrelative:needlemanual\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78CD472E-7EA0-4FBC-94A9-9E1EB16DF5F6}|NeedleManual\\NeedleManual.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\needlemanual\\needlemanual\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{78CD472E-7EA0-4FBC-94A9-9E1EB16DF5F6}|NeedleManual\\NeedleManual.csproj|C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\NeedleManual\\needlemanual\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78CD472E-7EA0-4FBC-94A9-9E1EB16DF5F6}|NeedleManual\\NeedleManual.csproj|solutionrelative:needlemanual\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78CD472E-7EA0-4FBC-94A9-9E1EB16DF5F6}|NeedleManual\\NeedleManual.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\needlemanual\\needlemanual\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78CD472E-7EA0-4FBC-94A9-9E1EB16DF5F6}|NeedleManual\\NeedleManual.csproj|solutionrelative:needlemanual\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Frm_Main.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\NeedleManual\\NeedleManual\\Frm_Main.Designer.cs",
+              "RelativeDocumentMoniker": "NeedleManual\\Frm_Main.Designer.cs",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\NeedleManual\\NeedleManual\\Frm_Main.Designer.cs",
+              "RelativeToolTip": "NeedleManual\\Frm_Main.Designer.cs",
+              "ViewState": "AgIAAPMBAAAA0czMzAxCwPsBAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T00:53:06.454Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,7 +45,7 @@
               "RelativeDocumentMoniker": "NeedleManual\\Frm_Main.cs",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\NeedleManual\\NeedleManual\\Frm_Main.cs",
               "RelativeToolTip": "NeedleManual\\Frm_Main.cs",
-              "ViewState": "AgIAABYAAABQNDMzMzM2wCAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAABAZmZmZuY/wDUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-23T07:21:41.675Z",
               "EditorCaption": ""
