@@ -489,7 +489,7 @@ namespace NeedleManual
             this.Controls.Add(this.btn_移至下視覺判斷有無料);
             this.Controls.Add(this.btn_回home);
             this.Name = "Frm_Main";
-            this.Text = "NeedleManual";
+            this.Text = "4";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Frm_Main_Paint);
             this.grp_位置與IO.ResumeLayout(false);
             this.grp_位置與IO.PerformLayout();

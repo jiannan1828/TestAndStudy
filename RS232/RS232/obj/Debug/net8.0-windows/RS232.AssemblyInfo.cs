@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RS232")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ef31789eca3926de88c1bd925ca2be8e78496cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+998ce151977d0856cc121eb0d3b9b4fbdec14678")]
 [assembly: System.Reflection.AssemblyProductAttribute("RS232")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RS232")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

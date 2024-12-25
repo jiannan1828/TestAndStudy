@@ -153,6 +153,7 @@
             Controls.Add(cmb_Port);
             Name = "Frm_Main";
             Text = "RS232";
+            TopLevel = false;
             ResumeLayout(false);
             PerformLayout();
         }

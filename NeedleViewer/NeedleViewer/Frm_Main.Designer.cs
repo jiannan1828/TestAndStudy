@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Windows.Forms;
+using System.Drawing;
+using System.IO;
 
 namespace NeedleViewer
 {
@@ -30,513 +32,521 @@ namespace NeedleViewer
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            dgv_Needles = new DataGridView();
-            Index = new DataGridViewTextBoxColumn();
-            ColumnName = new DataGridViewTextBoxColumn();
-            Id = new DataGridViewTextBoxColumn();
-            PosX = new DataGridViewTextBoxColumn();
-            PosY = new DataGridViewTextBoxColumn();
-            Diameter = new DataGridViewTextBoxColumn();
-            Place = new DataGridViewTextBoxColumn();
-            Remove = new DataGridViewTextBoxColumn();
-            Replace = new DataGridViewTextBoxColumn();
-            Display = new DataGridViewTextBoxColumn();
-            Enable = new DataGridViewTextBoxColumn();
-            Reserve1 = new DataGridViewTextBoxColumn();
-            Reserve2 = new DataGridViewTextBoxColumn();
-            Reserve3 = new DataGridViewTextBoxColumn();
-            Reserve4 = new DataGridViewTextBoxColumn();
-            Reserve5 = new DataGridViewTextBoxColumn();
-            lbl_MousePos = new Label();
-            menu_NeedleViewer = new MenuStrip();
-            tsmi_File = new ToolStripMenuItem();
-            tsmi_OpenFile = new ToolStripMenuItem();
-            tsmi_SaveFile = new ToolStripMenuItem();
-            pic_Needles = new PictureBox();
-            txt_Name = new TextBox();
-            label1 = new Label();
-            grp_NeedleInfo = new GroupBox();
-            rad_Replace = new RadioButton();
-            rad_Remove = new RadioButton();
-            rad_Place = new RadioButton();
-            lbl_Index = new Label();
-            txt_Index = new TextBox();
-            chk_Enable = new CheckBox();
-            chk_Display = new CheckBox();
-            txt_Diameter = new TextBox();
-            lbl_Diameter = new Label();
-            txt_PosX = new TextBox();
-            txt_PosY = new TextBox();
-            lbl_Pos = new Label();
-            txt_Id = new TextBox();
-            lbl_Id = new Label();
-            grp_Search = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)dgv_Needles).BeginInit();
-            menu_NeedleViewer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_Needles).BeginInit();
-            grp_NeedleInfo.SuspendLayout();
-            SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgv_Needles = new System.Windows.Forms.DataGridView();
+            this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PosX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PosY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diameter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Place = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Replace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Display = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Enable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reserve1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reserve2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reserve3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reserve4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reserve5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_MousePos = new System.Windows.Forms.Label();
+            this.menu_NeedleViewer = new System.Windows.Forms.MenuStrip();
+            this.tsmi_File = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_OpenFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_SaveFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.pic_Needles = new System.Windows.Forms.PictureBox();
+            this.txt_Name = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.grp_NeedleInfo = new System.Windows.Forms.GroupBox();
+            this.rad_Replace = new System.Windows.Forms.RadioButton();
+            this.rad_Remove = new System.Windows.Forms.RadioButton();
+            this.rad_Place = new System.Windows.Forms.RadioButton();
+            this.lbl_Index = new System.Windows.Forms.Label();
+            this.txt_Index = new System.Windows.Forms.TextBox();
+            this.chk_Enable = new System.Windows.Forms.CheckBox();
+            this.chk_Display = new System.Windows.Forms.CheckBox();
+            this.txt_Diameter = new System.Windows.Forms.TextBox();
+            this.lbl_Diameter = new System.Windows.Forms.Label();
+            this.txt_PosX = new System.Windows.Forms.TextBox();
+            this.txt_PosY = new System.Windows.Forms.TextBox();
+            this.lbl_Pos = new System.Windows.Forms.Label();
+            this.txt_Id = new System.Windows.Forms.TextBox();
+            this.lbl_Id = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Needles)).BeginInit();
+            this.menu_NeedleViewer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Needles)).BeginInit();
+            this.grp_NeedleInfo.SuspendLayout();
+            this.SuspendLayout();
             // 
             // dgv_Needles
             // 
-            dgv_Needles.AllowUserToAddRows = false;
-            dgv_Needles.AllowUserToDeleteRows = false;
-            dgv_Needles.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("微軟正黑體", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 136);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgv_Needles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgv_Needles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_Needles.Columns.AddRange(new DataGridViewColumn[] { Index, ColumnName, Id, PosX, PosY, Diameter, Place, Remove, Replace, Display, Enable, Reserve1, Reserve2, Reserve3, Reserve4, Reserve5 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Consolas", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Brown;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgv_Needles.DefaultCellStyle = dataGridViewCellStyle4;
-            dgv_Needles.Location = new Point(11, 752);
-            dgv_Needles.MultiSelect = false;
-            dgv_Needles.Name = "dgv_Needles";
-            dgv_Needles.ReadOnly = true;
-            dgv_Needles.RowHeadersVisible = false;
-            dgv_Needles.RowHeadersWidth = 82;
-            dgv_Needles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_Needles.Size = new Size(1453, 197);
-            dgv_Needles.TabIndex = 3;
-            dgv_Needles.CellMouseEnter += dgv_Needles_CellMouseEnter;
-            dgv_Needles.CellMouseLeave += dgv_Needles_CellMouseLeave;
-            dgv_Needles.SelectionChanged += dgv_Needles_SelectionChanged;
+            this.dgv_Needles.AllowUserToAddRows = false;
+            this.dgv_Needles.AllowUserToDeleteRows = false;
+            this.dgv_Needles.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Needles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Needles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Needles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Index,
+            this.ColumnName,
+            this.Id,
+            this.PosX,
+            this.PosY,
+            this.Diameter,
+            this.Place,
+            this.Remove,
+            this.Replace,
+            this.Display,
+            this.Enable,
+            this.Reserve1,
+            this.Reserve2,
+            this.Reserve3,
+            this.Reserve4,
+            this.Reserve5});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Needles.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_Needles.Location = new System.Drawing.Point(21, 760);
+            this.dgv_Needles.MultiSelect = false;
+            this.dgv_Needles.Name = "dgv_Needles";
+            this.dgv_Needles.ReadOnly = true;
+            this.dgv_Needles.RowHeadersVisible = false;
+            this.dgv_Needles.RowHeadersWidth = 82;
+            this.dgv_Needles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Needles.Size = new System.Drawing.Size(1251, 197);
+            this.dgv_Needles.TabIndex = 3;
+            this.dgv_Needles.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Needles_CellMouseEnter);
+            this.dgv_Needles.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Needles_CellMouseLeave);
+            this.dgv_Needles.SelectionChanged += new System.EventHandler(this.dgv_Needles_SelectionChanged);
             // 
             // Index
             // 
-            dataGridViewCellStyle2.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            Index.DefaultCellStyle = dataGridViewCellStyle2;
-            Index.HeaderText = "流水號";
-            Index.MinimumWidth = 10;
-            Index.Name = "Index";
-            Index.ReadOnly = true;
-            Index.Width = 200;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Index.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Index.HeaderText = "流水號";
+            this.Index.MinimumWidth = 10;
+            this.Index.Name = "Index";
+            this.Index.ReadOnly = true;
+            this.Index.Width = 200;
             // 
             // ColumnName
             // 
-            dataGridViewCellStyle3.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            ColumnName.DefaultCellStyle = dataGridViewCellStyle3;
-            ColumnName.HeaderText = "名稱";
-            ColumnName.MinimumWidth = 10;
-            ColumnName.Name = "ColumnName";
-            ColumnName.ReadOnly = true;
-            ColumnName.Width = 200;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ColumnName.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnName.HeaderText = "名稱";
+            this.ColumnName.MinimumWidth = 10;
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 200;
             // 
             // Id
             // 
-            Id.HeaderText = "編號";
-            Id.MinimumWidth = 10;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 200;
+            this.Id.HeaderText = "編號";
+            this.Id.MinimumWidth = 10;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 200;
             // 
             // PosX
             // 
-            PosX.HeaderText = "座標X";
-            PosX.MinimumWidth = 10;
-            PosX.Name = "PosX";
-            PosX.ReadOnly = true;
-            PosX.Width = 125;
+            this.PosX.HeaderText = "座標X";
+            this.PosX.MinimumWidth = 10;
+            this.PosX.Name = "PosX";
+            this.PosX.ReadOnly = true;
+            this.PosX.Width = 125;
             // 
             // PosY
             // 
-            PosY.HeaderText = "座標Y";
-            PosY.MinimumWidth = 10;
-            PosY.Name = "PosY";
-            PosY.ReadOnly = true;
-            PosY.Width = 125;
+            this.PosY.HeaderText = "座標Y";
+            this.PosY.MinimumWidth = 10;
+            this.PosY.Name = "PosY";
+            this.PosY.ReadOnly = true;
+            this.PosY.Width = 125;
             // 
             // Diameter
             // 
-            Diameter.HeaderText = "直徑";
-            Diameter.MinimumWidth = 10;
-            Diameter.Name = "Diameter";
-            Diameter.ReadOnly = true;
-            Diameter.Width = 200;
+            this.Diameter.HeaderText = "直徑";
+            this.Diameter.MinimumWidth = 10;
+            this.Diameter.Name = "Diameter";
+            this.Diameter.ReadOnly = true;
+            this.Diameter.Width = 200;
             // 
             // Place
             // 
-            Place.HeaderText = "放置";
-            Place.MinimumWidth = 10;
-            Place.Name = "Place";
-            Place.ReadOnly = true;
-            Place.Width = 200;
+            this.Place.HeaderText = "放置";
+            this.Place.MinimumWidth = 10;
+            this.Place.Name = "Place";
+            this.Place.ReadOnly = true;
+            this.Place.Width = 200;
             // 
             // Remove
             // 
-            Remove.HeaderText = "移除";
-            Remove.MinimumWidth = 10;
-            Remove.Name = "Remove";
-            Remove.ReadOnly = true;
-            Remove.Width = 200;
+            this.Remove.HeaderText = "移除";
+            this.Remove.MinimumWidth = 10;
+            this.Remove.Name = "Remove";
+            this.Remove.ReadOnly = true;
+            this.Remove.Width = 200;
             // 
             // Replace
             // 
-            Replace.HeaderText = "置換";
-            Replace.MinimumWidth = 10;
-            Replace.Name = "Replace";
-            Replace.ReadOnly = true;
-            Replace.Width = 200;
+            this.Replace.HeaderText = "置換";
+            this.Replace.MinimumWidth = 10;
+            this.Replace.Name = "Replace";
+            this.Replace.ReadOnly = true;
+            this.Replace.Width = 200;
             // 
             // Display
             // 
-            Display.HeaderText = "顯示";
-            Display.MinimumWidth = 10;
-            Display.Name = "Display";
-            Display.ReadOnly = true;
-            Display.Width = 200;
+            this.Display.HeaderText = "顯示";
+            this.Display.MinimumWidth = 10;
+            this.Display.Name = "Display";
+            this.Display.ReadOnly = true;
+            this.Display.Width = 200;
             // 
             // Enable
             // 
-            Enable.HeaderText = "啟用";
-            Enable.MinimumWidth = 10;
-            Enable.Name = "Enable";
-            Enable.ReadOnly = true;
-            Enable.Width = 200;
+            this.Enable.HeaderText = "啟用";
+            this.Enable.MinimumWidth = 10;
+            this.Enable.Name = "Enable";
+            this.Enable.ReadOnly = true;
+            this.Enable.Width = 200;
             // 
             // Reserve1
             // 
-            Reserve1.HeaderText = "保留1";
-            Reserve1.MinimumWidth = 10;
-            Reserve1.Name = "Reserve1";
-            Reserve1.ReadOnly = true;
-            Reserve1.Width = 200;
+            this.Reserve1.HeaderText = "保留1";
+            this.Reserve1.MinimumWidth = 10;
+            this.Reserve1.Name = "Reserve1";
+            this.Reserve1.ReadOnly = true;
+            this.Reserve1.Width = 200;
             // 
             // Reserve2
             // 
-            Reserve2.HeaderText = "保留2";
-            Reserve2.MinimumWidth = 10;
-            Reserve2.Name = "Reserve2";
-            Reserve2.ReadOnly = true;
-            Reserve2.Width = 200;
+            this.Reserve2.HeaderText = "保留2";
+            this.Reserve2.MinimumWidth = 10;
+            this.Reserve2.Name = "Reserve2";
+            this.Reserve2.ReadOnly = true;
+            this.Reserve2.Width = 200;
             // 
             // Reserve3
             // 
-            Reserve3.HeaderText = "保留3";
-            Reserve3.MinimumWidth = 10;
-            Reserve3.Name = "Reserve3";
-            Reserve3.ReadOnly = true;
-            Reserve3.Width = 200;
+            this.Reserve3.HeaderText = "保留3";
+            this.Reserve3.MinimumWidth = 10;
+            this.Reserve3.Name = "Reserve3";
+            this.Reserve3.ReadOnly = true;
+            this.Reserve3.Width = 200;
             // 
             // Reserve4
             // 
-            Reserve4.HeaderText = "保留4";
-            Reserve4.MinimumWidth = 10;
-            Reserve4.Name = "Reserve4";
-            Reserve4.ReadOnly = true;
-            Reserve4.Width = 200;
+            this.Reserve4.HeaderText = "保留4";
+            this.Reserve4.MinimumWidth = 10;
+            this.Reserve4.Name = "Reserve4";
+            this.Reserve4.ReadOnly = true;
+            this.Reserve4.Width = 200;
             // 
             // Reserve5
             // 
-            Reserve5.HeaderText = "保留5";
-            Reserve5.MinimumWidth = 10;
-            Reserve5.Name = "Reserve5";
-            Reserve5.ReadOnly = true;
-            Reserve5.Width = 200;
+            this.Reserve5.HeaderText = "保留5";
+            this.Reserve5.MinimumWidth = 10;
+            this.Reserve5.Name = "Reserve5";
+            this.Reserve5.ReadOnly = true;
+            this.Reserve5.Width = 200;
             // 
             // lbl_MousePos
             // 
-            lbl_MousePos.AutoSize = true;
-            lbl_MousePos.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            lbl_MousePos.Location = new Point(1115, 711);
-            lbl_MousePos.Name = "lbl_MousePos";
-            lbl_MousePos.Size = new Size(130, 35);
-            lbl_MousePos.TabIndex = 5;
-            lbl_MousePos.Text = "滑鼠座標 ";
+            this.lbl_MousePos.AutoSize = true;
+            this.lbl_MousePos.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbl_MousePos.Location = new System.Drawing.Point(1274, 711);
+            this.lbl_MousePos.Name = "lbl_MousePos";
+            this.lbl_MousePos.Size = new System.Drawing.Size(164, 43);
+            this.lbl_MousePos.TabIndex = 5;
+            this.lbl_MousePos.Text = "滑鼠座標 ";
             // 
             // menu_NeedleViewer
             // 
-            menu_NeedleViewer.BackColor = Color.Thistle;
-            menu_NeedleViewer.ImageScalingSize = new Size(32, 32);
-            menu_NeedleViewer.Items.AddRange(new ToolStripItem[] { tsmi_File });
-            menu_NeedleViewer.Location = new Point(0, 0);
-            menu_NeedleViewer.Name = "menu_NeedleViewer";
-            menu_NeedleViewer.Size = new Size(1784, 43);
-            menu_NeedleViewer.TabIndex = 7;
-            menu_NeedleViewer.Text = "menuStrip1";
+            this.menu_NeedleViewer.BackColor = System.Drawing.Color.Thistle;
+            this.menu_NeedleViewer.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menu_NeedleViewer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_File});
+            this.menu_NeedleViewer.Location = new System.Drawing.Point(0, 0);
+            this.menu_NeedleViewer.Name = "menu_NeedleViewer";
+            this.menu_NeedleViewer.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menu_NeedleViewer.Size = new System.Drawing.Size(1438, 51);
+            this.menu_NeedleViewer.TabIndex = 7;
+            this.menu_NeedleViewer.Text = "menuStrip1";
             // 
             // tsmi_File
             // 
-            tsmi_File.DropDownItems.AddRange(new ToolStripItem[] { tsmi_OpenFile, tsmi_SaveFile });
-            tsmi_File.Font = new Font("微軟正黑體", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 136);
-            tsmi_File.ForeColor = SystemColors.ControlLightLight;
-            tsmi_File.Name = "tsmi_File";
-            tsmi_File.Size = new Size(81, 39);
-            tsmi_File.Text = "檔案";
+            this.tsmi_File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_OpenFile,
+            this.tsmi_SaveFile});
+            this.tsmi_File.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tsmi_File.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tsmi_File.Name = "tsmi_File";
+            this.tsmi_File.Size = new System.Drawing.Size(101, 47);
+            this.tsmi_File.Text = "檔案";
             // 
             // tsmi_OpenFile
             // 
-            tsmi_OpenFile.Name = "tsmi_OpenFile";
-            tsmi_OpenFile.Size = new Size(198, 40);
-            tsmi_OpenFile.Text = "開啟檔案";
-            tsmi_OpenFile.Click += tsmi_OpenFile_Click;
+            this.tsmi_OpenFile.Name = "tsmi_OpenFile";
+            this.tsmi_OpenFile.Size = new System.Drawing.Size(248, 48);
+            this.tsmi_OpenFile.Text = "開啟檔案";
+            this.tsmi_OpenFile.Click += new System.EventHandler(this.tsmi_OpenFile_Click);
             // 
             // tsmi_SaveFile
             // 
-            tsmi_SaveFile.Name = "tsmi_SaveFile";
-            tsmi_SaveFile.Size = new Size(198, 40);
-            tsmi_SaveFile.Text = "儲存檔案";
-            tsmi_SaveFile.Click += tsmi_SaveFile_Click;
+            this.tsmi_SaveFile.Name = "tsmi_SaveFile";
+            this.tsmi_SaveFile.Size = new System.Drawing.Size(248, 48);
+            this.tsmi_SaveFile.Text = "儲存檔案";
+            this.tsmi_SaveFile.Click += new System.EventHandler(this.tsmi_SaveFile_Click);
             // 
             // pic_Needles
             // 
-            pic_Needles.BackColor = Color.Honeydew;
-            pic_Needles.BorderStyle = BorderStyle.Fixed3D;
-            pic_Needles.Location = new Point(409, 46);
-            pic_Needles.Name = "pic_Needles";
-            pic_Needles.Size = new Size(700, 700);
-            pic_Needles.TabIndex = 0;
-            pic_Needles.TabStop = false;
-            pic_Needles.Paint += pic_Needles_Paint;
-            pic_Needles.MouseDown += pic_Needles_MouseDown;
-            pic_Needles.MouseMove += pic_Needles_MouseMove;
-            pic_Needles.MouseWheel += pic_Needles_MouseWheel;
+            this.pic_Needles.BackColor = System.Drawing.Color.Honeydew;
+            this.pic_Needles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pic_Needles.Location = new System.Drawing.Point(473, 53);
+            this.pic_Needles.Name = "pic_Needles";
+            this.pic_Needles.Size = new System.Drawing.Size(799, 700);
+            this.pic_Needles.TabIndex = 0;
+            this.pic_Needles.TabStop = false;
+            this.pic_Needles.Paint += new System.Windows.Forms.PaintEventHandler(this.pic_Needles_Paint);
+            this.pic_Needles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pic_Needles_MouseDown);
+            this.pic_Needles.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic_Needles_MouseMove);
+            this.pic_Needles.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.pic_Needles_MouseWheel);
             // 
             // txt_Name
             // 
-            txt_Name.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Name.Location = new Point(74, 80);
-            txt_Name.Name = "txt_Name";
-            txt_Name.Size = new Size(174, 42);
-            txt_Name.TabIndex = 8;
+            this.txt_Name.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txt_Name.Location = new System.Drawing.Point(96, 99);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(198, 50);
+            this.txt_Name.TabIndex = 8;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(1, 84);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 34);
-            label1.TabIndex = 9;
-            label1.Text = "名稱";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 99);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 43);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "名稱";
             // 
             // grp_NeedleInfo
             // 
-            grp_NeedleInfo.BackColor = Color.FloralWhite;
-            grp_NeedleInfo.Controls.Add(rad_Replace);
-            grp_NeedleInfo.Controls.Add(rad_Remove);
-            grp_NeedleInfo.Controls.Add(rad_Place);
-            grp_NeedleInfo.Controls.Add(lbl_Index);
-            grp_NeedleInfo.Controls.Add(txt_Index);
-            grp_NeedleInfo.Controls.Add(chk_Enable);
-            grp_NeedleInfo.Controls.Add(chk_Display);
-            grp_NeedleInfo.Controls.Add(txt_Diameter);
-            grp_NeedleInfo.Controls.Add(lbl_Diameter);
-            grp_NeedleInfo.Controls.Add(txt_PosX);
-            grp_NeedleInfo.Controls.Add(txt_PosY);
-            grp_NeedleInfo.Controls.Add(lbl_Pos);
-            grp_NeedleInfo.Controls.Add(txt_Id);
-            grp_NeedleInfo.Controls.Add(lbl_Id);
-            grp_NeedleInfo.Controls.Add(label1);
-            grp_NeedleInfo.Controls.Add(txt_Name);
-            grp_NeedleInfo.Font = new Font("微軟正黑體", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            grp_NeedleInfo.Location = new Point(11, 46);
-            grp_NeedleInfo.Margin = new Padding(2);
-            grp_NeedleInfo.Name = "grp_NeedleInfo";
-            grp_NeedleInfo.Padding = new Padding(2);
-            grp_NeedleInfo.Size = new Size(393, 331);
-            grp_NeedleInfo.TabIndex = 10;
-            grp_NeedleInfo.TabStop = false;
-            grp_NeedleInfo.Text = "植針資訊";
+            this.grp_NeedleInfo.BackColor = System.Drawing.Color.FloralWhite;
+            this.grp_NeedleInfo.Controls.Add(this.rad_Replace);
+            this.grp_NeedleInfo.Controls.Add(this.rad_Remove);
+            this.grp_NeedleInfo.Controls.Add(this.rad_Place);
+            this.grp_NeedleInfo.Controls.Add(this.lbl_Index);
+            this.grp_NeedleInfo.Controls.Add(this.txt_Index);
+            this.grp_NeedleInfo.Controls.Add(this.chk_Enable);
+            this.grp_NeedleInfo.Controls.Add(this.chk_Display);
+            this.grp_NeedleInfo.Controls.Add(this.txt_Diameter);
+            this.grp_NeedleInfo.Controls.Add(this.lbl_Diameter);
+            this.grp_NeedleInfo.Controls.Add(this.txt_PosX);
+            this.grp_NeedleInfo.Controls.Add(this.txt_PosY);
+            this.grp_NeedleInfo.Controls.Add(this.lbl_Pos);
+            this.grp_NeedleInfo.Controls.Add(this.txt_Id);
+            this.grp_NeedleInfo.Controls.Add(this.lbl_Id);
+            this.grp_NeedleInfo.Controls.Add(this.label1);
+            this.grp_NeedleInfo.Controls.Add(this.txt_Name);
+            this.grp_NeedleInfo.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.grp_NeedleInfo.Location = new System.Drawing.Point(19, 53);
+            this.grp_NeedleInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.grp_NeedleInfo.Name = "grp_NeedleInfo";
+            this.grp_NeedleInfo.Padding = new System.Windows.Forms.Padding(2);
+            this.grp_NeedleInfo.Size = new System.Drawing.Size(449, 389);
+            this.grp_NeedleInfo.TabIndex = 10;
+            this.grp_NeedleInfo.TabStop = false;
+            this.grp_NeedleInfo.Text = "植針資訊";
             // 
             // rad_Replace
             // 
-            rad_Replace.AutoSize = true;
-            rad_Replace.Location = new Point(290, 119);
-            rad_Replace.Name = "rad_Replace";
-            rad_Replace.Size = new Size(87, 38);
-            rad_Replace.TabIndex = 2;
-            rad_Replace.TabStop = true;
-            rad_Replace.Text = "置換";
-            rad_Replace.UseVisualStyleBackColor = true;
+            this.rad_Replace.AutoSize = true;
+            this.rad_Replace.Location = new System.Drawing.Point(330, 130);
+            this.rad_Replace.Name = "rad_Replace";
+            this.rad_Replace.Size = new System.Drawing.Size(108, 47);
+            this.rad_Replace.TabIndex = 2;
+            this.rad_Replace.TabStop = true;
+            this.rad_Replace.Text = "置換";
+            this.rad_Replace.UseVisualStyleBackColor = true;
             // 
             // rad_Remove
             // 
-            rad_Remove.AutoSize = true;
-            rad_Remove.Location = new Point(290, 75);
-            rad_Remove.Name = "rad_Remove";
-            rad_Remove.Size = new Size(87, 38);
-            rad_Remove.TabIndex = 1;
-            rad_Remove.TabStop = true;
-            rad_Remove.Text = "移除";
-            rad_Remove.UseVisualStyleBackColor = true;
+            this.rad_Remove.AutoSize = true;
+            this.rad_Remove.Location = new System.Drawing.Point(330, 86);
+            this.rad_Remove.Name = "rad_Remove";
+            this.rad_Remove.Size = new System.Drawing.Size(108, 47);
+            this.rad_Remove.TabIndex = 1;
+            this.rad_Remove.TabStop = true;
+            this.rad_Remove.Text = "移除";
+            this.rad_Remove.UseVisualStyleBackColor = true;
             // 
             // rad_Place
             // 
-            rad_Place.AutoSize = true;
-            rad_Place.Location = new Point(290, 31);
-            rad_Place.Name = "rad_Place";
-            rad_Place.Size = new Size(87, 38);
-            rad_Place.TabIndex = 0;
-            rad_Place.TabStop = true;
-            rad_Place.Text = "放置";
-            rad_Place.UseVisualStyleBackColor = true;
+            this.rad_Place.AutoSize = true;
+            this.rad_Place.Location = new System.Drawing.Point(330, 42);
+            this.rad_Place.Name = "rad_Place";
+            this.rad_Place.Size = new System.Drawing.Size(108, 47);
+            this.rad_Place.TabIndex = 0;
+            this.rad_Place.TabStop = true;
+            this.rad_Place.Text = "放置";
+            this.rad_Place.UseVisualStyleBackColor = true;
             // 
             // lbl_Index
             // 
-            lbl_Index.AutoSize = true;
-            lbl_Index.Location = new Point(4, 36);
-            lbl_Index.Margin = new Padding(2, 0, 2, 0);
-            lbl_Index.Name = "lbl_Index";
-            lbl_Index.Size = new Size(96, 34);
-            lbl_Index.TabIndex = 22;
-            lbl_Index.Text = "流水號";
+            this.lbl_Index.AutoSize = true;
+            this.lbl_Index.Location = new System.Drawing.Point(4, 47);
+            this.lbl_Index.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Index.Name = "lbl_Index";
+            this.lbl_Index.Size = new System.Drawing.Size(121, 43);
+            this.lbl_Index.TabIndex = 22;
+            this.lbl_Index.Text = "流水號";
             // 
             // txt_Index
             // 
-            txt_Index.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Index.Location = new Point(105, 32);
-            txt_Index.Name = "txt_Index";
-            txt_Index.ReadOnly = true;
-            txt_Index.Size = new Size(143, 42);
-            txt_Index.TabIndex = 23;
+            this.txt_Index.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txt_Index.Location = new System.Drawing.Point(130, 40);
+            this.txt_Index.Name = "txt_Index";
+            this.txt_Index.ReadOnly = true;
+            this.txt_Index.Size = new System.Drawing.Size(163, 50);
+            this.txt_Index.TabIndex = 23;
             // 
             // chk_Enable
             // 
-            chk_Enable.Appearance = Appearance.Button;
-            chk_Enable.AutoSize = true;
-            chk_Enable.Location = new Point(290, 224);
-            chk_Enable.Margin = new Padding(2);
-            chk_Enable.Name = "chk_Enable";
-            chk_Enable.Size = new Size(79, 44);
-            chk_Enable.TabIndex = 21;
-            chk_Enable.Text = "啟用";
-            chk_Enable.UseVisualStyleBackColor = true;
+            this.chk_Enable.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chk_Enable.AutoSize = true;
+            this.chk_Enable.Location = new System.Drawing.Point(330, 267);
+            this.chk_Enable.Margin = new System.Windows.Forms.Padding(2);
+            this.chk_Enable.Name = "chk_Enable";
+            this.chk_Enable.Size = new System.Drawing.Size(97, 53);
+            this.chk_Enable.TabIndex = 21;
+            this.chk_Enable.Text = "啟用";
+            this.chk_Enable.UseVisualStyleBackColor = true;
             // 
             // chk_Display
             // 
-            chk_Display.Appearance = Appearance.Button;
-            chk_Display.AutoSize = true;
-            chk_Display.Location = new Point(290, 176);
-            chk_Display.Margin = new Padding(2);
-            chk_Display.Name = "chk_Display";
-            chk_Display.Size = new Size(79, 44);
-            chk_Display.TabIndex = 20;
-            chk_Display.Text = "顯示";
-            chk_Display.UseVisualStyleBackColor = true;
-            chk_Display.CheckedChanged += chk_Display_CheckedChanged;
+            this.chk_Display.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chk_Display.AutoSize = true;
+            this.chk_Display.Location = new System.Drawing.Point(330, 204);
+            this.chk_Display.Margin = new System.Windows.Forms.Padding(2);
+            this.chk_Display.Name = "chk_Display";
+            this.chk_Display.Size = new System.Drawing.Size(97, 53);
+            this.chk_Display.TabIndex = 20;
+            this.chk_Display.Text = "顯示";
+            this.chk_Display.UseVisualStyleBackColor = true;
+            this.chk_Display.CheckedChanged += new System.EventHandler(this.chk_Display_CheckedChanged);
             // 
             // txt_Diameter
             // 
-            txt_Diameter.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Diameter.Location = new Point(74, 272);
-            txt_Diameter.Name = "txt_Diameter";
-            txt_Diameter.ReadOnly = true;
-            txt_Diameter.Size = new Size(174, 42);
-            txt_Diameter.TabIndex = 16;
+            this.txt_Diameter.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txt_Diameter.Location = new System.Drawing.Point(96, 323);
+            this.txt_Diameter.Name = "txt_Diameter";
+            this.txt_Diameter.ReadOnly = true;
+            this.txt_Diameter.Size = new System.Drawing.Size(198, 50);
+            this.txt_Diameter.TabIndex = 16;
             // 
             // lbl_Diameter
             // 
-            lbl_Diameter.AutoSize = true;
-            lbl_Diameter.Location = new Point(1, 278);
-            lbl_Diameter.Margin = new Padding(2, 0, 2, 0);
-            lbl_Diameter.Name = "lbl_Diameter";
-            lbl_Diameter.Size = new Size(69, 34);
-            lbl_Diameter.TabIndex = 15;
-            lbl_Diameter.Text = "直徑";
+            this.lbl_Diameter.AutoSize = true;
+            this.lbl_Diameter.Location = new System.Drawing.Point(4, 326);
+            this.lbl_Diameter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Diameter.Name = "lbl_Diameter";
+            this.lbl_Diameter.Size = new System.Drawing.Size(87, 43);
+            this.lbl_Diameter.TabIndex = 15;
+            this.lbl_Diameter.Text = "直徑";
             // 
             // txt_PosX
             // 
-            txt_PosX.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_PosX.Location = new Point(74, 176);
-            txt_PosX.Name = "txt_PosX";
-            txt_PosX.ReadOnly = true;
-            txt_PosX.Size = new Size(174, 42);
-            txt_PosX.TabIndex = 14;
+            this.txt_PosX.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txt_PosX.Location = new System.Drawing.Point(96, 211);
+            this.txt_PosX.Name = "txt_PosX";
+            this.txt_PosX.ReadOnly = true;
+            this.txt_PosX.Size = new System.Drawing.Size(198, 50);
+            this.txt_PosX.TabIndex = 14;
             // 
             // txt_PosY
             // 
-            txt_PosY.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_PosY.Location = new Point(74, 224);
-            txt_PosY.Name = "txt_PosY";
-            txt_PosY.ReadOnly = true;
-            txt_PosY.Size = new Size(174, 42);
-            txt_PosY.TabIndex = 13;
+            this.txt_PosY.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txt_PosY.Location = new System.Drawing.Point(96, 267);
+            this.txt_PosY.Name = "txt_PosY";
+            this.txt_PosY.ReadOnly = true;
+            this.txt_PosY.Size = new System.Drawing.Size(198, 50);
+            this.txt_PosY.TabIndex = 13;
             // 
             // lbl_Pos
             // 
-            lbl_Pos.AutoSize = true;
-            lbl_Pos.Location = new Point(1, 181);
-            lbl_Pos.Margin = new Padding(2, 0, 2, 0);
-            lbl_Pos.Name = "lbl_Pos";
-            lbl_Pos.Size = new Size(69, 34);
-            lbl_Pos.TabIndex = 12;
-            lbl_Pos.Text = "座標";
+            this.lbl_Pos.AutoSize = true;
+            this.lbl_Pos.Location = new System.Drawing.Point(4, 214);
+            this.lbl_Pos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Pos.Name = "lbl_Pos";
+            this.lbl_Pos.Size = new System.Drawing.Size(87, 43);
+            this.lbl_Pos.TabIndex = 12;
+            this.lbl_Pos.Text = "座標";
             // 
             // txt_Id
             // 
-            txt_Id.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            txt_Id.Location = new Point(74, 128);
-            txt_Id.Name = "txt_Id";
-            txt_Id.Size = new Size(174, 42);
-            txt_Id.TabIndex = 11;
+            this.txt_Id.Font = new System.Drawing.Font("Microsoft JhengHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txt_Id.Location = new System.Drawing.Point(96, 155);
+            this.txt_Id.Name = "txt_Id";
+            this.txt_Id.Size = new System.Drawing.Size(198, 50);
+            this.txt_Id.TabIndex = 11;
             // 
             // lbl_Id
             // 
-            lbl_Id.AutoSize = true;
-            lbl_Id.Location = new Point(4, 133);
-            lbl_Id.Margin = new Padding(2, 0, 2, 0);
-            lbl_Id.Name = "lbl_Id";
-            lbl_Id.Size = new Size(69, 34);
-            lbl_Id.TabIndex = 10;
-            lbl_Id.Text = "編號";
-            // 
-            // grp_Search
-            // 
-            grp_Search.BackColor = Color.FloralWhite;
-            grp_Search.Font = new Font("Microsoft JhengHei UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            grp_Search.Location = new Point(12, 382);
-            grp_Search.Name = "grp_Search";
-            grp_Search.Size = new Size(391, 364);
-            grp_Search.TabIndex = 11;
-            grp_Search.TabStop = false;
-            grp_Search.Text = "搜尋";
+            this.lbl_Id.AutoSize = true;
+            this.lbl_Id.Location = new System.Drawing.Point(4, 158);
+            this.lbl_Id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Id.Name = "lbl_Id";
+            this.lbl_Id.Size = new System.Drawing.Size(87, 43);
+            this.lbl_Id.TabIndex = 10;
+            this.lbl_Id.Text = "編號";
             // 
             // Frm_Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
-            BackColor = Color.Cornsilk;
-            ClientSize = new Size(1784, 961);
-            Controls.Add(grp_Search);
-            Controls.Add(grp_NeedleInfo);
-            Controls.Add(pic_Needles);
-            Controls.Add(lbl_MousePos);
-            Controls.Add(dgv_Needles);
-            Controls.Add(menu_NeedleViewer);
-            DoubleBuffered = true;
-            ForeColor = SystemColors.ControlText;
-            MainMenuStrip = menu_NeedleViewer;
-            Margin = new Padding(2);
-            Name = "Frm_Main";
-            Text = "NeedleViewer";
-            Load += Frm_Main_Load;
-            SizeChanged += Frm_Main_SizeChanged;
-            Paint += Frm_Main_Paint;
-            ((System.ComponentModel.ISupportInitialize)dgv_Needles).EndInit();
-            menu_NeedleViewer.ResumeLayout(false);
-            menu_NeedleViewer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pic_Needles).EndInit();
-            grp_NeedleInfo.ResumeLayout(false);
-            grp_NeedleInfo.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.Cornsilk;
+            this.ClientSize = new System.Drawing.Size(1281, 978);
+            this.Controls.Add(this.grp_NeedleInfo);
+            this.Controls.Add(this.pic_Needles);
+            this.Controls.Add(this.lbl_MousePos);
+            this.Controls.Add(this.dgv_Needles);
+            this.Controls.Add(this.menu_NeedleViewer);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MainMenuStrip = this.menu_NeedleViewer;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Frm_Main";
+            this.Text = "NeedleViewer";
+            this.Load += new System.EventHandler(this.Frm_Main_Load);
+            this.SizeChanged += new System.EventHandler(this.Frm_Main_SizeChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Frm_Main_Paint);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Needles)).EndInit();
+            this.menu_NeedleViewer.ResumeLayout(false);
+            this.menu_NeedleViewer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Needles)).EndInit();
+            this.grp_NeedleInfo.ResumeLayout(false);
+            this.grp_NeedleInfo.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         public void Initialize_grp_NeedleInfo_ChildControlChanged_Listener(GroupBox groupBox)
@@ -602,7 +612,6 @@ namespace NeedleViewer
         private DataGridViewTextBoxColumn Reserve3;
         private DataGridViewTextBoxColumn Reserve4;
         private DataGridViewTextBoxColumn Reserve5;
-        private GroupBox grp_Search;
         private RadioButton rad_Place;
         private RadioButton rad_Replace;
         private RadioButton rad_Remove;

@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Text.Json;
+using System.IO;
+using System.Windows.Forms;
+using System.Collections.Generic;
 using netDxf;
 using netDxf.Entities;
+using Newtonsoft.Json;
 
 namespace NeedleViewer
 {
@@ -23,8 +26,8 @@ namespace NeedleViewer
             public class Circle
             {
                 public int Index { get; set; }
-                public string? Name { get; set; }
-                public string? Id { get; set; }
+                public string Name { get; set; }
+                public string Id { get; set; }
                 public double X { get; set; }
                 public double Y { get; set; }
                 public double Diameter { get; set; }
@@ -33,11 +36,11 @@ namespace NeedleViewer
                 public bool Replace { get; set; }
                 public bool Display { get; set; }
                 public bool Enable { get; set; }
-                public string? Reserve1 { get; set; }
-                public string? Reserve2 { get; set; }
-                public string? Reserve3 { get; set; }
-                public string? Reserve4 { get; set; }
-                public string? Reserve5 { get; set; }
+                public string Reserve1 { get; set; }
+                public string Reserve2 { get; set; }
+                public string Reserve3 { get; set; }
+                public string Reserve4 { get; set; }
+                public string Reserve5 { get; set; }
             }
 
             public JSON()
@@ -160,7 +163,7 @@ namespace NeedleViewer
                 {
                     try
                     {
-                        Json = JsonSerializer.Deserialize<JSON>(File.ReadAllText(OpenDxfFileDialog.FileName));
+                        Json = JsonConvert.DeserializeObject<JSON>(File.ReadAllText(OpenDxfFileDialog.FileName));
                         MessageBox.Show($"檔案 {OpenDxfFileDialog.FileName} 成功讀取！");
                     }
                     catch (Exception ex)
@@ -180,8 +183,8 @@ namespace NeedleViewer
 
             if (SaveJsonFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // 使用 System.Text.Json 進行物件序列化，並設定格式化輸出（會縮排顯示）
-                string json = JsonSerializer.Serialize(Json, new JsonSerializerOptions { WriteIndented = true });
+                // 使用 Newtonsoft.Json 進行物件序列化，並設定格式化輸出（會縮排顯示）
+                string json = JsonConvert.SerializeObject(Json, Formatting.Indented);
 
                 // 使用 StreamWriter 儲存 Json 到選定的檔案
                 using (StreamWriter writer = new StreamWriter(SaveJsonFileDialog.FileName))

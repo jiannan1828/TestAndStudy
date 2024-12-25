@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174
+VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeedleViewer", "NeedleViewer\NeedleViewer.csproj", "{957B2067-314C-43B4-9AE0-51B6C0866DFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeedleViewer", "NeedleViewer\NeedleViewer.csproj", "{D2FE91D5-D3E8-45B2-8ABB-6839710FE664}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{957B2067-314C-43B4-9AE0-51B6C0866DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{957B2067-314C-43B4-9AE0-51B6C0866DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{957B2067-314C-43B4-9AE0-51B6C0866DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{957B2067-314C-43B4-9AE0-51B6C0866DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2FE91D5-D3E8-45B2-8ABB-6839710FE664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FE91D5-D3E8-45B2-8ABB-6839710FE664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FE91D5-D3E8-45B2-8ABB-6839710FE664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FE91D5-D3E8-45B2-8ABB-6839710FE664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

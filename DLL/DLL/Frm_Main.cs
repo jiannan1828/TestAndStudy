@@ -11,12 +11,13 @@ namespace DLL
         public Frm_Main()
         {
             InitializeComponent();
+            RS232.Show();
         }
 
         private void btn_RS232_Click(object sender, EventArgs e)
         {
-            RS232.Frm_Main RS232 = new RS232.Frm_Main();
-            RS232.Show();
+            RS232.Frm_Main s123 = new RS232.Frm_Main();
+            s123.Show();
         }
     }
 }
