@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB6FB1C8-E88E-4CA1-A3B5-21248F6F3AA9}|RS232\\RS232.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\rs232\\rs232\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB6FB1C8-E88E-4CA1-A3B5-21248F6F3AA9}|RS232\\RS232.csproj|solutionrelative:rs232\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB6FB1C8-E88E-4CA1-A3B5-21248F6F3AA9}|RS232\\RS232.csproj|C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\rs232\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AB6FB1C8-E88E-4CA1-A3B5-21248F6F3AA9}|RS232\\RS232.csproj|solutionrelative:rs232\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB6FB1C8-E88E-4CA1-A3B5-21248F6F3AA9}|RS232\\RS232.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\rs232\\rs232\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB6FB1C8-E88E-4CA1-A3B5-21248F6F3AA9}|RS232\\RS232.csproj|solutionrelative:rs232\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB6FB1C8-E88E-4CA1-A3B5-21248F6F3AA9}|RS232\\RS232.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\rs232\\rs232\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -32,33 +32,35 @@
               "RelativeDocumentMoniker": "RS232\\Frm_Main.Designer.cs",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\Frm_Main.Designer.cs",
               "RelativeToolTip": "RS232\\Frm_Main.Designer.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAnwBQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAADAmZmZmRk8wJsAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T02:21:32.845Z"
+              "WhenOpened": "2024-12-04T02:21:32.845Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Frm_Main.cs",
               "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\Frm_Main.cs",
               "RelativeDocumentMoniker": "RS232\\Frm_Main.cs",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\Frm_Main.cs",
               "RelativeToolTip": "RS232\\Frm_Main.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T01:36:44.947Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Frm_Main.cs [\u8A2D\u8A08]",
               "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\Frm_Main.cs",
               "RelativeDocumentMoniker": "RS232\\Frm_Main.cs",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\Frm_Main.cs [\u8A2D\u8A08]",
               "RelativeToolTip": "RS232\\Frm_Main.cs [\u8A2D\u8A08]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T01:33:16.655Z"
+              "WhenOpened": "2024-12-04T01:33:16.655Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
             }
           ]
         }

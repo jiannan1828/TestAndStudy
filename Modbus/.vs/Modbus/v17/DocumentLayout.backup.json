@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3DDF6B50-0C5B-4DD1-B2C4-347CAA66FE79}|Modbus\\Modbus.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\modbus\\modbus\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DDF6B50-0C5B-4DD1-B2C4-347CAA66FE79}|Modbus\\Modbus.csproj|solutionrelative:modbus\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2425BE40-99E0-403D-BEAE-1FEF0A645E38}|ModbusRTU\\ModbusRTU.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\modbus\\modbusrtu\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2425BE40-99E0-403D-BEAE-1FEF0A645E38}|ModbusRTU\\ModbusRTU.csproj|solutionrelative:modbusrtu\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DDF6B50-0C5B-4DD1-B2C4-347CAA66FE79}|Modbus\\Modbus.csproj|C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\modbus\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3DDF6B50-0C5B-4DD1-B2C4-347CAA66FE79}|Modbus\\Modbus.csproj|solutionrelative:modbus\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2425BE40-99E0-403D-BEAE-1FEF0A645E38}|ModbusRTU\\ModbusRTU.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\modbus\\modbusrtu\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2425BE40-99E0-403D-BEAE-1FEF0A645E38}|ModbusRTU\\ModbusRTU.csproj|solutionrelative:modbusrtu\\frm_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DDF6B50-0C5B-4DD1-B2C4-347CAA66FE79}|Modbus\\Modbus.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\modbus\\modbus\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DDF6B50-0C5B-4DD1-B2C4-347CAA66FE79}|Modbus\\Modbus.csproj|solutionrelative:modbus\\frm_main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2425BE40-99E0-403D-BEAE-1FEF0A645E38}|ModbusRTU\\ModbusRTU.csproj|c:\\users\\r417t\\desktop\\ccp_contact_probes\\modbus\\modbusrtu\\modbusrtu.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2425BE40-99E0-403D-BEAE-1FEF0A645E38}|ModbusRTU\\ModbusRTU.csproj|solutionrelative:modbusrtu\\modbusrtu.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Frm_Main.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\Modbus\\Frm_Main.cs",
-              "RelativeDocumentMoniker": "Modbus\\Frm_Main.cs",
-              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\Modbus\\Frm_Main.cs [Design]",
-              "RelativeToolTip": "Modbus\\Frm_Main.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T00:58:33.285Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Frm_Main.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\Modbus\\Frm_Main.Designer.cs",
-              "RelativeDocumentMoniker": "Modbus\\Frm_Main.Designer.cs",
-              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\Modbus\\Frm_Main.Designer.cs",
-              "RelativeToolTip": "Modbus\\Frm_Main.Designer.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAIAywBQBAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T00:53:17.383Z"
+              "Title": "ModbusRTU",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\ModbusRTU\\ModbusRTU.csproj",
+              "RelativeDocumentMoniker": "ModbusRTU\\ModbusRTU.csproj",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\ModbusRTU\\ModbusRTU.csproj",
+              "RelativeToolTip": "ModbusRTU\\ModbusRTU.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-27T06:05:40.82Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Frm_Main.cs",
-              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\Modbus\\Frm_Main.cs",
-              "RelativeDocumentMoniker": "Modbus\\Frm_Main.cs",
-              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\Modbus\\Frm_Main.cs",
-              "RelativeToolTip": "Modbus\\Frm_Main.cs",
-              "ViewState": "AgIAAAgAAABA+v////8/wJAAAAAcAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\ModbusRTU\\Frm_Main.cs",
+              "RelativeDocumentMoniker": "ModbusRTU\\Frm_Main.cs",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\ModbusRTU\\Frm_Main.cs",
+              "RelativeToolTip": "ModbusRTU\\Frm_Main.cs",
+              "ViewState": "AgIAAIYAAAAAPTMzM7M6wNgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T00:33:51.802Z",
+              "WhenOpened": "2024-12-27T05:19:12.406Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Frm_Main.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\ModbusRTU\\Frm_Main.cs",
+              "RelativeDocumentMoniker": "ModbusRTU\\Frm_Main.cs",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\Modbus\\ModbusRTU\\Frm_Main.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "ModbusRTU\\Frm_Main.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T05:19:09.517Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
             }
           ]
         }
