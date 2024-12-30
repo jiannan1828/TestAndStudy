@@ -1,4 +1,4 @@
-namespace Modbus
+namespace ModbusTCP
 {
     internal static class Program
     {

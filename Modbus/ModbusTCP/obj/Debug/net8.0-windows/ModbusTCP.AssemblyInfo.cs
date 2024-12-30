@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ModbusTCP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+687ccbda8cbdd1e69d3e60f8621580f7bd271116")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4eef2de628ce1dbff873a5795af7f2e442afd02e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ModbusTCP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ModbusTCP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
