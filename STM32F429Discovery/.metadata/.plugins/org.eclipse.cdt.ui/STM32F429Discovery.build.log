@@ -1,0 +1,10 @@
+22:05:04 **** Incremental Build of configuration Debug for project STM32F429Discovery ****
+make -j12 all 
+arm-none-eabi-size  STM32F429Discovery.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54080	    128	  38288	  92496	  16950	STM32F429Discovery.elf
+Finished building: default.size.stdout
+ 
+
+22:05:05 Build Finished. 0 errors, 0 warnings. (took 512ms)
+
