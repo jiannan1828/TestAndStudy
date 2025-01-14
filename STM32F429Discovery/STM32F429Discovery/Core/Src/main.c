@@ -110,10 +110,10 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
-  MX_FREERTOS_Init();
+  //MX_FREERTOS_Init();
 
   /* Start scheduler */
-  osKernelStart();
+  //osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
 
@@ -124,6 +124,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	HAL_GPIO_WritePin(GPIOG, LD3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOG, LD4_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOG, LD3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOG, LD4_Pin, GPIO_PIN_RESET);
   }
   /* USER CODE END 3 */
 }
