@@ -16,15 +16,15 @@ namespace PerspectiveTransform
 
         private void btn_PerspectiveTransform_Click(object sender, EventArgs e)
         {
-            cameraPos[0] = new PointF(100, 100);
-            cameraPos[1] = new PointF(400, 100);
-            cameraPos[2] = new PointF(300, 400);
-            cameraPos[3] = new PointF(200, 400);
+            cameraPos[0] = new PointF(0, 0);
+            cameraPos[1] = new PointF(500, 0);
+            cameraPos[2] = new PointF(400, 500);
+            cameraPos[3] = new PointF(100, 500);
 
-            realPos[0] = new PointF(100, 100);
-            realPos[1] = new PointF(400, 100);
-            realPos[2] = new PointF(400, 400);
-            realPos[3] = new PointF(100, 400);
+            realPos[0] = new PointF(0, 0);
+            realPos[1] = new PointF(500, 0);
+            realPos[2] = new PointF(500, 500);
+            realPos[3] = new PointF(0, 500);
 
 
             OpenFileDialog openFileDialog = new OpenFileDialog();

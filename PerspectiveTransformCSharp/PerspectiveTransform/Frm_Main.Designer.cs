@@ -33,7 +33,6 @@
             lbl_PerspectiveTransform = new Label();
             pic_Original = new PictureBox();
             pic_PerspectiveTransform = new PictureBox();
-            lbl_H = new Label();
             ((System.ComponentModel.ISupportInitialize)pic_Original).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_PerspectiveTransform).BeginInit();
             SuspendLayout();
@@ -41,7 +40,7 @@
             // btn_PerspectiveTransform
             // 
             btn_PerspectiveTransform.Font = new Font("新細明體", 12F, FontStyle.Regular, GraphicsUnit.Point, 136);
-            btn_PerspectiveTransform.Location = new Point(144, 469);
+            btn_PerspectiveTransform.Location = new Point(168, 591);
             btn_PerspectiveTransform.Margin = new Padding(2);
             btn_PerspectiveTransform.Name = "btn_PerspectiveTransform";
             btn_PerspectiveTransform.Size = new Size(166, 73);
@@ -74,38 +73,27 @@
             // 
             // pic_Original
             // 
-            pic_Original.Location = new Point(9, 43);
+            pic_Original.Location = new Point(11, 48);
             pic_Original.Margin = new Padding(2);
             pic_Original.Name = "pic_Original";
-            pic_Original.Size = new Size(389, 395);
+            pic_Original.Size = new Size(500, 500);
             pic_Original.TabIndex = 5;
             pic_Original.TabStop = false;
             // 
             // pic_PerspectiveTransform
             // 
-            pic_PerspectiveTransform.Location = new Point(403, 43);
+            pic_PerspectiveTransform.Location = new Point(515, 48);
             pic_PerspectiveTransform.Margin = new Padding(2);
             pic_PerspectiveTransform.Name = "pic_PerspectiveTransform";
-            pic_PerspectiveTransform.Size = new Size(389, 395);
+            pic_PerspectiveTransform.Size = new Size(700, 700);
             pic_PerspectiveTransform.TabIndex = 6;
             pic_PerspectiveTransform.TabStop = false;
-            // 
-            // lbl_H
-            // 
-            lbl_H.AutoSize = true;
-            lbl_H.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_H.Location = new Point(433, 469);
-            lbl_H.Name = "lbl_H";
-            lbl_H.Size = new Size(61, 23);
-            lbl_H.TabIndex = 7;
-            lbl_H.Text = "label1";
             // 
             // Frm_Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(826, 636);
-            Controls.Add(lbl_H);
+            ClientSize = new Size(1245, 765);
             Controls.Add(pic_PerspectiveTransform);
             Controls.Add(pic_Original);
             Controls.Add(lbl_PerspectiveTransform);
@@ -126,6 +114,5 @@
         private Label lbl_PerspectiveTransform;
         private PictureBox pic_Original;
         private PictureBox pic_PerspectiveTransform;
-        private Label lbl_H;
     }
 }

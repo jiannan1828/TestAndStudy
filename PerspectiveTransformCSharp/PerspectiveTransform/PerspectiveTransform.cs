@@ -24,14 +24,41 @@ namespace PerspectiveTransform
 
             // 計算透視變換矩陣
             float[,] perspectiveMatrix = GetPerspectiveMatrix(cameraPos, realPos);
-            AdjustPerspectiveMatrix(ref perspectiveMatrix); // 修正正負號
 
-            // 創建輸出的圖像
+            // 輸出圖像
             Bitmap outputImage = new Bitmap(inputImage.Width, inputImage.Height);
 
-            outputImage = inputImage; //未來修改
+            // 遍歷輸出圖像的每個像素，計算反向映射
+            for (int y = 0; y < outputImage.Height; y++)
+            {
+                for (int x = 0; x < outputImage.Width; x++)
+                {
+                    // 將輸出圖像座標轉換回輸入圖像座標
+                    PointF sourcePoint = TransformPoint(x, y, perspectiveMatrix);
+
+                    // 確認點是否在輸入圖像範圍內
+                    if (sourcePoint.X >= 0 && sourcePoint.X < inputImage.Width &&
+                        sourcePoint.Y >= 0 && sourcePoint.Y < inputImage.Height)
+                    {
+                        Color pixelColor = inputImage.GetPixel((int)sourcePoint.X, (int)sourcePoint.Y);
+                        outputImage.SetPixel(x, y, pixelColor);
+                    }
+                }
+            }
 
             return outputImage;
+        }
+
+        /// <summary>
+        /// 使用透視矩陣將座標轉換
+        /// </summary>
+        private static PointF TransformPoint(float x, float y, float[,] matrix)
+        {
+            float denom = matrix[2, 0] * x + matrix[2, 1] * y + matrix[2, 2]; // 深度 W
+            float newX = (matrix[0, 0] * x + matrix[0, 1] * y + matrix[0, 2]) / denom; // x"=x'/W
+            float newY = (matrix[1, 0] * x + matrix[1, 1] * y + matrix[1, 2]) / denom; // y"=y'/W
+
+            return new PointF(newX, newY);
         }
 
         /// <summary>
@@ -123,20 +150,6 @@ namespace PerspectiveTransform
             result[2, 2] = 1;
 
             return result;
-        }
-
-        private static void AdjustPerspectiveMatrix(ref float[,] perspectiveMatrix)
-        {
-            if (perspectiveMatrix[0, 0] < 0)
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        perspectiveMatrix[i, j] = -perspectiveMatrix[i, j];
-                    }
-                }
-            }
         }
     }
 }
