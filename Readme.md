@@ -33,15 +33,18 @@ RenHong:
             1-1-O. 保留5
         1-2. 依照Json檔，忠實畫出全部的圓
     1. ptQT Thread ok
-        
+    1. pyQT 開RS232 對傳 ok
+    2. C# / pyQT / python 互傳資料 ok
+    3. 研究 MOBUS-485 以及 MOBUS TCP ok
+    4. 4點校正 ok
+    
 [Xavier] 請幫忙研究:
-    1. pyQT 開RS232 對傳
-    2. C# / pyQT / python 互傳資料
-    3. 研究 MOBUS-485 以及 MOBUS TCP 
-    3. Parallel port 開啟 與控制 (非常難)
+    1. 4點影像校正 轉C#語言
+    2. 9點 16點 校正
+    3. 軸空平台: tWinCat: 馬達設定, 找廠商來講解twinCAT
     4. FreeRTOS 找資料 看一看, VisualStudio的範例, (*****)
-    5. STM 周邊練習
-    6. https://blog.csdn.net/zzz_xxj/article/details/119862465
-    7. 
+    5. Parallel port 開啟 與控制 (非常難)
+    6. STM 周邊練習: LED呼吸燈
+    7. https://blog.csdn.net/zzz_xxj/article/details/119862465 (SOEM)
 
     
