@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4RErdd+qmyg=",
+  "dgSpecHash": "3FTyWtTuUok=",
   "success": true,
-  "projectFilePath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\CS2PYImage.csproj",
+  "projectFilePath": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\CS2PYImage\\CS2PYImage\\CS2PYImage.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\r417t\\.nuget\\packages\\emgu.cv\\4.9.0.5494\\emgu.cv.4.9.0.5494.nupkg.sha512",
     "C:\\Users\\r417t\\.nuget\\packages\\emgu.cv.bitmap\\4.9.0.5494\\emgu.cv.bitmap.4.9.0.5494.nupkg.sha512",

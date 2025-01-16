@@ -1896,11 +1896,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\CS2PYImage.csproj",
+      "projectUniqueName": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\CS2PYImage\\CS2PYImage\\CS2PYImage.csproj",
       "projectName": "CS2PYImage",
-      "projectPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\CS2PYImage.csproj",
+      "projectPath": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\CS2PYImage\\CS2PYImage\\CS2PYImage.csproj",
       "packagesPath": "C:\\Users\\r417t\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\CS2PYImage\\CS2PYImage\\obj\\",
+      "outputPath": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\CS2PYImage\\CS2PYImage\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

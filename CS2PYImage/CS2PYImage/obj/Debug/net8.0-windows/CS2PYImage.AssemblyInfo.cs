@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CS2PYImage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4792361ea9bdbc51462d73c83b1970f2a941513e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb9153ca231509c48bf37dee50eaff7b6bc038c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("CS2PYImage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CS2PYImage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
