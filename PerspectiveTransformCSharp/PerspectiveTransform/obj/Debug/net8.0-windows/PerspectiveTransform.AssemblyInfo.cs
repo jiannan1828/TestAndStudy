@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PerspectiveTransform")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0ae39c29e9eb897c8bbf1682532eb1de2c8a76e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96aa2ee8b2b2e95835d20697a0f93a6f3b2c3c1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("PerspectiveTransform")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PerspectiveTransform")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

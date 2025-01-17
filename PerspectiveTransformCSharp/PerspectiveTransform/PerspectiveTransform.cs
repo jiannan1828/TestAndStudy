@@ -25,6 +25,16 @@ namespace PerspectiveTransform
             // 計算透視變換矩陣
             float[,] perspectiveMatrix = GetPerspectiveMatrix(cameraPos, realPos);
 
+            Console.WriteLine("透視變換矩陣:");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(perspectiveMatrix[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
             // 輸出圖像
             Bitmap outputImage = new Bitmap(inputImage.Width, inputImage.Height);
 
