@@ -35,23 +35,29 @@ namespace PerspectiveTransform
                 Console.WriteLine();
             }
 
+            float[,] inversePerspectiveMatrix = InvertMatrix(perspectiveMatrix);
             // 輸出圖像
             Bitmap outputImage = new Bitmap(inputImage.Width, inputImage.Height);
 
-            // 遍歷輸出圖像的每個像素，計算反向映射
+            // 使用反向映射，將目標圖像的每個像素映射到原始圖像
             for (int y = 0; y < outputImage.Height; y++)
             {
                 for (int x = 0; x < outputImage.Width; x++)
                 {
-                    // 將輸出圖像座標轉換回輸入圖像座標
-                    PointF sourcePoint = TransformPoint(x, y, perspectiveMatrix);
+                    // 計算目標點在原始圖像中的對應點
+                    PointF sourcePoint = TransformPoint(x, y, inversePerspectiveMatrix);
 
-                    // 確認點是否在輸入圖像範圍內
+                    // 確認點是否在原始圖像範圍內
                     if (sourcePoint.X >= 0 && sourcePoint.X < inputImage.Width &&
                         sourcePoint.Y >= 0 && sourcePoint.Y < inputImage.Height)
                     {
+                        // 使用最近鄰插值或其他插值方法取得顏色
                         Color pixelColor = inputImage.GetPixel((int)sourcePoint.X, (int)sourcePoint.Y);
                         outputImage.SetPixel(x, y, pixelColor);
+                    }
+                    else
+                    {
+                        outputImage.SetPixel(x, y, Color.White);
                     }
                 }
             }
@@ -108,6 +114,49 @@ namespace PerspectiveTransform
             float[,] result = SolveLinearSystem(matrix);
 
             return result;
+        }
+
+        /// <summary>
+        /// 算出透視變換矩陣
+        /// </summary>
+        /// <param name="matrix">該矩陣</param>
+        /// <returns>反矩陣</returns>
+        private static float[,] InvertMatrix(float[,] matrix)
+        {
+            if (matrix.GetLength(0) != 3 || matrix.GetLength(1) != 3)
+                throw new ArgumentException("Matrix must be 3x3.");
+
+            // 計算行列式 det(H)
+            float det = matrix[0, 0] * (matrix[1, 1] * matrix[2, 2] - matrix[1, 2] * matrix[2, 1]) -
+                        matrix[0, 1] * (matrix[1, 0] * matrix[2, 2] - matrix[1, 2] * matrix[2, 0]) +
+                        matrix[0, 2] * (matrix[1, 0] * matrix[2, 1] - matrix[1, 1] * matrix[2, 0]);
+
+            if (Math.Abs(det) < 1e-6)
+                throw new InvalidOperationException("Matrix is not invertible.");
+
+            // 計算伴隨矩陣 adj(H)
+            float[,] adj = new float[3, 3];
+            adj[0, 0] = (matrix[1, 1] * matrix[2, 2] - matrix[1, 2] * matrix[2, 1]);
+            adj[0, 1] = -(matrix[0, 1] * matrix[2, 2] - matrix[0, 2] * matrix[2, 1]);
+            adj[0, 2] = (matrix[0, 1] * matrix[1, 2] - matrix[0, 2] * matrix[1, 1]);
+            adj[1, 0] = -(matrix[1, 0] * matrix[2, 2] - matrix[1, 2] * matrix[2, 0]);
+            adj[1, 1] = (matrix[0, 0] * matrix[2, 2] - matrix[0, 2] * matrix[2, 0]);
+            adj[1, 2] = -(matrix[0, 0] * matrix[1, 2] - matrix[0, 2] * matrix[1, 0]);
+            adj[2, 0] = (matrix[1, 0] * matrix[2, 1] - matrix[1, 1] * matrix[2, 0]);
+            adj[2, 1] = -(matrix[0, 0] * matrix[2, 1] - matrix[0, 1] * matrix[2, 0]);
+            adj[2, 2] = (matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0]);
+
+            // 計算逆矩陣 H^-1 = adj(H) / det(H)
+            float[,] inverse = new float[3, 3];
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    inverse[i, j] = adj[i, j] / det;
+                }
+            }
+
+            return inverse;
         }
 
         private static float[,] SolveLinearSystem(float[,] matrix)
