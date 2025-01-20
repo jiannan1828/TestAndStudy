@@ -56,4 +56,4 @@ RenHong:
    2. Parallel port 開啟 與控制 (非常難, pending)
    3. Ethernet(lwip 野火板子) (XavierTsai)
    4. https://blog.csdn.net/zzz_xxj/article/details/119862465 (SOEM) (XavierTsai)
-    
+       
