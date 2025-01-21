@@ -1,0 +1,17 @@
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.Frm_main.resources
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.csproj.GenerateResource.cache
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.AssemblyInfoInputs.cache
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.AssemblyInfo.cs
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.csproj.CoreCompileInputs.cache
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.sourcelink.json
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\bin\Debug\net8.0-windows\AffineTransform.exe
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\bin\Debug\net8.0-windows\AffineTransform.deps.json
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\bin\Debug\net8.0-windows\AffineTransform.runtimeconfig.json
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\bin\Debug\net8.0-windows\AffineTransform.dll
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\bin\Debug\net8.0-windows\AffineTransform.pdb
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.dll
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\refint\AffineTransform.dll
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.pdb
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\AffineTransform.genruntimeconfig.cache
+C:\Users\r417t\Desktop\TestAndStudy_new\AffineTransform\AffineTransform\obj\Debug\net8.0-windows\ref\AffineTransform.dll
