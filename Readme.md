@@ -40,9 +40,7 @@ RenHong:
     1. 4點影像校正 轉C#語言 (ok)
     
 [Xavier] 請幫忙研究:
-    0. UI完整
     1. 軸空平台: tWinCat: 馬達設定, 找廠商來講解twinCAT
-    ..
     2. FreeRTOS 找資料 看一看, VisualStudio的範例, (*****)
     3. STM 周邊練習: LED呼吸燈 (30%)
     4. Button,  => Button+LED Breath, Single Click(slow), Double Click(Normal), Tripple Click(duty), Long Press(LED Off),
@@ -52,6 +50,7 @@ RenHong:
     7. UART, RCC中斷, Timer, (問AI), 485, 
     8. LCD1202, (Encoder:https://tw.element14.com/bourns/pec11r-4220k-s0024/incremental-encoder-12mm-60rpm/dp/2663528?CMP=KNC-GOO-SHOPPING-2663528&CMP=&mckv=sffAFc7Gw_dc|pcrid|191433825590|pkw||pmt||slid||product|2663528|pgrid|41608933397|ptaid|pla-300794752538|&gad_source=1&gclid=Cj0KCQiA4rK8BhD7ARIsAFe5LXK7NQobMvvaUc1caK6cGQBt-SK4wRwTyw2HhEwd_-PNWminJqgvuhQaAhPcEALw_wcB)
 
+   0. UI完整
    1. 9點 16點 校正 (pending)
    2. Parallel port 開啟 與控制 (非常難, pending)
    3. Ethernet(lwip 野火板子) (XavierTsai)
