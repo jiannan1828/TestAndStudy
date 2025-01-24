@@ -9,7 +9,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
+-include Drivers/STM32F4xx_HAL_Driver/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
@@ -52,6 +52,21 @@ default.size.stdout \
 OBJDUMP_LIST += \
 LED_Breath.list \
 
+OBJCOPY_HEX += \
+LED_Breath.hex \
+
+OBJCOPY_BIN += \
+LED_Breath.bin \
+
+OBJCOPY_VERILOG += \
+LED_Breath.verilog \
+
+OBJCOPY_SREC += \
+LED_Breath.srec \
+
+OBJCOPY_SYMBOLSREC += \
+LED_Breath.symbolsrec \
+
 
 # All Target
 all: main-build
@@ -75,12 +90,37 @@ LED_Breath.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+LED_Breath.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "LED_Breath.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+LED_Breath.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "LED_Breath.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+LED_Breath.verilog: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O verilog $(EXECUTABLES) "LED_Breath.verilog"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+LED_Breath.srec: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O srec $(EXECUTABLES) "LED_Breath.srec"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+LED_Breath.symbolsrec: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O symbolsrec $(EXECUTABLES) "LED_Breath.symbolsrec"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) LED_Breath.elf LED_Breath.list LED_Breath.map default.size.stdout
+	-$(RM) LED_Breath.bin LED_Breath.elf LED_Breath.hex LED_Breath.list LED_Breath.map LED_Breath.srec LED_Breath.symbolsrec LED_Breath.verilog default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN) $(OBJCOPY_VERILOG) $(OBJCOPY_SREC) $(OBJCOPY_SYMBOLSREC)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

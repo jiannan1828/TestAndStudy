@@ -43,6 +43,19 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint32_t led1_cnt    = 0;
+uint32_t led1_B      = 0;
+uint32_t led1_isPlus = 0;
+
+uint32_t led2_cnt    = 0;
+uint32_t led2_B      = 0;
+uint32_t led2_isPlus = 0;
+
+uint32_t led3_cnt    = 0;
+uint32_t led3_B      = 0;
+uint32_t led3_isPlus = 0;
+
+uint32_t delaycnt = 0;
 
 /* USER CODE END PV */
 
@@ -88,22 +101,117 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
-
+  led1_B = 25;
+  led2_B = 50;
+  led3_B = 75;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, GPIO_PIN_RESET);
-	HAL_Delay(500);
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, GPIO_PIN_RESET);
-	HAL_Delay(500);
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, GPIO_PIN_RESET);
-	HAL_Delay(500);
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, GPIO_PIN_SET);
+
     /* USER CODE BEGIN 3 */
+	if(0) {
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, GPIO_PIN_RESET);
+		HAL_Delay(50);
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, GPIO_PIN_RESET);
+		HAL_Delay(50);
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, GPIO_PIN_RESET);
+		HAL_Delay(50);
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, GPIO_PIN_SET);
+	} else {
+		//Xavier_Tsai
+		delaycnt++;
+		if(delaycnt>=1000) {
+			delaycnt = 0;
+
+
+			if(led1_isPlus) {
+				//+
+				led1_B++;
+				if(led1_B>=100) {
+					led1_isPlus = 0;
+				}
+			} else {
+				//-
+				led1_B--;
+				if(led1_B<=0) {
+					led1_isPlus = 1;
+				}
+			}
+
+			if(led2_isPlus) {
+				//+
+				led2_B++;
+				if(led2_B>=100) {
+					led2_isPlus = 0;
+				}
+			} else {
+				//-
+				led2_B--;
+				if(led2_B<=0) {
+					led2_isPlus = 1;
+				}
+			}
+
+			if(led3_isPlus) {
+				//+
+				led3_B++;
+				if(led3_B>=100) {
+					led3_isPlus = 0;
+				}
+			} else {
+				//-
+				led3_B--;
+				if(led3_B<=0) {
+					led3_isPlus = 1;
+				}
+			}
+		}
+
+		led1_cnt++;
+		led2_cnt++;
+		led3_cnt++;
+
+		if(led1_cnt>=100) {
+			led1_cnt = 0;
+		}
+
+		if(led2_cnt>=100) {
+			led2_cnt = 0;
+		}
+
+		if(led3_cnt>=100) {
+			led3_cnt = 0;
+		}
+
+		if(led1_cnt<led1_B) {
+		    //LED ON
+			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, GPIO_PIN_RESET);
+		} else {
+			//LED OFF
+			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, GPIO_PIN_SET);
+		}
+
+		if(led2_cnt<led2_B) {
+		    //LED ON
+			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, GPIO_PIN_RESET);
+		} else {
+			//LED OFF
+			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, GPIO_PIN_SET);
+		}
+
+		if(led3_cnt<led3_B) {
+		    //LED ON
+			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, GPIO_PIN_RESET);
+		} else {
+			//LED OFF
+			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, GPIO_PIN_SET);
+		}
+	}
+
   }
   /* USER CODE END 3 */
 }
