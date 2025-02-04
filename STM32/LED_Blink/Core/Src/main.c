@@ -101,9 +101,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
-  led1_B = 25;
-  led2_B = 50;
-  led3_B = 75;
+  led1_B = 33;
+  led2_B = 66;
+  led3_B = 99;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
