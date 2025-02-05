@@ -168,12 +168,12 @@ HAL_StatusTypeDef Bsp_Eth_Init(void)
   ETH->DMABMR |= ETH_DMABMR_SR;
   
   /* Init ETH */
-  MACAddr[0] = 0x02;
-  MACAddr[1] = 0x00;
-  MACAddr[2] = 0x00;
-  MACAddr[3] = 0x00;
-  MACAddr[4] = 0x00;
-  MACAddr[5] = 0x00;
+  MACAddr[0] = 0x1A;
+  MACAddr[1] = 0x2B;
+  MACAddr[2] = 0x3C;
+  MACAddr[3] = 0x4D;
+  MACAddr[4] = 0x5E;
+  MACAddr[5] = 0x6F;
   heth.Instance = ETH;
   heth.Init.AutoNegotiation = ETH_AUTONEGOTIATION_ENABLE;
   heth.Init.PhyAddress = LAN8720_PHY_ADDRESS;
