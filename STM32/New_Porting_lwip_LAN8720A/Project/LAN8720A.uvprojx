@@ -369,7 +369,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F429_439xx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\New_Porting_lwip_LAN8720A;..\USER;..\Libraries\CMSIS\Include;..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\Libraries\STM32F4xx_StdPeriph_Driver\inc</IncludePath>
+              <IncludePath>..\Libraries\CMSIS\Include;..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\Libraries\STM32F4xx_StdPeriph_Driver\inc;..\USER;..\USER\BSP\ETH;..\USER\App;..\USER\lwip-1.4.1\port\arch;..\USER\lwip-1.4.1\port\Standalone;..\USER\lwip-1.4.1\port;..\USER\lwip-1.4.1\src\include\ipv4;..\USER\lwip-1.4.1\src\include\lwip;..\USER\lwip-1.4.1\src\include\netif;..\USER\lwip-1.4.1\src\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
