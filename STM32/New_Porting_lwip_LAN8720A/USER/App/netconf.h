@@ -40,6 +40,13 @@
 #define DHCP_ADDRESS_ASSIGNED      3
 #define DHCP_TIMEOUT               4
 #define DHCP_LINK_DOWN             5
+	 
+/* 電腦或ip分享器的地址 */
+#define DEST_IP_ADDR0  192
+#define DEST_IP_ADDR1  168
+#define DEST_IP_ADDR2  1
+#define DEST_IP_ADDR3  100  
+#define DEST_PORT      5000 
 
  /* STM32 MAC地址 */
 #define MAC_ADDR0  0x00

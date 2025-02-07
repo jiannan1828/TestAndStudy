@@ -909,6 +909,16 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>LwIP_port</GroupName>
+          <Files>
+            <File>
+              <FileName>ethernetif.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\lwip_port\Standalone\ethernetif.c</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>

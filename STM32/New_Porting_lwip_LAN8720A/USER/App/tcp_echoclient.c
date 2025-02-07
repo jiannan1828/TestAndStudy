@@ -35,6 +35,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "netconf.h"
+
 #if LWIP_TCP
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/

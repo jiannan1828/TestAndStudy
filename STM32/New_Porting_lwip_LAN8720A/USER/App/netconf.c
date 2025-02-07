@@ -38,6 +38,8 @@
 #include "netconf.h"
 #include <stdio.h>
 
+#include "stm32f429_phy.h"
+
 /* Private typedef -----------------------------------------------------------*/
 #define MAX_DHCP_TRIES        4
 
@@ -137,6 +139,8 @@ void LwIP_Init(void)
 #ifdef USE_DHCP
     DHCP_state = DHCP_LINK_DOWN;
 #endif /* USE_DHCP */
+		
+#ifdef USE_LCD		
     /* Set the LCD Text Color */
     LCD_SetTextColor(Red);
 
@@ -146,6 +150,7 @@ void LwIP_Init(void)
 
     /* Set the LCD Text Color */
     LCD_SetTextColor(White);
+#endif		
   }
   
   /* Set the link callback function, this function is called on change of link status*/
