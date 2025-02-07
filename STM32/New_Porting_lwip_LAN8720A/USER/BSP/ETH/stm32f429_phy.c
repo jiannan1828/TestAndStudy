@@ -169,13 +169,25 @@ static void ETH_MACDMA_Config(void)
   */
 void ETH_GPIO_Config(void)
 {
+	/* 
+			ETH_MDIO ----------------------------> PA2
+			ETH_MDC -----------------------------> PC1
+			ETH_RMII_REF_CLK --------------------> PA1
+			ETH_RMII_CRS_DV ---------------------> PA7
+			ETH_RMII_RXD0 -----------------------> PC4
+			ETH_RMII_RXD1 -----------------------> PC5
+			ETH_RMII_TX_EN ----------------------> PB11
+			ETH_RMII_TXD0 -----------------------> PG13
+			ETH_RMII_TXD1 -----------------------> PG14
+			ETH_NRST ----------------------------> PI1
+																									*/
+	
   GPIO_InitTypeDef GPIO_InitStructure;
   
-  /* Enable GPIOs clocks */
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB |
-                         RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOI |
-                         RCC_AHB1Periph_GPIOG | RCC_AHB1Periph_GPIOH |
-                         RCC_AHB1Periph_GPIOF, ENABLE);
+  /* 始能 GPIO 時鐘 */
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB |
+                         RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOG |
+                         RCC_AHB1Periph_GPIOI, ENABLE);
 
   /* Enable SYSCFG clock */
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);  
@@ -203,69 +215,42 @@ void ETH_GPIO_Config(void)
   SYSCFG_ETH_MediaInterfaceConfig(SYSCFG_ETH_MediaInterface_RMII);
 #endif
 
-/* Ethernet pins configuration ************************************************/
-   /*
-        ETH_MDIO -------------------------> PA2
-        ETH_MDC --------------------------> PC1
-        ETH_PPS_OUT ----------------------> PB5
-        ETH_MII_CRS ----------------------> PH2
-        ETH_MII_COL ----------------------> PH3
-        ETH_MII_RX_ER --------------------> PI10
-        ETH_MII_RXD2 ---------------------> PH6
-        ETH_MII_RXD3 ---------------------> PH7
-        ETH_MII_TX_CLK -------------------> PC3
-        ETH_MII_TXD2 ---------------------> PC2
-        ETH_MII_TXD3 ---------------------> PB8
-        ETH_MII_RX_CLK/ETH_RMII_REF_CLK---> PA1
-        ETH_MII_RX_DV/ETH_RMII_CRS_DV ----> PA7
-        ETH_MII_RXD0/ETH_RMII_RXD0 -------> PC4
-        ETH_MII_RXD1/ETH_RMII_RXD1 -------> PC5
-        ETH_MII_TX_EN/ETH_RMII_TX_EN -----> PG11
-        ETH_MII_TXD0/ETH_RMII_TXD0 -------> PG13
-        ETH_MII_TXD1/ETH_RMII_TXD1 -------> PG14
-                                                  */
-
-  /* Configure PA1, PA2 and PA7 */
+  /* 設定 PA1, PA2, PA7 */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_7;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
-  GPIO_PinAFConfig(GPIOA, GPIO_PinSource1, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_ETH);
+  GPIO_PinAFConfig(GPIOA, GPIO_PinSource1, GPIO_AF_ETH); // RMII_REF_CLK
+  GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_ETH); // MDIO
+  GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_ETH); // CRS_DV
 
-  /* Configure PB5 and PB8 */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_8;
-  GPIO_Init(GPIOB, &GPIO_InitStructure);
-  GPIO_PinAFConfig(GPIOB, GPIO_PinSource5, GPIO_AF_ETH);	
-  GPIO_PinAFConfig(GPIOB, GPIO_PinSource8, GPIO_AF_ETH);
-
-  /* Configure PC1, PC2, PC3, PC4 and PC5 */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;
+  /* 設定 PC1, PC4, PC5 */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_4 | GPIO_Pin_5;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
-  GPIO_PinAFConfig(GPIOC, GPIO_PinSource1, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOC, GPIO_PinSource2, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOC, GPIO_PinSource3, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOC, GPIO_PinSource4, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOC, GPIO_PinSource5, GPIO_AF_ETH);
-                                
-  /* Configure PG11, PG14 and PG13 */
-  GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_11 | GPIO_Pin_13 | GPIO_Pin_14;
+  GPIO_PinAFConfig(GPIOC, GPIO_PinSource1, GPIO_AF_ETH); // MDC
+  GPIO_PinAFConfig(GPIOC, GPIO_PinSource4, GPIO_AF_ETH); // RXD0
+  GPIO_PinAFConfig(GPIOC, GPIO_PinSource5, GPIO_AF_ETH); // RXD1
+
+  /* 設定 PB11 */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource11, GPIO_AF_ETH); // TX_EN
+
+  /* 設定 PG13, PG14 */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_14;
   GPIO_Init(GPIOG, &GPIO_InitStructure);
-  GPIO_PinAFConfig(GPIOG, GPIO_PinSource11, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOG, GPIO_PinSource13, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOG, GPIO_PinSource14, GPIO_AF_ETH);
+  GPIO_PinAFConfig(GPIOG, GPIO_PinSource13, GPIO_AF_ETH); // TXD0
+  GPIO_PinAFConfig(GPIOG, GPIO_PinSource14, GPIO_AF_ETH); // TXD1
 
-  /* Configure PH2, PH3, PH6, PH7 */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_6 | GPIO_Pin_7;
-  GPIO_Init(GPIOH, &GPIO_InitStructure);
-  GPIO_PinAFConfig(GPIOH, GPIO_PinSource2, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOH, GPIO_PinSource3, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOH, GPIO_PinSource6, GPIO_AF_ETH);
-  GPIO_PinAFConfig(GPIOH, GPIO_PinSource7, GPIO_AF_ETH);
-
-  /* Configure PI10 */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
+  /* 設定 PI1 為 NRST */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;  // NRST ???????
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
   GPIO_Init(GPIOI, &GPIO_InitStructure);
-  GPIO_PinAFConfig(GPIOI, GPIO_PinSource10, GPIO_AF_ETH);
 }
 
 /**

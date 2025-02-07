@@ -27,8 +27,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F4x7_ETH_H
-#define __STM32F4x7_ETH_H
+#ifndef __STM32F429_ETH_H
+#define __STM32F429_ETH_H
 
 #ifdef __cplusplus
  extern "C" {
