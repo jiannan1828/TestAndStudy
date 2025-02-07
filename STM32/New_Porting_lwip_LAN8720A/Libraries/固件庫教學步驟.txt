@@ -1,7 +1,0 @@
-接著我們把剛剛解壓縮後的firmware路徑STM32F4xx_DSP_StdPeriph_Lib_V1.8.0\Libraries下的CMSIS,
-
- STM32F4xx_StdPeriph_Driver兩個folder複製到我們自己創建的Libraries目錄下
-
-注意: CMSIS資料夾只留Device跟Include資料夾就可以了，
-
-其他檔案皆可以刪除。同理STM32F4xx_StdPeriph_Driver只留inc與src資料夾
