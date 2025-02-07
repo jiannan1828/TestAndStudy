@@ -8,6 +8,11 @@ int main(void)
   {
   }
 }
- void SystemInit(void)
- {	
- }
+
+void SystemInit(void)
+{	
+}
+
+void Delay(uint32_t ms) {
+   
+}
