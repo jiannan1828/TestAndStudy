@@ -73,6 +73,9 @@
 #define GW_ADDR1         168
 #define GW_ADDR2           1
 #define GW_ADDR3           1
+
+/* ¿ï¾ÜRMII¼Ò¦¡ */
+#define RMII_MODE
 	 
 void LwIP_Init(void);
 void LwIP_Pkt_Handle(void);

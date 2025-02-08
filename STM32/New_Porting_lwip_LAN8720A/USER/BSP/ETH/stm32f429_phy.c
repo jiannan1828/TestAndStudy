@@ -91,7 +91,7 @@ void ETH_BSP_Config(void)
   }
 
   /* Configure the PHY to generate an interrupt on change of link status */
-  Eth_Link_PHYITConfig(DP83848_PHY_ADDRESS);
+  Eth_Link_PHYITConfig(LAN8720_PHY_ADDRESS);
 
   /* Configure the EXTI for Ethernet link status. */
   Eth_Link_EXTIConfig(); 
@@ -159,7 +159,7 @@ static void ETH_MACDMA_Config(void)
   ETH_InitStructure.ETH_DMAArbitration = ETH_DMAArbitration_RoundRobin_RxTx_2_1;
 
   /* Configure Ethernet */
-  EthStatus = ETH_Init(&ETH_InitStructure, DP83848_PHY_ADDRESS);
+  EthStatus = ETH_Init(&ETH_InitStructure, LAN8720_PHY_ADDRESS);
 }
 
 /**
@@ -376,19 +376,19 @@ void ETH_link_callback(struct netif *netif)
       timeout = 0;
 
       /* Enable auto-negotiation */
-      ETH_WritePHYRegister(DP83848_PHY_ADDRESS, PHY_BCR, PHY_AutoNegotiation);
+      ETH_WritePHYRegister(LAN8720_PHY_ADDRESS, PHY_BCR, PHY_AutoNegotiation);
 
       /* Wait until the auto-negotiation will be completed */
       do
       {
         timeout++;
-      } while (!(ETH_ReadPHYRegister(DP83848_PHY_ADDRESS, PHY_BSR) & PHY_AutoNego_Complete) && (timeout < (uint32_t)PHY_READ_TO));  
+      } while (!(ETH_ReadPHYRegister(LAN8720_PHY_ADDRESS, PHY_BSR) & PHY_AutoNego_Complete) && (timeout < (uint32_t)PHY_READ_TO));  
 
       /* Reset Timeout counter */
       timeout = 0;
 
       /* Read the result of the auto-negotiation */
-      RegValue = ETH_ReadPHYRegister(DP83848_PHY_ADDRESS, PHY_SR);
+      RegValue = ETH_ReadPHYRegister(LAN8720_PHY_ADDRESS, PHY_SR);
 
       /* Configure the MAC with the Duplex Mode fixed by the auto-negotiation process */
       if((RegValue & PHY_DUPLEX_STATUS) != (uint16_t)RESET)

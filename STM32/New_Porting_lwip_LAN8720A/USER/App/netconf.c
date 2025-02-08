@@ -153,7 +153,7 @@ void LwIP_Init(void)
 #endif		
   }
   
-  /* Set the link callback function, this function is called on change of link status*/
+  /* 當 LAN8720 網路連線狀態發生變化時, 會自動調用 ETH_link_callback, 相當於註冊事件 */
   netif_set_link_callback(&gnetif, ETH_link_callback);
 }
 
