@@ -39,6 +39,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+extern uint32_t LocalTime;  // tim.c 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -163,6 +164,14 @@ void SysTick_Handler(void)
 /**
   * @}
   */ 
-
+void TIM3_IRQHandler(void)
+{
+    if (TIM_GetITStatus(TIM3, TIM_IT_Update) == SET)
+    {
+				LocalTime += 10;
+    }
+		
+		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+}
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
