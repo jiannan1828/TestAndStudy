@@ -34,6 +34,8 @@
 #include "netconf.h"
 #include "lwip/dhcp.h"
 
+#include "bsp_SysTick.h"
+
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -254,9 +256,9 @@ void ETH_GPIO_Config(void)
 	
 	 /* LAN8720 Hardware Reset */
   GPIO_ResetBits(GPIOI, GPIO_Pin_1); 
-  Delay(10); 
+  Delay_ms(10); 
   GPIO_SetBits(GPIOI, GPIO_Pin_1); 
-  Delay(10); 
+  Delay_ms(10); 
 }
 
 /**

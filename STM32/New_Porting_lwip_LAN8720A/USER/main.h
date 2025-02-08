@@ -37,8 +37,6 @@
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-void TimingDelay_Decrement(void);
-void Delay(uint32_t ms);
 
 #endif /* __MAIN_H */
 

@@ -31,6 +31,8 @@
 #include "stm32f4xx_rcc.h"
 #include <string.h>
 
+#include "bsp_SysTick.h"
+
 /** @addtogroup STM32F4x7_ETH_Driver
   * @brief ETH driver modules
 * @{

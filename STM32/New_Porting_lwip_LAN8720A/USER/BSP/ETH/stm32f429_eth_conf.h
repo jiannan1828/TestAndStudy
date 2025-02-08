@@ -50,7 +50,7 @@
 
 #ifdef USE_Delay
   #include "main.h"              /* Header file where the Delay function prototype is exported */
-  #define _eth_delay_    Delay   /* User can provide more timing precise _eth_delay_ function 
+  #define _eth_delay_    Delay_ms   /* User can provide more timing precise _eth_delay_ function 
                                    in this example Systick is configured with an interrupt every 10 ms*/
 #else
   #define _eth_delay_    ETH_Delay /* Default _eth_delay_ function with less precise timing */
