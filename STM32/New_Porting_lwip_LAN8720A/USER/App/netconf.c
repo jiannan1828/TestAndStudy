@@ -49,6 +49,7 @@
 struct netif gnetif;
 uint32_t TCPTimer = 0;
 uint32_t ARPTimer = 0;
+uint32_t LinkTimer = 0;
 uint32_t IPaddress = 0;
 
 #ifdef USE_DHCP
@@ -191,6 +192,13 @@ void LwIP_Periodic_Handle(__IO uint32_t localtime)
     etharp_tmr();
   }
 
+	/* 新增週期性檢查連結狀態 1s */
+	if ((localtime - LinkTimer) >= LINK_TIMER_INTERVAL)
+	{
+		LinkTimer = localtime;
+		Eth_Link_ITHandler(LAN8720_PHY_ADDRESS);
+	}
+		
 #ifdef USE_DHCP
   /* Fine DHCP periodic process every 500ms */
   if (localtime - DHCPfineTimer >= DHCP_FINE_TIMER_MSECS)

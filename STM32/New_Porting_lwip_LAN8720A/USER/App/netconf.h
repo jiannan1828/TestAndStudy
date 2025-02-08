@@ -74,6 +74,9 @@
 #define GW_ADDR2           1
 #define GW_ADDR3           1
 
+/* 檢查 PHY 連結狀態的時間間隔 */
+#define LINK_TIMER_INTERVAL    1000
+
 /* 選擇RMII模式 */
 #define RMII_MODE
 	 
