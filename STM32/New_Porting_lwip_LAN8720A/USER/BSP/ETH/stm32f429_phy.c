@@ -251,6 +251,12 @@ void ETH_GPIO_Config(void)
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
   GPIO_Init(GPIOI, &GPIO_InitStructure);
+	
+	 /* LAN8720 Hardware Reset */
+  GPIO_ResetBits(GPIOI, GPIO_Pin_1); 
+  Delay(10); 
+  GPIO_SetBits(GPIOI, GPIO_Pin_1); 
+  Delay(10); 
 }
 
 /**
