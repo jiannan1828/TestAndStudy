@@ -11,8 +11,8 @@ void TIM3_Config(void)
 
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
-    TIM_TimeBaseStructure.TIM_Period = 999;            // 從 0 數到 999
-    TIM_TimeBaseStructure.TIM_Prescaler = 1679;        // 168 MHz / 1680 = 100kHz
+    TIM_TimeBaseStructure.TIM_Period = 249;            // 從 0 數到 999
+    TIM_TimeBaseStructure.TIM_Prescaler = 1799;        // 180 MHz / 1799 + 1 = 100kHz 請查看 system_stm32f4xx.c 的註解
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 

@@ -4,8 +4,7 @@
 #include "stm32f4xx.h"
 
 void SysTick_Init(void);
-void Delay_us(__IO u32 nTime);
+void Delay_ms(__IO u32 nTime);
 void TimingDelay_Decrement(void);
-#define Delay_ms(x) Delay_us(1000*x)	 //µ¥Î»ms
 
 #endif /* __SYSTICK_H */

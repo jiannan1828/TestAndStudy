@@ -31,6 +31,8 @@
 #include "stm32f4xx_it.h"
 #include "main.h"
 
+extern void TimingDelay_Decrement(void);
+
 /** @addtogroup Template_Project
   * @{
   */
@@ -142,7 +144,7 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-  //TimingDelay_Decrement();
+	TimingDelay_Decrement();
 }
 
 /******************************************************************************/

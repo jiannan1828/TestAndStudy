@@ -4,17 +4,14 @@ static __IO u32 TimingDelay;
  
 void SysTick_Init(void)
 {
-	/* SystemFrequency / 1000    1ms中断一次
-	 * SystemFrequency / 1000000 1us中断一次
-	 */
-	if (SysTick_Config(SystemCoreClock / 1000000))
+	if (SysTick_Config(SystemCoreClock / 1800)) // 硂娩璶猔種Τ⊿Τ秈碻吏, ╰参﹚竟﹍てア毖
 	{ 
 		/* Capture error */ 
 		while (1);
 	}
 }
 
-void Delay_us(__IO u32 nTime)
+void Delay_ms(__IO u32 nTime)
 { 
 	TimingDelay = nTime;	
 

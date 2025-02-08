@@ -34,7 +34,7 @@
 #include "netconf.h"
 #include "lwip/dhcp.h"
 
-#include "bsp_SysTick.h"
+extern void Delay_ms(__IO u32 nTime);
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
