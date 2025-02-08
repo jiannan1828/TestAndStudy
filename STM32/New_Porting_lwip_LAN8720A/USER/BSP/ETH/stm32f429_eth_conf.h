@@ -91,20 +91,15 @@
 /* These values are relatives to DP83848 PHY and change from PHY to another,
    so the user have to update this value depending on the used external PHY */   
 
-/* The DP83848 PHY status register  */
-#define PHY_SR                 ((uint16_t)0x10) /* PHY status register Offset */
-#define PHY_SPEED_STATUS       ((uint16_t)0x0002) /* PHY Speed mask */
-#define PHY_DUPLEX_STATUS      ((uint16_t)0x0004) /* PHY Duplex mask */
+/* The LAN8720 PHY 狀態寄存器  */
+#define PHY_SR                 ((uint16_t)0x1F) // PHY 狀態寄存器 (PSCSR)
 
-/* The DP83848 PHY: MII Interrupt Control Register  */
-#define PHY_MICR               ((uint16_t)0x11) /* MII Interrupt Control Register */
-#define PHY_MICR_INT_EN        ((uint16_t)0x0002) /* PHY Enable interrupts */
-#define PHY_MICR_INT_OE        ((uint16_t)0x0001) /* PHY Enable output interrupt events */
+/* LAN8720 速度與雙工狀態 */
+#define PHY_SPEED_STATUS       ((uint16_t)0x0004) // Bit 2: 1 = 100Mbps, 0 = 10Mbps
+#define PHY_DUPLEX_STATUS      ((uint16_t)0x0010) // Bit 4: 1 = Full Duplex, 0 = Half Duplex
 
-/* The DP83848 PHY: MII Interrupt Status and Misc. Control Register */
-#define PHY_MISR               ((uint16_t)0x12) /* MII Interrupt Status and Misc. Control Register */
-#define PHY_MISR_LINK_INT_EN   ((uint16_t)0x0020) /* Enable Interrupt on change of link status */
-#define PHY_LINK_STATUS        ((uint16_t)0x2000) /* PHY link status interrupt mask */
+/* LAN8720 連線狀態 */
+#define PHY_LINK_STATUS        ((uint16_t)0x0001) // Bit 0: 1 = Link Up, 0 = Link Down
 
    /* Note : Common PHY registers are defined in stm32f4x7_eth.h file */
 

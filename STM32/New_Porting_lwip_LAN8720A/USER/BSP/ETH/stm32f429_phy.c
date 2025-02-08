@@ -85,7 +85,7 @@ void ETH_BSP_Config(void)
   ETH_MACDMA_Config();
 
   /* Get Ethernet link status*/
-  if(ETH_ReadPHYRegister(DP83848_PHY_ADDRESS, PHY_SR) & 1)
+  if(ETH_ReadPHYRegister(LAN8720_PHY_ADDRESS, PHY_SR) & 1)
   {
     EthStatus |= ETH_LINK_FLAG;
   }
@@ -262,29 +262,20 @@ uint32_t Eth_Link_PHYITConfig(uint16_t PHYAddress)
 {
   uint16_t tmpreg = 0;
 
-  /* Read MICR register */
-  tmpreg = ETH_ReadPHYRegister(PHYAddress, PHY_MICR);
-
-  /* Enable output interrupt events to signal via the INT pin */
-  tmpreg |= (uint16_t)(PHY_MICR_INT_EN | PHY_MICR_INT_OE);
-  if(!(ETH_WritePHYRegister(PHYAddress, PHY_MICR, tmpreg)))
+  /* LAN8720 不支援 MICR 和 MISR, 此段重寫 */
+  
+  /* ?? LAN8720 PHY 狀態寄存器 */
+  tmpreg = ETH_ReadPHYRegister(PHYAddress, PHY_SR);
+  
+  /* 判斷是否有 Link 變化 */
+  if(tmpreg & PHY_LINK_STATUS)
   {
-    /* Return ERROR in case of write timeout */
+    return ETH_SUCCESS;
+  }
+  else
+  {
     return ETH_ERROR;
   }
-
-  /* Read MISR register */
-  tmpreg = ETH_ReadPHYRegister(PHYAddress, PHY_MISR);
-
-  /* Enable Interrupt on change of link status */
-  tmpreg |= (uint16_t)PHY_MISR_LINK_INT_EN;
-  if(!(ETH_WritePHYRegister(PHYAddress, PHY_MISR, tmpreg)))
-  {
-    /* Return ERROR in case of write timeout */
-    return ETH_ERROR;
-  }
-  /* Return SUCCESS */
-  return ETH_SUCCESS;   
 }
 
 /**
@@ -332,18 +323,15 @@ void Eth_Link_EXTIConfig(void)
   */
 void Eth_Link_ITHandler(uint16_t PHYAddress)
 {
-  /* Check whether the link interrupt has occurred or not */
-  if(((ETH_ReadPHYRegister(PHYAddress, PHY_MISR)) & PHY_LINK_STATUS) != 0)
+  /* 判斷 Link 狀態 (Bit 0) */
+  if (ETH_ReadPHYRegister(PHYAddress, PHY_SR) & PHY_LINK_STATUS) // Bit0 = 1 代表連結成功
   {
-    if((ETH_ReadPHYRegister(PHYAddress, PHY_SR) & 1))
-    {
-      netif_set_link_up(&gnetif);
-    }
-    else
-    {
-      EthLinkStatus = 1;
-      netif_set_link_down(&gnetif);
-    }
+    netif_set_link_up(&gnetif); // 設定為連線狀態
+  }
+  else
+	{
+    EthLinkStatus = 1;
+    netif_set_link_down(&gnetif); // 設定為斷線狀態
   }
 }
 
