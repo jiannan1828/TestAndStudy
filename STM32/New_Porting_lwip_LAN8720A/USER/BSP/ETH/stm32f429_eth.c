@@ -385,7 +385,6 @@ uint32_t ETH_Init(ETH_InitTypeDef* ETH_InitStruct, uint16_t PHYAddress)
     {
       timeout++;
     } while (!(ETH_ReadPHYRegister(PHYAddress, PHY_BSR) & PHY_Linked_Status) && (timeout < PHY_READ_TO));
-    
     /* Return ERROR in case of timeout */
     if(timeout == PHY_READ_TO)
     {

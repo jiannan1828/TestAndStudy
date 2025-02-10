@@ -270,20 +270,29 @@ uint32_t Eth_Link_PHYITConfig(uint16_t PHYAddress)
 {
   uint16_t tmpreg = 0;
 
-  /* LAN8720 不支援 MICR 和 MISR, 此段重寫 */
-  
-  /* ?? LAN8720 PHY 狀態寄存器 */
-  tmpreg = ETH_ReadPHYRegister(PHYAddress, PHY_SR);
-  
-  /* 判斷是否有 Link 變化 */
-  if(tmpreg & PHY_LINK_STATUS)
+  /* Read MICR register */
+  tmpreg = ETH_ReadPHYRegister(PHYAddress, PHY_MICR);
+
+  /* Enable output interrupt events to signal via the INT pin */
+  tmpreg |= (uint16_t)(PHY_MICR_INT_EN);
+  if(!(ETH_WritePHYRegister(PHYAddress, PHY_MICR, tmpreg)))
   {
-    return ETH_SUCCESS;
-  }
-  else
-  {
+    /* Return ERROR in case of write timeout */
     return ETH_ERROR;
   }
+
+  /* Read MISR register */
+  tmpreg = ETH_ReadPHYRegister(PHYAddress, PHY_MISR);
+
+  /* Enable Interrupt on change of link status */
+  tmpreg |= (uint16_t)PHY_MISR_LINK_INT_EN;
+  if(!(ETH_WritePHYRegister(PHYAddress, PHY_MISR, tmpreg)))
+  {
+    /* Return ERROR in case of write timeout */
+    return ETH_ERROR;
+  }
+  /* Return SUCCESS */
+  return ETH_SUCCESS;   
 }
 
 /**

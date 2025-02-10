@@ -186,9 +186,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>279</LineNumber>
+          <LineNumber>344</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134222736</Address>
+          <Address>134222676</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -197,14 +197,30 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\USER\BSP\ETH\stm32f429_phy.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\LAN8720A\../USER/BSP/ETH/stm32f429_phy.c\279</Expression>
+          <Expression>\\LAN8720A\../USER/BSP/ETH/stm32f429_phy.c\344</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
+          <LineNumber>271</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134222724</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\USER\BSP\ETH\stm32f429_phy.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\LAN8720A\../USER/BSP/ETH/stm32f429_phy.c\271</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
           <LineNumber>25</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134231962</Address>
+          <Address>134232002</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -216,20 +232,20 @@
           <Expression>\\LAN8720A\../USER/main.c\25</Expression>
         </Bp>
         <Bp>
-          <Number>2</Number>
+          <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>2335</LineNumber>
+          <LineNumber>92</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134221748</Address>
+          <Address>134219594</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\USER\BSP\ETH\stm32f429_eth.c</Filename>
+          <Filename>..\USER\BSP\ETH\stm32f429_phy.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\LAN8720A\../USER/BSP/ETH/stm32f429_eth.c\2335</Expression>
+          <Expression>\\LAN8720A\../USER/BSP/ETH/stm32f429_phy.c\92</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

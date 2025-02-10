@@ -98,8 +98,16 @@
 #define PHY_SPEED_STATUS       ((uint16_t)0x0004) // Bit 2: 1 = 100Mbps, 0 = 10Mbps
 #define PHY_DUPLEX_STATUS      ((uint16_t)0x0010) // Bit 4: 1 = Full Duplex, 0 = Half Duplex
 
-/* LAN8720 連線狀態 */
-#define PHY_LINK_STATUS        ((uint16_t)0x0001) // Bit 0: 1 = Link Up, 0 = Link Down
+/* LAN8720: MII Interrupt Control Register */
+#define PHY_MICR               ((uint16_t)0x11) /* MICR (Interrupt Control Register) */
+#define PHY_MICR_INT_EN        ((uint16_t)0x0002) /* 啟用中斷 */
+
+/* LAN8720: MII Interrupt Status Register */
+#define PHY_MISR               ((uint16_t)0x12) /* MISR (Interrupt Status Register) */
+#define PHY_MISR_LINK_INT_EN   ((uint16_t)0x0020) /* 啟用 Link Change 中斷 */
+
+/* LAN8720: Basic Mode Status Register */
+#define PHY_LINK_STATUS        ((uint16_t)0x0004) /* Bit 2: 1 = Link Up, 0 = Link Down */
 
    /* Note : Common PHY registers are defined in stm32f4x7_eth.h file */
 
