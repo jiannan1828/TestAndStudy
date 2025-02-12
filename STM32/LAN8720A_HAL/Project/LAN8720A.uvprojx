@@ -784,13 +784,6 @@
         </Group>
         <Group>
           <GroupName>LwIP/arch</GroupName>
-          <Files>
-            <File>
-              <FileName>ethernetif.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\arch\ethernetif.c</FilePath>
-            </File>
-          </Files>
         </Group>
       </Groups>
     </Target>

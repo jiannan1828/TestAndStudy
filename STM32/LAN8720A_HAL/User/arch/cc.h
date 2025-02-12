@@ -29,58 +29,74 @@
  * Author: Adam Dunkels <adam@sics.se>
  *
  */
-#ifndef LWIP_ARCH_CC_H
-#define LWIP_ARCH_CC_H
+#ifndef __CC_H__
+#define __CC_H__
 
-/* see https://sourceforge.net/p/predef/wiki/OperatingSystems/ */
-#if defined __ANDROID__
-#define LWIP_UNIX_ANDROID
-#elif defined __linux__
-#define LWIP_UNIX_LINUX
-#elif defined __APPLE__
-#define LWIP_UNIX_MACH
-#elif defined __OpenBSD__
-#define LWIP_UNIX_OPENBSD
-#elif defined __CYGWIN__
-#define LWIP_UNIX_CYGWIN
-#elif defined __GNU__
-#define LWIP_UNIX_HURD
+#include "stdio.h"
+
+#include "main.h"
+
+#define LWIP_NO_STDINT_H  1
+
+typedef unsigned   char    u8_t;
+typedef signed     char    s8_t;
+typedef unsigned   short   u16_t;
+typedef signed     short   s16_t;
+typedef unsigned   long    u32_t;
+typedef signed     long    s32_t;
+typedef u32_t mem_ptr_t;
+typedef int sys_prot_t;
+
+
+#define U16_F "hu"
+#define S16_F "d"
+#define X16_F "hx"
+#define U32_F "u"
+#define S32_F "d"
+#define X32_F "x"
+#define SZT_F "uz" 
+
+
+
+/* 选择小端模式 */
+#define BYTE_ORDER LITTLE_ENDIAN
+
+/* define compiler specific symbols */
+#if defined (__ICCARM__)
+
+#define PACK_STRUCT_BEGIN
+#define PACK_STRUCT_STRUCT 
+#define PACK_STRUCT_END
+#define PACK_STRUCT_FIELD(x) x
+#define PACK_STRUCT_USE_INCLUDES
+
+#elif defined (__CC_ARM)
+
+#define PACK_STRUCT_BEGIN __packed
+#define PACK_STRUCT_STRUCT 
+#define PACK_STRUCT_END
+#define PACK_STRUCT_FIELD(x) x
+
+#elif defined (__GNUC__)
+
+#define PACK_STRUCT_BEGIN
+#define PACK_STRUCT_STRUCT __attribute__ ((__packed__))
+#define PACK_STRUCT_END
+#define PACK_STRUCT_FIELD(x) x
+
+#elif defined (__TASKING__)
+
+#define PACK_STRUCT_BEGIN
+#define PACK_STRUCT_STRUCT
+#define PACK_STRUCT_END
+#define PACK_STRUCT_FIELD(x) x
+
 #endif
 
-#define LWIP_TIMEVAL_PRIVATE 0
-#include <sys/time.h>
 
-#define LWIP_ERRNO_INCLUDE <errno.h>
+#define LWIP_PLATFORM_ASSERT(x) do {printf(x);}while(0)
 
-#if defined(LWIP_UNIX_LINUX) || defined(LWIP_UNIX_HURD)
-#define LWIP_ERRNO_STDINCLUDE	1
-#endif
 
-#define LWIP_RAND() ((u32_t)rand())
+extern u32_t sys_now(void);
 
-/* different handling for unit test, normally not needed */
-#ifdef LWIP_NOASSERT_ON_ERROR
-#define LWIP_ERROR(message, expression, handler) do { if (!(expression)) { \
-  handler;}} while(0)
-#endif
-
-#if defined(LWIP_UNIX_ANDROID) && defined(FD_SET)
-typedef __kernel_fd_set fd_set;
-#endif
-
-#if defined(LWIP_UNIX_MACH)
-/* sys/types.h and signal.h bring in Darwin byte order macros. pull the
-   header here and disable LwIP's version so that apps still can get
-   the macros via LwIP headers and use system headers */
-#include <sys/types.h>
-#define LWIP_DONT_PROVIDE_BYTEORDER_FUNCTIONS
-#endif
-
-struct sio_status_s;
-typedef struct sio_status_s sio_status_t;
-#define sio_fd_t sio_status_t*
-#define __sio_fd_t_defined
-
-typedef unsigned int sys_prot_t;
-
-#endif /* LWIP_ARCH_CC_H */
+#endif /* __CC_H__ */

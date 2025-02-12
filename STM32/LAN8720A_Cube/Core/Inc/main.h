@@ -28,7 +28,6 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -36,7 +35,17 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+#define DEST_IP_ADDR0 192
+#define DEST_IP_ADDR1 168
+#define DEST_IP_ADDR2 1
+#define DEST_IP_ADDR3 50
+	
+#define DEST_PORT 5001
 
+#define UDP_SERVER_PORT 5002
+#define UDP_CLIENT_PORT 5002
+
+#define LOCAL_PORT 5001
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

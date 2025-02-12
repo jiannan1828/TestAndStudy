@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2001-2003 Swedish Institute of Computer Science.
+ * Copyright (c) 2017 Simon Goldschmidt
  * All rights reserved. 
  * 
  * Redistribution and use in source and binary forms, with or without modification, 
@@ -26,38 +26,65 @@
  *
  * This file is part of the lwIP TCP/IP stack.
  * 
- * Author: Adam Dunkels <adam@sics.se>
+ * Author: Simon Goldschmidt
  *
  */
-#ifndef LWIP_ARCH_SYS_ARCH_H
-#define LWIP_ARCH_SYS_ARCH_H
+ 
+#include <lwip/opt.h>
+#include <lwip/arch.h>
+#include "tcpip.h"
 
-#define SYS_MBOX_NULL NULL
-#define SYS_SEM_NULL  NULL
+ /* FreeRTOSÍ·ÎÄ¼þ */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "semphr.h"
 
-/*typedef u32_t sys_prot_t;*/
+/* USER CODE BEGIN 0 */
+#define DEST_IP_ADDR0               192
+#define DEST_IP_ADDR1               168
+#define DEST_IP_ADDR2                 1
+#define DEST_IP_ADDR3               102
 
-struct sys_sem;
-typedef struct sys_sem * sys_sem_t;
-#define sys_sem_valid(sem)             (((sem) != NULL) && (*(sem) != NULL))
-#define sys_sem_valid_val(sem)         ((sem) != NULL)
-#define sys_sem_set_invalid(sem)       do { if((sem) != NULL) { *(sem) = NULL; }}while(0)
-#define sys_sem_set_invalid_val(sem)   do { (sem) = NULL; }while(0)
+#define DEST_PORT                  6000
 
-struct sys_mutex;
-typedef struct sys_mutex * sys_mutex_t;
-#define sys_mutex_valid(mutex)         sys_sem_valid(mutex)
-#define sys_mutex_set_invalid(mutex)   sys_sem_set_invalid(mutex)
+#define UDP_SERVER_PORT            5002   /* define the UDP local connection port */
+#define UDP_CLIENT_PORT            5002   /* define the UDP remote connection port */
 
-struct sys_mbox;
-typedef struct sys_mbox * sys_mbox_t;
-#define sys_mbox_valid(mbox)           sys_sem_valid(mbox)
-#define sys_mbox_valid_val(mbox)       sys_sem_valid_val(mbox)
-#define sys_mbox_set_invalid(mbox)     sys_sem_set_invalid(mbox)
-#define sys_mbox_set_invalid_val(mbox) sys_sem_set_invalid_val(mbox)
+#define LOCAL_PORT                 5001
 
-struct sys_thread;
-typedef struct sys_thread * sys_thread_t;
+/*Static IP ADDRESS: IP_ADDR0.IP_ADDR1.IP_ADDR2.IP_ADDR3 */
+#define IP_ADDR0                    192
+#define IP_ADDR1                    168
+#define IP_ADDR2                      1
+#define IP_ADDR3                    122
 
-#endif /* LWIP_ARCH_SYS_ARCH_H */
+/*NETMASK*/
+#define NETMASK_ADDR0               255
+#define NETMASK_ADDR1               255
+#define NETMASK_ADDR2               255
+#define NETMASK_ADDR3                 0
+
+/*Gateway Address*/
+#define GW_ADDR0                    192
+#define GW_ADDR1                    168
+#define GW_ADDR2                      1
+#define GW_ADDR3                      1
+/* USER CODE END 0 */
+
+#define SYS_MBOX_NULL  (QueueHandle_t)0
+#define SYS_SEM_NULL   (SemaphoreHandle_t)0
+#define SYS_MRTEX_NULL SYS_SEM_NULL
+#define SYS_DEFAULT_THREAD_STACK_DEPTH	configMINIMAL_STACK_SIZE
+
+typedef SemaphoreHandle_t sys_sem_t;
+typedef SemaphoreHandle_t sys_mutex_t;
+typedef QueueHandle_t sys_mbox_t;
+typedef TaskHandle_t sys_thread_t;
+
+typedef int sys_prot_t;
+
+
+
+void TCPIP_Init(void);
 
