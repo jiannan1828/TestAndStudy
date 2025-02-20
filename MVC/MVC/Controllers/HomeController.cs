@@ -41,14 +41,21 @@ namespace MVC.Controllers
         [HttpPost]
         public IActionResult RadioButtonSubmit(MVC.Models.Index indexModel)
         {
-            ViewBag.Message = "你選擇的是：" + indexModel.RadioButtonSelectedOption;
+            ViewBag.Message = "你選擇的 RadioButton 的選項是：" + indexModel.RadioButtonSelectedOption;
             return View("Index", indexModel);
         }
 
         [HttpPost]
         public IActionResult CheckBoxSubmit(MVC.Models.Index indexModel)
         {
-            ViewBag.Message = "你選擇的選項： " + string.Join(", ", indexModel.CheckboxSelectedOptions);
+            ViewBag.Message = "你選擇 CheckBox 的選項是： " + string.Join(", ", indexModel.CheckboxSelectedOptions);
+            return View("Index", indexModel); // 返回 Index 視圖
+        }
+
+        [HttpPost]
+        public IActionResult TextBoxSubmit(MVC.Models.Index indexModel)
+        {
+            ViewBag.Message = "TextBox 輸入的值是： " + indexModel.TextboxValue;
             return View("Index", indexModel); // 返回 Index 視圖
         }
     }
