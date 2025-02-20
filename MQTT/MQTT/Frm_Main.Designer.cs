@@ -70,6 +70,7 @@
             btn_SendMessage.TabIndex = 3;
             btn_SendMessage.Text = "發送";
             btn_SendMessage.UseVisualStyleBackColor = true;
+            btn_SendMessage.Click += btn_SendMessage_Click;
             // 
             // btn_Unsubscribe
             // 
@@ -101,6 +102,7 @@
             Controls.Add(txt_Topic);
             Name = "Frm_Main";
             Text = "MQTT";
+            Load += Frm_Main_Load;
             ResumeLayout(false);
             PerformLayout();
         }
