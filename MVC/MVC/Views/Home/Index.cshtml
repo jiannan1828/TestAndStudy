@@ -2,6 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
+<label for="volume">音量:</label>
+<input type="range" id="volume" min="0" max="100" value="50" step="1" oninput="updateLabel(this.value)">
+<span id="volumeValue">50</span>
+
+<script>
+    function updateLabel(value) {
+        document.getElementById("volumeValue").innerText = value;
+    }
+</script>
+
 <div class="text-center">
     <label id="counterLabel">Counter: @Model.CounterValue</label>
     <form method="post" asp-action="AddCounter">
