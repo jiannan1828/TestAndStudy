@@ -44,19 +44,13 @@
     <div>
         <label for="selectedOption">選擇一個選項：</label>
         <select id="selectedOption" name="DropDownSelectedOption">
-            @foreach (var option in ViewBag.Options)
-            {
-                <option value="@option">@option</option>
-            }
+            <option value="選項 A">選項 A</option>
+            <option value="選項 B">選項 B</option>
+            <option value="選項 C">選項 C</option>
         </select>
     </div>
     <button type="submit">提交</button>
 </form>
-
-@if (ViewBag.Message != null)
-{
-    <p>@ViewBag.Message</p>
-}
 
 <label for="volume">音量:</label>
 <input type="range" id="volume" min="0" max="100" value="50" step="1" oninput="updateLabel(this.value)">
@@ -68,9 +62,6 @@
     }
 </script>
 
-<div class="text-center">
-    <label id="counterLabel">Counter: @Model.CounterValue</label>
-    <form method="post" asp-action="AddCounter">
-        <button type="submit" class="btn btn-primary">點擊我+1</button>
-    </form>
+<div>
+    <textarea id="richTextValue" name="RichTextValue" rows="10" cols="50">@Model.RichTextboxValue</textarea>
 </div>
