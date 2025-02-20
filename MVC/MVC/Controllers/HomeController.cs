@@ -18,6 +18,7 @@ namespace MVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            ViewBag.Options = new List<string> { "選項 A", "選項 B", "選項 C" }; // 下拉選單的選項
             return View(_indexModel);
         }
 
@@ -56,6 +57,14 @@ namespace MVC.Controllers
         public IActionResult TextBoxSubmit(MVC.Models.Index indexModel)
         {
             ViewBag.Message = "TextBox 輸入的值是： " + indexModel.TextboxValue;
+            return View("Index", indexModel); // 返回 Index 視圖
+        }
+
+        [HttpPost]
+        public IActionResult DropDownSubmit(MVC.Models.Index indexModel)
+        {
+            ViewBag.Message = "你選擇下拉式選單的選項是： " + indexModel.DropDownSelectedOption;
+            ViewBag.Options = new List<string> { "選項 A", "選項 B", "選項 C" }; // 重新填充選項
             return View("Index", indexModel); // 返回 Index 視圖
         }
     }
