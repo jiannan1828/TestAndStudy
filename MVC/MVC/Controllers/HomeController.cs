@@ -15,6 +15,7 @@ namespace MVC.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View(_indexModel);
@@ -35,6 +36,20 @@ namespace MVC.Controllers
         {
             _indexModel.CounterValue += 1; // 將值加1
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult RadioButtonSubmit(MVC.Models.Index indexModel)
+        {
+            ViewBag.Message = "你選擇的是：" + indexModel.RadioButtonSelectedOption;
+            return View("Index", indexModel);
+        }
+
+        [HttpPost]
+        public IActionResult CheckBoxSubmit(MVC.Models.Index indexModel)
+        {
+            ViewBag.Message = "你選擇的選項： " + string.Join(", ", indexModel.CheckboxSelectedOptions);
+            return View("Index", indexModel); // 返回 Index 視圖
         }
     }
 }

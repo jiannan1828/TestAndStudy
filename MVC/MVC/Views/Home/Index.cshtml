@@ -2,6 +2,41 @@
     ViewData["Title"] = "Home Page";
 }
 
+<form asp-controller="Home" asp-action="RadioButtonSubmit" method="post">
+    <div>
+        <label>
+            <input type="radio" name="RadioButtonSelectedOption" value="A"> 選項 A
+        </label>
+        <label>
+            <input type="radio" name="RadioButtonSelectedOption" value="B"> 選項 B
+        </label>
+        <label>
+            <input type="radio" name="RadioButtonSelectedOption" value="C"> 選項 C
+        </label>
+    </div>
+    <button type="submit">提交</button>
+</form>
+
+<form asp-controller="Home" asp-action="CheckBoxSubmit" method="post">
+    <div>
+        <label>
+            <input type="checkbox" name="CheckBoxSelectedOptions" value="A"> 選項 A
+        </label>
+        <label>
+            <input type="checkbox" name="CheckBoxSelectedOptions" value="B"> 選項 B
+        </label>
+        <label>
+            <input type="checkbox" name="CheckBoxSelectedOptions" value="C"> 選項 C
+        </label>
+    </div>
+    <button type="submit">提交</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+
 <label for="volume">音量:</label>
 <input type="range" id="volume" min="0" max="100" value="50" step="1" oninput="updateLabel(this.value)">
 <span id="volumeValue">50</span>
