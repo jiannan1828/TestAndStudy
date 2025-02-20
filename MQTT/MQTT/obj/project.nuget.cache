@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Dl+zhAvtuJ0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\MQTT\\MQTT\\MQTT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\r417t\\.nuget\\packages\\mqttnet\\5.0.1.1416\\mqttnet.5.0.1.1416.nupkg.sha512"
+  ],
+  "logs": []
+}
