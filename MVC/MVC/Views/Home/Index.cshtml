@@ -65,3 +65,20 @@
 <div>
     <textarea id="richTextValue" name="RichTextValue" rows="10" cols="50">@Model.RichTextboxValue</textarea>
 </div>
+
+<script>
+    // 當頁面加載完成後，設置事件監聽器
+    document.addEventListener("DOMContentLoaded", function () {
+        // 偵測鍵盤按鍵
+        document.addEventListener("keydown", function (event) {
+            // 在這裡可以做任何你想要的事情
+            console.log("按下的鍵是: " + event.key);
+            // 你可以根據按下的鍵執行其他操作
+            if (event.key === "Enter") {
+                // 假設當按下 Enter 鍵時，我們想要提交表單
+                alert("你按下了 Enter 鍵!");
+                // 這裡可以觸發提交表單或其他操作
+            }
+        });
+    });
+</script>
