@@ -2,83 +2,154 @@
     ViewData["Title"] = "Home Page";
 }
 
-<form asp-controller="Home" asp-action="RadioButtonSubmit" method="post">
-    <div>
-        <label>
-            <input type="radio" name="RadioButtonSelectedOption" value="A"> 選項 A
-        </label>
-        <label>
-            <input type="radio" name="RadioButtonSelectedOption" value="B"> 選項 B
-        </label>
-        <label>
-            <input type="radio" name="RadioButtonSelectedOption" value="C"> 選項 C
-        </label>
-    </div>
-    <button type="submit">提交</button>
-</form>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <title>@ViewData["Title"]</title>
+    </head>
+    <body>
+    <div class="container">
+        <div class="d-flex justify-content-between mb-4">
+            <div class="w-50">
+                <h3>單選框</h3>
+                <form asp-controller="Home" asp-action="RadioButtonSubmit" method="post">
+                    <div class="form-group">
+                        <div>
+                            <label>
+                            <input type="radio" name="RadioButtonSelectedOption" value="A" @(Model.RadioButtonSelectedOption == "A" ? "checked" : "")> 選項 A
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="RadioButtonSelectedOption" value="B" @(Model.RadioButtonSelectedOption == "B" ? "checked" : "")> 選項 B
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="radio" name="RadioButtonSelectedOption" value="C" @(Model.RadioButtonSelectedOption == "C" ? "checked" : "")> 選項 C
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
 
-<form asp-controller="Home" asp-action="CheckBoxSubmit" method="post">
-    <div>
-        <label>
-            <input type="checkbox" name="CheckBoxSelectedOptions" value="A"> 選項 A
-        </label>
-        <label>
-            <input type="checkbox" name="CheckBoxSelectedOptions" value="B"> 選項 B
-        </label>
-        <label>
-            <input type="checkbox" name="CheckBoxSelectedOptions" value="C"> 選項 C
-        </label>
-    </div>
-    <button type="submit">提交</button>
-</form>
+            <div class="w-50">
+                <h3>複選框</h3>
+                <form asp-controller="Home" asp-action="CheckBoxSubmit" method="post">
+                    <div class="form-group">
+                        <div>
+                            <label>
+                            <input type="checkbox" name="CheckBoxSelectedOptions" value="A" @(Model.CheckboxSelectedOptions.Contains("A") ? "checked" : "")> 選項 A
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="checkbox" name="CheckBoxSelectedOptions" value="B" @(Model.CheckboxSelectedOptions.Contains("B") ? "checked" : "")> 選項 B
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                            <input type="checkbox" name="CheckBoxSelectedOptions" value="C" @(Model.CheckboxSelectedOptions.Contains("C") ? "checked" : "")> 選項 C
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
 
-<form asp-controller="Home" asp-action="TextBoxSubmit" method="post">
-    <div>
-        <label for="textValue">請輸入值：</label>
-        <input type="text" id="textValue" name="TextboxValue" />
-    </div>
-    <button type="submit">提交</button>
-</form>
+        <div class="d-flex justify-content-between mb-4">
+            <div class="w-50">
+                <h3>文字框</h3>
+                <form asp-controller="Home" asp-action="TextBoxSubmit" method="post">
+                    <div class="form-group">
+                        <label for="textValue">請輸入值：</label>
+                        <input type="text" value="@(Model.TextboxValue)" id="textValue" name="TextboxValue" class="form-control" style="width: 200px;" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
 
-<form asp-controller="Home" asp-action="DropDownSubmit" method="post">
-    <div>
-        <label for="selectedOption">選擇一個選項：</label>
-        <select id="selectedOption" name="DropDownSelectedOption">
-            <option value="選項 A">選項 A</option>
-            <option value="選項 B">選項 B</option>
-            <option value="選項 C">選項 C</option>
-        </select>
-    </div>
-    <button type="submit">提交</button>
-</form>
+            <div class="w-50">
+                <h3>下拉選單</h3>
+                <form asp-controller="Home" asp-action="DropDownSubmit" method="post">
+                    <div class="form-group">
+                        <label for="selectedOption">選擇一個選項：</label>
+                        <select id="selectedOption" name="DropDownSelectedOption" class="form-control" style="width: 200px;">
+                            <!option value="選項 A" @(Model.DropDownSelectedOption == "選項 A" ? "selected" : "")>選項 A</!option>
+                            <!option value="選項 B" @(Model.DropDownSelectedOption == "選項 B" ? "selected" : "")>選項 B</!option>
+                            <!option value="選項 C" @(Model.DropDownSelectedOption == "選項 C" ? "selected" : "")>選項 C</!option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+            </div>
+        </div>
 
-<label for="volume">音量:</label>
-<input type="range" id="volume" min="0" max="100" value="50" step="1" oninput="updateLabel(this.value)">
-<span id="volumeValue">50</span>
+        <div class="mb-4">
+            <label for="volume">音量:</label>
+            <input type="range" id="volume" min="0" max="100" value="50" step="1" oninput="updateLabel(this.value)">
+            <span id="volumeValue">50</span>
+        </div>
 
-<script>
-    function updateLabel(value) {
-        document.getElementById("volumeValue").innerText = value;
-    }
-</script>
-
-<div>
-    <textarea id="richTextValue" name="RichTextValue" rows="10" cols="50">@Model.RichTextboxValue</textarea>
-</div>
-
-<script>
-    // 當頁面加載完成後，設置事件監聽器
-    document.addEventListener("DOMContentLoaded", function () {
-        // 偵測鍵盤按鍵
-        document.addEventListener("keydown", function (event) {
-            // 在這裡可以做任何你想要的事情
-            console.log("按下的鍵是: " + event.key);
-            // 你可以根據按下的鍵執行其他操作
-            if (event.key === "Enter") {
-                // 假設當按下 Enter 鍵時，我們想要提交表單
-                alert("你按下了 Enter 鍵!");
-                // 這裡可以觸發提交表單或其他操作
+        <script>
+            function updateLabel(value) {
+                document.getElementById("volumeValue").innerText = value;
             }
-        });
-    });
-</script>
+        </script>
+
+        <div class="mb-4">
+            <h3>富文本框</h3>
+            <textarea id="richTextValue" name="RichTextValue" rows="10" cols="50" class="form-control">@Model.RichTextboxValue</textarea>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.addEventListener("keydown", function (event) {
+                    console.log("按下的鍵是: " + event.key);
+                    if (event.key === "Enter") {
+                        alert("你按下了 Enter 鍵!");
+                    }
+                });
+            });
+        </script>
+    </div>
+
+    <div class="d-flex align-items-center mb-2">
+        <form asp-controller="Home" asp-action="ConnectSubmit" method="post">
+            <div class="d-flex align-items-center">
+                <select name="cmb_Port" class="form-control me-2" style="width: 200px;">
+                    <option value="選項 A">選項 A</option>
+                    <option value="選項 B">選項 B</option>
+                    <option value="選項 C">選項 C</option>
+                </select>
+                <button type="submit" class="btn btn-primary me-2">連線</button>
+            </div>
+        </form>
+
+        <form asp-controller="Home" asp-action="DisconnectSubmit" method="post">
+            <button type="submit" class="btn btn-primary">斷開連線</button>
+        </form>
+    </div>
+
+    <div class="mb-2">
+        <form asp-controller="Home" asp-action="SendMessageSubmit" method="post">
+            <div class="d-flex align-items-center">
+                <input type="text" id="txt_SendMessage" name="txt_SendMessage" class="form-control w-50 me-2" />
+                <button type="submit" class="btn btn-primary">發送</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="mb-2">
+        <textarea id="rtb_ReceiveMessage" name="rtb_ReceiveMessage" rows="10" cols="50" class="form-control">@Model.rtb_ReceiveMessage</textarea>
+    </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

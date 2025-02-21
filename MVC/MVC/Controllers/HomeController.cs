@@ -7,6 +7,8 @@ namespace MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        
+        private static IndexModel _indexModel = new IndexModel();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -16,8 +18,7 @@ namespace MVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var model = new MVC.Models.Index(); // 使用新的模型實例
-            return View(model);
+            return View(_indexModel);
         }
 
         public IActionResult Privacy()
@@ -32,32 +33,35 @@ namespace MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult RadioButtonSubmit(MVC.Models.Index indexModel)
+        public IActionResult RadioButtonSubmit(IndexModel indexModel)
         {
-            indexModel.RichTextboxValue += "你選擇的 RadioButton 的選項是：" + indexModel.RadioButtonSelectedOption;
-            return View("Index", indexModel);
+            _indexModel.RadioButtonSelectedOption = indexModel.RadioButtonSelectedOption;
+            _indexModel.RichTextboxValue += "你選擇的 RadioButton 的選項是：" + indexModel.RadioButtonSelectedOption + Environment.NewLine;
+            return View("Index", _indexModel);
         }
 
         [HttpPost]
-        public IActionResult CheckBoxSubmit(MVC.Models.Index indexModel)
+        public IActionResult CheckBoxSubmit(IndexModel indexModel)
         {
-            indexModel.RichTextboxValue += "你選擇 CheckBox 的選項是： " + string.Join(", ", indexModel.CheckboxSelectedOptions);
-            return View("Index", indexModel); // 返回 Index 視圖
+            _indexModel.CheckboxSelectedOptions = indexModel.CheckboxSelectedOptions;
+            _indexModel.RichTextboxValue += "你選擇 CheckBox 的選項是： " + string.Join(", ", indexModel.CheckboxSelectedOptions) + Environment.NewLine;
+            return View("Index", _indexModel); 
         }
 
         [HttpPost]
-        public IActionResult TextBoxSubmit(MVC.Models.Index indexModel)
+        public IActionResult TextBoxSubmit(IndexModel indexModel)
         {
-            indexModel.RichTextboxValue += "TextBox 輸入的值是： " + indexModel.TextboxValue;
-            return View("Index", indexModel); // 返回 Index 視圖
+            _indexModel.TextboxValue = indexModel.TextboxValue;
+            _indexModel.RichTextboxValue += "TextBox 輸入的值是： " + indexModel.TextboxValue + Environment.NewLine;
+            return View("Index", _indexModel); 
         }
 
         [HttpPost]
-        public IActionResult DropDownSubmit(MVC.Models.Index indexModel)
+        public IActionResult DropDownSubmit(IndexModel indexModel)
         {
-            // 將下拉選單選擇的訊息賦值給 RichTextValue
-            indexModel.RichTextboxValue += "你選擇下拉式選單的選項是： " + indexModel.DropDownSelectedOption + "\n";
-            return View("Index", indexModel); // 返回 Index 視圖
+            _indexModel.DropDownSelectedOption = indexModel.DropDownSelectedOption;
+            _indexModel.RichTextboxValue += "你選擇下拉式選單的選項是： " + indexModel.DropDownSelectedOption + Environment.NewLine;
+            return View("Index", _indexModel); 
         }
     }
 }
