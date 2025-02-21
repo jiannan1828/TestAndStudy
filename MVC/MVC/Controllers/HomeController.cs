@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.IO.Ports;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
 
@@ -7,7 +8,7 @@ namespace MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        
+
         private static IndexModel _indexModel = new IndexModel();
 
         public HomeController(ILogger<HomeController> logger)
@@ -18,9 +19,16 @@ namespace MVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            // 得到可用的連接埠, 並顯示在 cmb 上
+            String[] port_Enable = SerialPort.GetPortNames();
+            foreach (var item in port_Enable)
+            {
+                _indexModel.cmb_Port_Items.Add(item);
+            }
             return View(_indexModel);
         }
 
+        [HttpGet]
         public IActionResult Privacy()
         {
             return View();
@@ -62,6 +70,61 @@ namespace MVC.Controllers
             _indexModel.DropDownSelectedOption = indexModel.DropDownSelectedOption;
             _indexModel.RichTextboxValue += "你選擇下拉式選單的選項是： " + indexModel.DropDownSelectedOption + Environment.NewLine;
             return View("Index", _indexModel); 
+        }
+
+        [HttpPost]
+        public IActionResult btn_Connect_Click(IndexModel indexModel)
+        {
+            try
+            {
+                _indexModel.RS232.BaudRate = 9600;
+                _indexModel.RS232.DataBits = 8;
+                _indexModel.RS232.PortName = indexModel.cmb_Port_Text;
+                _indexModel.RS232.StopBits = System.IO.Ports.StopBits.One;
+                _indexModel.RS232.Parity = System.IO.Ports.Parity.None;
+                _indexModel.RS232.ReadTimeout = 100;
+                _indexModel.RS232.Open();
+
+                if (_indexModel.RS232.IsOpen)
+                {
+                    _indexModel.rtb_ReceiveMessage_Text += $"埠 {indexModel.cmb_Port_Text} 開啟成功" + Environment.NewLine;
+
+                    _indexModel.cmb_Port_Text = indexModel.cmb_Port_Text;
+                    _indexModel.cmb_Port_Enabled = false;
+                    _indexModel.btn_Connect_Enabled = false;
+                    _indexModel.btn_Disconnect_Enabled = true;
+                    _indexModel.btn_SendMessage_Enabled = true;
+                }
+                else
+                {
+                    _indexModel.rtb_ReceiveMessage_Text = $"埠 {indexModel.cmb_Port_Text} 開啟失敗" + Environment.NewLine;
+                    return View("Index", _indexModel);
+                }
+
+                _indexModel.RS232.DataReceived += new SerialDataReceivedEventHandler(_indexModel.DataReceivedHandler);
+                return View("Index", _indexModel);
+            }
+            catch (Exception ex)
+            {
+                _indexModel.RS232.Dispose();
+                _indexModel.rtb_ReceiveMessage_Text += ex.Message + Environment.NewLine;
+                return View("Index", _indexModel);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult btn_Disconnect_Click(IndexModel indexModel)
+        {
+            _indexModel.RS232.Dispose();
+
+            _indexModel.cmb_Port_Enabled = true;
+            _indexModel.btn_Connect_Enabled = true;
+            _indexModel.btn_Disconnect_Enabled = false;
+            _indexModel.btn_SendMessage_Enabled = false;
+
+            _indexModel.rtb_ReceiveMessage_Text += $"埠 {_indexModel.cmb_Port_Text} 成功斷開" + Environment.NewLine;
+
+            return View("Index", _indexModel);
         }
     }
 }

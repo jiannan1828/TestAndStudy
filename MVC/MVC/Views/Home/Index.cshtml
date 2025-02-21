@@ -120,33 +120,34 @@
     </div>
 
     <div class="d-flex align-items-center mb-2">
-        <form asp-controller="Home" asp-action="ConnectSubmit" method="post">
+        <form asp-controller="Home" asp-action="btn_Connect_Click" method="post">
             <div class="d-flex align-items-center">
-                <select name="cmb_Port" class="form-control me-2" style="width: 200px;">
-                    <option value="選項 A">選項 A</option>
-                    <option value="選項 B">選項 B</option>
-                    <option value="選項 C">選項 C</option>
+                <select name="cmb_Port_Text" class="form-control me-2" style="width: 200px;" @(Model.cmb_Port_Enabled ? "" : "disabled")>
+                    @foreach (var port in Model.cmb_Port_Items)
+                    {
+                        <option value="@port">@port</option>
+                    }
                 </select>
-                <button type="submit" class="btn btn-primary me-2">連線</button>
+                <button type="submit" class="btn btn-primary me-2" @(Model.btn_Connect_Enabled ? "" : "disabled")>連線</button>
             </div>
         </form>
 
-        <form asp-controller="Home" asp-action="DisconnectSubmit" method="post">
-            <button type="submit" class="btn btn-primary">斷開連線</button>
+        <form asp-controller="Home" asp-action="btn_Disconnect_Click" method="post" >
+            <button type="submit" class="btn btn-primary" @(Model.btn_Disconnect_Enabled ? "" : "disabled")>斷開</button>
         </form>
     </div>
 
     <div class="mb-2">
-        <form asp-controller="Home" asp-action="SendMessageSubmit" method="post">
+        <form asp-controller="Home" asp-action="btn_SendMessage_Click" method="post">
             <div class="d-flex align-items-center">
-                <input type="text" id="txt_SendMessage" name="txt_SendMessage" class="form-control w-50 me-2" />
+                <input type="text" id="txt_SendMessage" name="txt_SendMessage_Text" class="form-control w-50 me-2" />
                 <button type="submit" class="btn btn-primary">發送</button>
             </div>
         </form>
     </div>
 
     <div class="mb-2">
-        <textarea id="rtb_ReceiveMessage" name="rtb_ReceiveMessage" rows="10" cols="50" class="form-control">@Model.rtb_ReceiveMessage</textarea>
+        <textarea id="rtb_ReceiveMessage" name="rtb_ReceiveMessage_Text" rows="10" cols="50" class="form-control">@Model.rtb_ReceiveMessage_Text</textarea>
     </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
