@@ -126,5 +126,25 @@ namespace MVC.Controllers
 
             return View("Index", _indexModel);
         }
+
+        [HttpPost]
+        public IActionResult btn_SendMessage_Click(IndexModel indexModel)
+        {
+            try
+            {
+                // 當資料寫入的時候, 會觸發 SerialDataReceivedEventHandler 事件,
+                // 並執行函數 DataReceivedHandler
+                _indexModel.RS232.Write(indexModel.txt_SendMessage_Text + "\n");
+                _indexModel.txt_SendMessage_Text = indexModel.txt_SendMessage_Text;
+                _indexModel.rtb_ReceiveMessage_Text += $"成功傳送 : {indexModel.txt_SendMessage_Text} " + Environment.NewLine;
+            }
+            catch (Exception ex)
+            {
+                _indexModel.RS232.Dispose();
+                _indexModel.rtb_ReceiveMessage_Text += ex.Message + Environment.NewLine;
+            }
+
+            return View("Index", _indexModel);
+        }
     }
 }

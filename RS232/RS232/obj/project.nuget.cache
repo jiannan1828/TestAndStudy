@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zkWN8AvCrOM=",
+  "dgSpecHash": "j5rDJYCjxtk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\RS232.csproj",
+  "projectFilePath": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\RS232\\RS232\\RS232.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\r417t\\.nuget\\packages\\runtime.android-arm.runtime.native.system.io.ports\\9.0.0\\runtime.android-arm.runtime.native.system.io.ports.9.0.0.nupkg.sha512",
     "C:\\Users\\r417t\\.nuget\\packages\\runtime.android-arm64.runtime.native.system.io.ports\\9.0.0\\runtime.android-arm64.runtime.native.system.io.ports.9.0.0.nupkg.sha512",

@@ -1736,11 +1736,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\RS232.csproj",
+      "projectUniqueName": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\RS232\\RS232\\RS232.csproj",
       "projectName": "RS232",
-      "projectPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\RS232.csproj",
+      "projectPath": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\RS232\\RS232\\RS232.csproj",
       "packagesPath": "C:\\Users\\r417t\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\r417t\\Desktop\\CCP_Contact_Probes\\RS232\\RS232\\obj\\",
+      "outputPath": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\RS232\\RS232\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
