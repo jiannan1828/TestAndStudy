@@ -42,7 +42,9 @@ namespace MVC.Controllers
         [HttpGet]
         public IActionResult GetSerialData()
         {
-            if (Received_Data_Buffer.Contains("\n"))
+            string serialData = Received_Data_Buffer;
+
+            if(Received_Data_Buffer != "")
             {
                 var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
                 currentText += Received_Data_Buffer + Environment.NewLine;
@@ -51,19 +53,7 @@ namespace MVC.Controllers
                 Received_Data_Buffer = "";
             }
 
-            var model = new IndexModel
-            {
-                rtb_ReceiveMessage_Text = HttpContext.Session.GetString("rtb_ReceiveMessage_Text"),
-                cmb_Port_Text = HttpContext.Session.GetString("cmb_Port_Text"),
-                cmb_Port_Enabled = HttpContext.Session.GetString("cmb_Port_Enabled"),
-                cmb_Port_Items = HttpContext.Session.GetObjectFromJson<List<string>>("cmb_Port_Items"),
-                btn_Connect_Enabled = HttpContext.Session.GetString("btn_Connect_Enabled"),
-                btn_Disconnect_Enabled = HttpContext.Session.GetString("btn_Disconnect_Enabled"),
-                btn_SendMessage_Enabled = HttpContext.Session.GetString("btn_SendMessage_Enabled"),
-                txt_SendMessage_Text = HttpContext.Session.GetString("txt_SendMessage_Text")
-            };
-
-            return View("Index", model);
+            return Json(new { serialData = serialData });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

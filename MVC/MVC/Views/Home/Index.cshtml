@@ -8,7 +8,10 @@
             type: 'GET',
             dataType: 'json',
             success: function(response) {
-                $("#serialData").text(response.serialData);
+                if (response.serialData && response.serialData.trim() !== "") {
+                var currentText = $("#rtb_ReceiveMessage").val();
+                $("#rtb_ReceiveMessage").val(currentText + response.serialData);
+            }
             },
             error: function(xhr, status, error) {
                 console.error("取得 Serial Data 發生錯誤: ", error);
