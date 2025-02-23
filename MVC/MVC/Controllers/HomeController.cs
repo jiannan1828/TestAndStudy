@@ -16,23 +16,29 @@ namespace MVC.Controllers
             _logger = logger;
         }
 
+        public string Received_Data_Buffer = "";
+
+
         [HttpGet]
         public IActionResult Index()
         {
-            // 得到可用的連接埠, 並顯示在 cmb 上
+            List<string> Items = new List<string>();
             String[] port_Enable = SerialPort.GetPortNames();
             foreach (var item in port_Enable)
             {
-                _indexModel.cmb_Port_Items.Add(item);
+                Items.Add(item);
             }
-            return View(_indexModel);
+
+            HttpContext.Session.SetObjectAsJson("cmb_Port_Items", Items);
+
+            var model = new IndexModel
+            {
+                cmb_Port_Items = Items
+            };
+
+            return View("Index", model);
         }
 
-        [HttpGet]
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -43,33 +49,61 @@ namespace MVC.Controllers
         [HttpPost]
         public IActionResult RadioButtonSubmit(IndexModel indexModel)
         {
-            _indexModel.RadioButtonSelectedOption = indexModel.RadioButtonSelectedOption;
-            _indexModel.RichTextboxValue += "你選擇的 RadioButton 的選項是：" + indexModel.RadioButtonSelectedOption + Environment.NewLine;
-            return View("Index", _indexModel);
+            var currentText = HttpContext.Session.GetString("IndexModel_RichTextboxValue");
+            currentText += "你選擇的 RadioButton 的選項是：" + indexModel.RadioButtonSelectedOption + Environment.NewLine;
+            HttpContext.Session.SetString("IndexModel_RichTextboxValue", currentText);
+
+            var model = new IndexModel
+            {
+                RichTextboxValue = HttpContext.Session.GetString("IndexModel_RichTextboxValue")
+            };
+
+            return View("Index", model);
         }
 
         [HttpPost]
         public IActionResult CheckBoxSubmit(IndexModel indexModel)
         {
-            _indexModel.CheckboxSelectedOptions = indexModel.CheckboxSelectedOptions;
-            _indexModel.RichTextboxValue += "你選擇 CheckBox 的選項是： " + string.Join(", ", indexModel.CheckboxSelectedOptions) + Environment.NewLine;
-            return View("Index", _indexModel); 
+            var currentText = HttpContext.Session.GetString("IndexModel_RichTextboxValue");
+            currentText += "你選擇 CheckBox 的選項是： " + string.Join(", ", indexModel.CheckboxSelectedOptions) + Environment.NewLine;
+            HttpContext.Session.SetString("IndexModel_RichTextboxValue", currentText);
+
+            var model = new IndexModel
+            {
+                RichTextboxValue = HttpContext.Session.GetString("IndexModel_RichTextboxValue")
+            };
+
+            return View("Index", model);
         }
 
         [HttpPost]
         public IActionResult TextBoxSubmit(IndexModel indexModel)
         {
-            _indexModel.TextboxValue = indexModel.TextboxValue;
-            _indexModel.RichTextboxValue += "TextBox 輸入的值是： " + indexModel.TextboxValue + Environment.NewLine;
-            return View("Index", _indexModel); 
+            var currentText = HttpContext.Session.GetString("IndexModel_RichTextboxValue");
+            currentText += "TextBox 輸入的值是： " + indexModel.TextboxValue + Environment.NewLine;
+            HttpContext.Session.SetString("IndexModel_RichTextboxValue", currentText);
+
+            var model = new IndexModel
+            {
+                RichTextboxValue = HttpContext.Session.GetString("IndexModel_RichTextboxValue")
+            };
+
+            return View("Index", model);
         }
 
         [HttpPost]
         public IActionResult DropDownSubmit(IndexModel indexModel)
         {
-            _indexModel.DropDownSelectedOption = indexModel.DropDownSelectedOption;
-            _indexModel.RichTextboxValue += "你選擇下拉式選單的選項是： " + indexModel.DropDownSelectedOption + Environment.NewLine;
-            return View("Index", _indexModel); 
+            var currentText = HttpContext.Session.GetString("IndexModel_RichTextboxValue");
+            currentText += "你選擇下拉式選單的選項是： " + indexModel.DropDownSelectedOption + Environment.NewLine;
+            HttpContext.Session.SetString("IndexModel_RichTextboxValue", currentText);
+
+            var model = new IndexModel
+            {
+                RichTextboxValue = HttpContext.Session.GetString("IndexModel_RichTextboxValue")
+            };
+
+            return View("Index", model);
         }
 
         [HttpPost]
@@ -87,29 +121,46 @@ namespace MVC.Controllers
 
                 if (_indexModel.RS232.IsOpen)
                 {
-                    _indexModel.rtb_ReceiveMessage_Text += $"埠 {indexModel.cmb_Port_Text} 開啟成功" + Environment.NewLine;
-
-                    _indexModel.cmb_Port_Text = indexModel.cmb_Port_Text;
-                    _indexModel.cmb_Port_Enabled = false;
-                    _indexModel.btn_Connect_Enabled = false;
-                    _indexModel.btn_Disconnect_Enabled = true;
-                    _indexModel.btn_SendMessage_Enabled = true;
+                    var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
+                    currentText += $"埠 {indexModel.cmb_Port_Text} 開啟成功" + Environment.NewLine;
+                    HttpContext.Session.SetString("rtb_ReceiveMessage_Text", currentText);
+                    HttpContext.Session.SetString("cmb_Port_Text", indexModel.cmb_Port_Text);
+                    HttpContext.Session.SetString("cmb_Port_Enabled", false.ToString());
+                    HttpContext.Session.SetString("btn_Connect_Enabled", false.ToString());
+                    HttpContext.Session.SetString("btn_Disconnect_Enabled", true.ToString());
+                    HttpContext.Session.SetString("btn_SendMessage_Enabled", true.ToString());
+                    
+                    _indexModel.RS232.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
                 }
                 else
                 {
-                    _indexModel.rtb_ReceiveMessage_Text = $"埠 {indexModel.cmb_Port_Text} 開啟失敗" + Environment.NewLine;
-                    return View("Index", _indexModel);
+                    var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
+                    currentText += $"埠 {indexModel.cmb_Port_Text} 開啟失敗" + Environment.NewLine; ;
+                    HttpContext.Session.SetString("rtb_ReceiveMessage_Text", currentText);
                 }
-
-                _indexModel.RS232.DataReceived += new SerialDataReceivedEventHandler(_indexModel.DataReceivedHandler);
-                return View("Index", _indexModel);
             }
             catch (Exception ex)
             {
                 _indexModel.RS232.Dispose();
-                _indexModel.rtb_ReceiveMessage_Text += ex.Message + Environment.NewLine;
-                return View("Index", _indexModel);
+
+                var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
+                currentText += ex.Message + Environment.NewLine;
+                HttpContext.Session.SetString("rtb_ReceiveMessage_Text", currentText);
             }
+
+            var model = new IndexModel
+            {
+                rtb_ReceiveMessage_Text = HttpContext.Session.GetString("rtb_ReceiveMessage_Text"),
+                cmb_Port_Text = HttpContext.Session.GetString("cmb_Port_Text"),
+                cmb_Port_Enabled = HttpContext.Session.GetString("cmb_Port_Enabled"),
+                cmb_Port_Items = HttpContext.Session.GetObjectFromJson<List<string>>("cmb_Port_Items"),
+                btn_Connect_Enabled = HttpContext.Session.GetString("btn_Connect_Enabled"),
+                btn_Disconnect_Enabled = HttpContext.Session.GetString("btn_Disconnect_Enabled"),
+                btn_SendMessage_Enabled = HttpContext.Session.GetString("btn_SendMessage_Enabled"),
+                txt_SendMessage_Text = HttpContext.Session.GetString("txt_SendMessage_Text")
+            };
+
+            return View("Index", model);
         }
 
         [HttpPost]
@@ -117,14 +168,28 @@ namespace MVC.Controllers
         {
             _indexModel.RS232.Dispose();
 
-            _indexModel.cmb_Port_Enabled = true;
-            _indexModel.btn_Connect_Enabled = true;
-            _indexModel.btn_Disconnect_Enabled = false;
-            _indexModel.btn_SendMessage_Enabled = false;
+            HttpContext.Session.SetString("cmb_Port_Enabled", true.ToString());
+            HttpContext.Session.SetString("btn_Connect_Enabled", true.ToString());
+            HttpContext.Session.SetString("btn_Disconnect_Enabled", false.ToString());
+            HttpContext.Session.SetString("btn_SendMessage_Enabled", false.ToString());
 
-            _indexModel.rtb_ReceiveMessage_Text += $"埠 {_indexModel.cmb_Port_Text} 成功斷開" + Environment.NewLine;
+            var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
+            currentText += $"埠 {HttpContext.Session.GetString("cmb_Port_Text")} 成功斷開" + Environment.NewLine;
+            HttpContext.Session.SetString("rtb_ReceiveMessage_Text", currentText);
 
-            return View("Index", _indexModel);
+            var model = new IndexModel
+            {
+                rtb_ReceiveMessage_Text = HttpContext.Session.GetString("rtb_ReceiveMessage_Text"),
+                cmb_Port_Text = HttpContext.Session.GetString("cmb_Port_Text"),
+                cmb_Port_Enabled = HttpContext.Session.GetString("cmb_Port_Enabled"),
+                cmb_Port_Items = HttpContext.Session.GetObjectFromJson<List<string>>("cmb_Port_Items"),
+                btn_Connect_Enabled = HttpContext.Session.GetString("btn_Connect_Enabled"),
+                btn_Disconnect_Enabled = HttpContext.Session.GetString("btn_Disconnect_Enabled"),
+                btn_SendMessage_Enabled = HttpContext.Session.GetString("btn_SendMessage_Enabled"),
+                txt_SendMessage_Text = HttpContext.Session.GetString("txt_SendMessage_Text")
+            };
+
+            return View("Index", model);
         }
 
         [HttpPost]
@@ -132,19 +197,53 @@ namespace MVC.Controllers
         {
             try
             {
-                // 當資料寫入的時候, 會觸發 SerialDataReceivedEventHandler 事件,
-                // 並執行函數 DataReceivedHandler
                 _indexModel.RS232.Write(indexModel.txt_SendMessage_Text + "\n");
-                _indexModel.txt_SendMessage_Text = indexModel.txt_SendMessage_Text;
-                _indexModel.rtb_ReceiveMessage_Text += $"成功傳送 : {indexModel.txt_SendMessage_Text} " + Environment.NewLine;
+                HttpContext.Session.SetString("txt_SendMessage_Text", indexModel.txt_SendMessage_Text);
+
+                var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
+                currentText += $"成功傳送 : {indexModel.txt_SendMessage_Text} " + Environment.NewLine;
+                HttpContext.Session.SetString("rtb_ReceiveMessage_Text", currentText);
             }
             catch (Exception ex)
             {
                 _indexModel.RS232.Dispose();
-                _indexModel.rtb_ReceiveMessage_Text += ex.Message + Environment.NewLine;
+
+                var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
+                currentText += ex.Message + Environment.NewLine;
+                HttpContext.Session.SetString("rtb_ReceiveMessage_Text", currentText);
             }
 
-            return View("Index", _indexModel);
+            var model = new IndexModel
+            {
+                rtb_ReceiveMessage_Text = HttpContext.Session.GetString("rtb_ReceiveMessage_Text"),
+                cmb_Port_Text = HttpContext.Session.GetString("cmb_Port_Text"),
+                cmb_Port_Enabled = HttpContext.Session.GetString("cmb_Port_Enabled"),
+                cmb_Port_Items = HttpContext.Session.GetObjectFromJson<List<string>>("cmb_Port_Items"),
+                btn_Connect_Enabled = HttpContext.Session.GetString("btn_Connect_Enabled"),
+                btn_Disconnect_Enabled = HttpContext.Session.GetString("btn_Disconnect_Enabled"),
+                btn_SendMessage_Enabled = HttpContext.Session.GetString("btn_SendMessage_Enabled"),
+                txt_SendMessage_Text = HttpContext.Session.GetString("txt_SendMessage_Text")
+            };
+
+            return View("Index", model);
+        }
+
+        public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort SerialPort_Receive = (SerialPort)sender;
+
+            string Received_Data = SerialPort_Receive.ReadExisting();
+
+            Received_Data_Buffer += Received_Data;
+
+            if (Received_Data_Buffer.Contains("\n"))
+            {
+                var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
+                currentText += Received_Data_Buffer;
+                HttpContext.Session.SetString("rtb_ReceiveMessage_Text", currentText);
+
+                Received_Data_Buffer = "";
+            }
         }
     }
 }

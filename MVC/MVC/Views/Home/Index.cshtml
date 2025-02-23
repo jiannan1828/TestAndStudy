@@ -110,18 +110,18 @@
 <div class="d-flex align-items-center mb-2">
     <form asp-controller="Home" asp-action="btn_Connect_Click" method="post">
         <div class="d-flex align-items-center">
-            <select name="cmb_Port_Text" class="form-control me-2" style="width: 200px;" @(Model.cmb_Port_Enabled ? "" : "disabled")>
+            <select name="cmb_Port_Text" class="form-control me-2" style="width: 200px;" @(Model.cmb_Port_Enabled == "True" ? "" : "disabled")>
                 @foreach (var port in Model.cmb_Port_Items)
                 {
-                    <option value="@port">@port</option>
+                    <!option value="@port" @(port == Model.cmb_Port_Text ? "selected" : "")>@port</!option>
                 }
             </select>
-            <button type="submit" class="btn btn-primary me-2" @(Model.btn_Connect_Enabled ? "" : "disabled")>連線</button>
+            <button type="submit" class="btn btn-primary me-2" @(Model.btn_Connect_Enabled == "True" ? "" : "disabled")>連線</button>
         </div>
     </form>
 
     <form asp-controller="Home" asp-action="btn_Disconnect_Click" method="post" >
-        <button type="submit" class="btn btn-primary" @(Model.btn_Disconnect_Enabled ? "" : "disabled")>斷開</button>
+        <button type="submit" class="btn btn-primary" @(Model.btn_Disconnect_Enabled == "True" ? "" : "disabled")>斷開</button>
     </form>
 </div>
 
@@ -129,7 +129,7 @@
     <form asp-controller="Home" asp-action="btn_SendMessage_Click" method="post">
         <div class="d-flex align-items-center">
             <input type="text" id="txt_SendMessage" name="txt_SendMessage_Text" class="form-control w-50 me-2" />
-            <button type="submit" class="btn btn-primary">發送</button>
+            <button type="submit" class="btn btn-primary" @(Model.btn_SendMessage_Enabled == "True" ? "" : "disabled")> 發送</button>
         </div>
     </form>
 </div>
