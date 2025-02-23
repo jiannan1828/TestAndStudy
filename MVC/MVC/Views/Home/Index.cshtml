@@ -1,6 +1,26 @@
 ﻿<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script>
+    function fetchSerialData() {
+        $.ajax({
+            url: '@Url.Action("GetSerialData", "Home")', 
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                $("#serialData").text(response.serialData);
+            },
+            error: function(xhr, status, error) {
+                console.error("取得 Serial Data 發生錯誤: ", error);
+            }
+        });
+    }
+
+    setInterval(fetchSerialData, 1000);
+
+    fetchSerialData();
+</script>
+
 <div class="d-flex justify-content-between mb-4">
     <div class="w-50">
         <h3>單選框</h3>
