@@ -35,8 +35,7 @@
               "ViewState": "AgIAAGMAAAAAAAAAAAAAAHEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-20T06:05:01.571Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -46,7 +45,7 @@
               "RelativeDocumentMoniker": "MVC\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\MVC\\MVC\\Controllers\\HomeController.cs",
               "RelativeToolTip": "MVC\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAN8AAAAAAAAAAIA7wOwAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAAAOoAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-20T05:57:51.148Z",
               "EditorCaption": ""

@@ -238,9 +238,7 @@ namespace MVC.Controllers
 
             if (Received_Data_Buffer.Contains("\n"))
             {
-                var currentText = HttpContext.Session.GetString("rtb_ReceiveMessage_Text");
-                currentText += Received_Data_Buffer;
-                HttpContext.Session.SetString("rtb_ReceiveMessage_Text", currentText);
+                _indexModel.rtb_ReceiveMessage_Text += Received_Data_Buffer + Environment.NewLine;
 
                 Received_Data_Buffer = "";
             }
