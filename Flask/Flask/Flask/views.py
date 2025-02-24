@@ -1,9 +1,11 @@
 """
 Routes and views for the flask application.
 """
-
 from datetime import datetime
 from flask import render_template
+from flask import request
+from flask import session
+import os
 from Flask import app
 
 @app.route('/')
@@ -16,12 +18,58 @@ def home():
         year=datetime.now().year,
     )
 
-@app.route('/radio_button_submit', methods=['POST'])
-def radio_button_submit():
-    # 從表單取得 RadioButton 的選項
-    selected_option = request.form.get("RadioButtonSelectedOption")
-    # 更新模型
-    _indexModel["RadioButtonSelectedOption"] = selected_option
-    _indexModel["RichTextboxValue"] += "你選擇的 RadioButton 的選項是：" + selected_option + "\n"
-    # 回傳 Index 頁面，同時傳入模型
-    return render_template("index.html", index_model=_indexModel)
+@app.route('/RadioButtonSubmit', methods=['POST'])
+def RadioButtonSubmit():
+    RadioButtonSelectedOption = request.form.get("RadioButtonSelectedOption", "")
+    
+    current_text = session.get("RichTextboxValue", "")
+    
+    current_text += "RadioButton is : " + RadioButtonSelectedOption + os.linesep
+    
+    session["RichTextboxValue"] = current_text
+
+    RichTextboxValue = current_text
+
+    return render_template("index.html", RichTextboxValue = RichTextboxValue)
+
+@app.route('/CheckboxSubmit', methods=['POST'])
+def CheckboxSubmit():
+    CheckboxSelectedOptions = request.form.getlist("CheckboxSelectedOptions")
+    
+    current_text = session.get("RichTextboxValue", "")
+    
+    current_text += "Checkbox is : " + ", ".join(CheckboxSelectedOptions) + os.linesep
+    
+    session["RichTextboxValue"] = current_text
+
+    RichTextboxValue = current_text
+
+    return render_template("index.html", RichTextboxValue = RichTextboxValue)
+
+@app.route('/TextboxSubmit', methods=['POST'])
+def TextboxSubmit():
+    TextboxValue = request.form.get("TextboxValue")
+    
+    current_text = session.get("RichTextboxValue", "")
+    
+    current_text += "Textbox is : " + TextboxValue + os.linesep
+    
+    session["RichTextboxValue"] = current_text
+
+    RichTextboxValue = current_text
+
+    return render_template("index.html", RichTextboxValue = RichTextboxValue)
+
+@app.route('/DropDownSubmit', methods=['POST'])
+def DropDownSubmit():
+    DropDownSelectedOption = request.form.get("DropDownSelectedOption")
+    
+    current_text = session.get("RichTextboxValue", "")
+    
+    current_text += "DropDown is : " + DropDownSelectedOption + os.linesep
+    
+    session["RichTextboxValue"] = current_text
+
+    RichTextboxValue = current_text
+
+    return render_template("index.html", RichTextboxValue = RichTextboxValue)
