@@ -3,6 +3,8 @@
 {% block scripts %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 {% endblock %}
 
 {% block content %}
@@ -109,5 +111,35 @@
         });
     });
 </script>
+
+<div class="d-flex align-items-center mb-2">
+    <form action="{{ url_for('btn_Connect_Click') }}" method="post">
+        <div class="d-flex align-items-center">
+            <select name="cmb_Port_Text" class="form-control mr-2" style="width: 200px;" {% if not cmb_Port_Enabled %}disabled{% endif %}>
+                {% for port in cmb_Port_Items %}
+                <option value="{{ port }}" {% if port == cmb_Port_Text %}selected{% endif %}>{{ port }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-primary mr-2" {% if not btn_Connect_Enabled %}disabled{% endif %}>Connect</button>
+        </div>
+    </form>
+
+    <form action="{{ url_for('btn_Disconnect_Click') }}" method="post">
+        <button type="submit" class="btn btn-primary" {% if not btn_Disconnect_Enabled %}disabled{% endif %}>Disconnect</button>
+    </form>
+</div>
+
+<div class="mb-2">
+    <form action="{{ url_for('btn_SendMessage_Click') }}" method="post">
+        <div class="d-flex align-items-center">
+            <input type="text" id="txt_SendMessage" name="txt_SendMessage_Text" class="form-control w-50 mr-2" />
+            <button type="submit" class="btn btn-primary" {% if not btn_Sendmessage_Enabled %}disabled{% endif %}>Send</button>
+        </div>
+    </form>
+</div>
+
+<div class="mb-2">
+    <textarea id="rtb_ReceiveMessage" name="rtb_ReceiveMessage_Text" rows="10" cols="50" class="form-control">{{rtb_ReceiveMessage_Text}}</textarea>
+</div>
 
 {% endblock %}

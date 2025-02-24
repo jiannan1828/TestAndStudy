@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|solutionrelative:Flask\\Flask\\templates\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\runserver.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|solutionrelative:Flask\\runserver.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,10 +32,22 @@
               "RelativeDocumentMoniker": "Flask\\Flask\\views.py",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\views.py",
               "RelativeToolTip": "Flask\\Flask\\views.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAKoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-02-23T00:35:25.233Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-02-24T03:24:18.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "runserver.py",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\runserver.py",
+              "RelativeDocumentMoniker": "Flask\\runserver.py",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\runserver.py",
+              "RelativeToolTip": "Flask\\runserver.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-02-24T03:23:38.198Z",
               "EditorCaption": ""
             },
             {
@@ -42,7 +58,7 @@
               "RelativeDocumentMoniker": "Flask\\Flask\\templates\\index.html",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\index.html",
               "RelativeToolTip": "Flask\\Flask\\templates\\index.html",
-              "ViewState": "AgIAAFkAAAAAAAAAAAA9wGkAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAIgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-02-24T01:18:08.429Z",
               "EditorCaption": ""
