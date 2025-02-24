@@ -4,15 +4,17 @@ Routes and views for the flask application.
 import serial   
 import serial.tools.list_ports
 import threading
+import os
 
 from datetime import datetime
 from flask import render_template
 from flask import request
 from flask import session
-import os
 from Flask import app
+from flask import jsonify
 
 ser = serial.Serial()
+Received_Data_Buffer = ""
 
 @app.route('/')
 @app.route('/home')
@@ -27,6 +29,22 @@ def home():
         btn_Disconnect_Enabled = False,
         btn_SendMessage_Enabled = False
     )
+
+@app.route('/GetSerialData', methods=['GET'])
+def GetSerialData():
+    global Received_Data_Buffer
+    serialData = Received_Data_Buffer
+    Received_Data = ""
+
+    if Received_Data_Buffer != "":
+        current_text = session.get("rtb_ReceiveMessage_Text", "")
+        current_text += Received_Data_Buffer + "\n"
+        Received_Data = Received_Data_Buffer + "\n"
+        session["rtb_ReceiveMessage_Text"] = current_text
+
+        Received_Data_Buffer = ""
+    
+    return jsonify({"serialData": Received_Data})
 
 @app.route('/RadioButtonSubmit', methods=['POST'])
 def RadioButtonSubmit():

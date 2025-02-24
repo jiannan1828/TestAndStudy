@@ -1,9 +1,28 @@
 {% extends "layout.html" %}
 
 {% block scripts %}
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script>
+    function fetchSerialData() {
+        $.ajax({
+            url: "{{ url_for('GetSerialData') }}",
+            type: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                if (response.serialData && response.serialData.trim() !== "") {
+                    var currentText = $("#rtb_ReceiveMessage").val();
+                    $("#rtb_ReceiveMessage").val(currentText + response.serialData);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Serial Data Error: ", error);
+            }
+        });
+    }
+
+    setInterval(fetchSerialData, 1000);
+
+    fetchSerialData();
+</script>
 
 {% endblock %}
 

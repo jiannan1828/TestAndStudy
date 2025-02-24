@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\views.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|solutionrelative:Flask\\Flask\\views.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|solutionrelative:Flask\\Flask\\templates\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\layout.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|solutionrelative:Flask\\Flask\\templates\\layout.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\views.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|solutionrelative:Flask\\Flask\\views.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02D95E95-B459-4438-A004-BE466AF361DA}|Flask\\Flask.pyproj|C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\runserver.py||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -22,24 +26,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "layout.html",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\layout.html",
+              "RelativeDocumentMoniker": "Flask\\Flask\\templates\\layout.html",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\layout.html",
+              "RelativeToolTip": "Flask\\Flask\\templates\\layout.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-24T08:18:01.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "views.py",
               "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\views.py",
               "RelativeDocumentMoniker": "Flask\\Flask\\views.py",
               "ToolTip": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\views.py",
               "RelativeToolTip": "Flask\\Flask\\views.py",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAKoAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-02-24T03:24:18.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\index.html",
+              "RelativeDocumentMoniker": "Flask\\Flask\\templates\\index.html",
+              "ToolTip": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\index.html",
+              "RelativeToolTip": "Flask\\Flask\\templates\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-24T01:18:08.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "runserver.py",
               "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\runserver.py",
               "RelativeDocumentMoniker": "Flask\\runserver.py",
@@ -48,19 +78,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-02-24T03:23:38.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\index.html",
-              "RelativeDocumentMoniker": "Flask\\Flask\\templates\\index.html",
-              "ToolTip": "C:\\Users\\r417t\\Desktop\\TestAndStudy\\Flask\\Flask\\Flask\\templates\\index.html",
-              "RelativeToolTip": "Flask\\Flask\\templates\\index.html",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAIgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-24T01:18:08.429Z",
               "EditorCaption": ""
             }
           ]
