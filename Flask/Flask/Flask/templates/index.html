@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between mb-4">
+    <div class="w-50">
+        <h3>單選框</h3>
+        <form asp-controller="Home" action="{{ url_for('RadioButtonSubmit') }}" method="post">
+            <div class="form-group">
+                <div>
+                    <label>
+                        <input type="radio" name="RadioButtonSelectedOption" value="A" {% if RadioButtonSelectedOption == "A" %}checked{% endif %}> 選項 A
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="RadioButtonSelectedOption" value="B" {% if RadioButtonSelectedOption == "B" %}checked{% endif %}> 選項 B
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="RadioButtonSelectedOption" value="C" {% if RadioButtonSelectedOption == "C" %}checked{% endif %}> 選項 C
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+
+
