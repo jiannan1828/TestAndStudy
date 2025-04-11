@@ -56,3 +56,13 @@ RenHong:
    3. Ethernet(lwip 野火板子) (XavierTsai)
    4. https://blog.csdn.net/zzz_xxj/article/details/119862465 (SOEM) (XavierTsai)
        
+
+
+
+YuWei:
+1. 開文字檔 讀寫文字檔 (.txt)
+2. 開圖片 並貼上圖片
+3. 加入兩個scroll bar, *&^%$#@
+4. 自己劃一個圓 一個三角形, 試試其他畫法
+5. RS232
+6. Thread
